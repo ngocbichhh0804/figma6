@@ -10,5 +10,10 @@
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
+    /* [ĐO] Chrome đặt chân chữ cao hơn Figma ~1px: dời baseline xuống 1.25% em,
+       giữ nguyên tổng ascent + descent (79% + 23.5%) nên chiều cao dòng không đổi. */
+    ascent-override: 80.25%;
+    descent-override: 22.25%;
+    line-gap-override: 0%;
   }
 }

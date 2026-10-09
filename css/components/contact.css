@@ -3,8 +3,8 @@
 @layer components {
   .contact__map {
     position: relative;
-    padding-top: 128px;                 /* [FIGMA] form y23616 − nút đáy 23488 */
-    padding-bottom: 782px;              /* [ĐO] bản đồ y24144 (720 cao) */
+    padding-top: 127px;                 /* [ĐO] form y23616 − nút đáy 23489 */
+    padding-bottom: 784px;              /* [ĐO] bản đồ y24144 (720 cao) */
   }
 
   .contact__map-img {

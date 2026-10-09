@@ -13,17 +13,17 @@
 
   .blog__list {
     margin-top: 47px;                   /* [ĐO] ảnh y21824 */
-    padding-bottom: 48px;               /* [ĐO] ngày đáy → đường kẻ */
+    padding-bottom: 52px;               /* [ĐO] mobile: ngày đáy → đường kẻ y23216 */
     border-bottom: 1px solid var(--line);
   }
   .blog__list::after { content: ""; display: table; clear: both; }
 
   .post + .post { margin-top: 52px; }   /* [ĐO] ảnh kế y22288 */
   .post__img { width: 100%; aspect-ratio: 329 / 224; object-fit: cover; object-position: left top; border-radius: 4px; }   /* [ĐO] Figma giữ mép trái ảnh */
-  .post__cat { margin-top: 28px; }      /* [ĐO] y+252 */
+  .post__cat { margin-top: 26px; }      /* [ĐO] chữ y+258 */
   .post__title { margin-top: 15px; max-width: 338px; }   /* [FIGMA] y+297, w338 */
   .post__title > a:hover { color: var(--accent); }
-  .post__date { margin-top: 17px; }     /* [ĐO] y+380 */
+  .post__date { margin-top: 19px; }     /* [ĐO] chữ y+386 */
 
   @media (width >= 64rem) {
     .blog { padding-top: 113px; }       /* [ĐO] eyebrow y14220 */

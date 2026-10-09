@@ -22,7 +22,7 @@
   }
   .field--area { height: 96px; padding-top: 7px; line-height: var(--body-lh); resize: none; }
 
-  .newsletter { padding-top: 81px; }    /* [FIGMA] H3 y23293 − kẻ 23217 */
+  .newsletter { padding-top: 76px; }    /* [ĐO] mobile H3 chữ y23296 − kẻ 23217 */
 
   .newsletter__form { margin-top: 35px; }   /* [ĐO] ô y23376 */
   .newsletter__form > .button { width: 100%; margin-top: 16px; }   /* [FIGMA] nút 329 y23440 */
