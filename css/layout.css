@@ -1,0 +1,37 @@
+/* Cấu trúc cấp trang: container và section. Không flex/grid/gap. */
+@layer layout {
+  /* Mobile: lề 23px [FIGMA]. Desktop: khung nội dung 1170px canh giữa
+     → ở khổ 1440 nội dung bắt đầu đúng x135 [FIGMA]. */
+  .container {
+    width: 100%;
+    max-width: calc(var(--content-w) + 2 * var(--gutter));
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  .container::after {             /* chứa float bên trong */
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .page {
+    position: relative;
+    isolation: isolate;
+    overflow: clip;
+  }
+
+  /* Nền tối cho các section Portfolio → Founder và hero */
+  .section--dark {
+    background-color: var(--surface-dark);
+    color: var(--text-on-dark);
+  }
+
+  @media (width >= 48rem) {
+    .container { --gutter: 40px; }
+  }
+
+  @media (width >= 64rem) {
+    .container { --gutter: 32px; }
+  }
+}

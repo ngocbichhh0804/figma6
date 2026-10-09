@@ -1,0 +1,141 @@
+/* Hero trên nền tối.
+   Mobile (375): ảnh minh hoạ gộp 329×334 [MẪU] ở trên, chữ ở dưới.
+   Desktop (1440): chữ bên trái, minh hoạ dựng từ từng mảnh bên phải
+   (toạ độ trong khung minh hoạ, gốc = x735 y178 của frame [ĐO]). */
+@layer components {
+  .hero-wrap {
+    /* nền tối kéo dài: mobile 0 → 1104, desktop 0 → 880 [ĐO] */
+    padding-bottom: 32px;               /* [ĐO] nền tối kết thúc y1104 */
+  }
+
+  .hero {
+    position: relative;
+  }
+
+  /* ---------- Minh hoạ ---------- */
+  .hero__art {
+    position: relative;
+    max-width: 329px;                   /* [FIGMA] Bitmap 329×334 tại x23 y80 */
+  }
+
+
+  /* ---------- Chữ ---------- */
+  .hero__body {
+    padding-top: 30px;                  /* [FIGMA] eyebrow y444 − ảnh đáy 414 */
+  }
+
+  .hero__title {
+    position: relative;
+    z-index: 0;                         /* tạo stacking context cho hình sao phía sau */
+    margin-top: 20px;                   /* [FIGMA] H1 y496 − eyebrow đáy 476 */
+    font-size: clamp(44px, 14.94vw, var(--h2-size));   /* [FIGMA] H2 56 ở 375; co lại dưới 375 */
+    line-height: var(--h2-lh);
+    letter-spacing: var(--h2-ls);
+  }
+
+  .hero__burst,
+  .hero__br { display: none; }
+
+  .hero__copy {
+    margin-top: 12px;                   /* [FIGMA] y764 − đáy H1 752 */
+  }
+
+  .hero__actions {
+    margin-top: 20px;                   /* [ĐO] chữ nút y896 */
+    font-size: 0;
+    white-space: nowrap;
+  }
+
+  .hero__link {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 46px;                  /* [FIGMA] Contact Us x223 = 23 + 154 + 46 */
+    font-size: var(--body-size);        /* [FIGMA] Text 16/32 trắng */
+    line-height: 48px;
+    color: var(--text-on-dark);
+  }
+  .hero__link:hover { color: var(--accent); }
+
+  .hero__quote {
+    position: relative;
+    margin-top: 44px;                   /* [FIGMA] avatar y976 */
+    padding-left: 64px;                 /* [FIGMA] chữ x87 = 23 + 48 + 16 */
+    min-height: 48px;
+  }
+
+  .hero__avatar {
+    position: absolute;
+    top: 4px;                           /* [FIGMA] avatar y976, chữ y972 */
+    left: 0;
+    width: 48px;
+    height: 48px;
+  }
+
+  .hero__source {
+    margin-top: 4px;                    /* [FIGMA] Meta Inc. y1040 − đáy quote 1036 */
+    font-size: var(--body-size);        /* [FIGMA] Text 16/32 trắng */
+    line-height: var(--body-lh);
+    color: var(--text-on-dark);
+  }
+
+  /* ---------- Desktop ---------- */
+  @media (width >= 64rem) {
+    .hero-wrap { padding-bottom: 0; height: 880px; }   /* [ĐO] nền tối 0 → 880 */
+
+    .hero__art {
+      position: absolute;
+      top: 120px;                       /* [ƯỚC] 1024–1439: ảnh gộp 329 bên phải */
+      right: var(--gutter);
+      width: 40%;
+      max-width: 420px;
+    }
+    .hero__art-mobile { width: 100%; }
+
+    .hero__body {
+      width: 530px;                     /* [ĐO] tiêu đề x135 → 644 (+ dư để Chrome không xuống dòng) */
+      padding-top: 108px;               /* [ĐO] eyebrow line y188 − header 80 */
+    }
+
+    .hero__title {
+      margin-top: 24px;                 /* [ĐO] */
+      font-size: var(--h1-size);        /* [ĐO] desktop H1 72/80 −2 */
+      line-height: var(--h1-lh);
+      letter-spacing: var(--h1-ls);
+    }
+
+    .hero__br { display: inline; }
+
+    .hero__burst {                       /* [ĐO] Star viền 147×146 tại 414,210 */
+      display: block;
+      position: absolute;
+      z-index: -1;
+      left: 279px; top: -34px;
+    }
+
+    .hero__copy { margin-top: 24px; width: 470px; }  /* [ĐO] */
+    .hero__actions { margin-top: 36px; }             /* [ĐO] nút y608 */
+    .hero__quote { margin-top: 112px; }              /* [ĐO] avatar y768 */
+    .hero__avatar { top: 3px; }                      /* [ĐO] avatar y771 */
+    .hero__said { margin-top: -3px; }                /* [ĐO] */
+    .hero__source { margin-top: -5px; padding-left: 6px; }  /* [ĐO] Meta Inc. x206 y800 */
+  }
+
+  @media (width >= 90rem) {
+    .hero__art {
+      top: 98px;                        /* [ĐO] 178 − header 80 */
+      width: 570px;                     /* [ĐO] x735 → 1305 */
+      max-width: none;
+      height: 578px;                    /* [ĐO] y178 → 756 */
+    }
+
+    .hero__art-mobile { display: none; }
+    .hero__art > .art__desk { left: 0; top: 0; }   /* [ĐO] ảnh cắt 735,178 */
+  }
+
+  /* Laptop 1024–1279: chữ nhỏ lại cho vừa cột trái */
+  @media (width >= 64rem) and (width < 80rem) {
+    .hero__body { width: 50%; }
+    .hero__title { font-size: 56px; line-height: 64px; letter-spacing: -1px; }   /* = H2 */
+    .hero__burst { display: none; }
+  }
+}

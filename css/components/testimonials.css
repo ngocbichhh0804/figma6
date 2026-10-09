@@ -1,0 +1,88 @@
+/* What Our Clients Saying: 4 thẻ đánh giá. Chiều cao thẻ theo nội dung
+   (đệm trên/dưới 48 [FIGMA]); desktop 2 cột float, thẻ 4 kéo lên bằng
+   margin âm vì thẻ 1 cao hơn thẻ 2 đúng 64px [FIGMA 400 − 336]. */
+@layer components {
+  .testimonials {
+    padding-top: 92px;                  /* [FIGMA] eyebrow y14956 − nền hồng 14864 */
+    text-align: center;
+  }
+
+  .testimonials__title {
+    max-width: 300px;                   /* [FIGMA] w291, 2 dòng */
+    margin: 17px auto 0;                /* [FIGMA] H3 y15005 */
+    font-size: var(--h3-size);
+    line-height: var(--h3-lh);
+    letter-spacing: 0;
+  }
+
+  .testimonials__list { margin-top: 35px; text-align: left; }   /* [FIGMA] thẻ y15136 */
+  .testimonials__list::after { content: ""; display: table; clear: both; }
+
+  .review {
+    position: relative;
+    padding: 47px 27px 47px;            /* [FIGMA] sao +48, x51 (viền 1) */
+    border: 1px solid var(--line);
+  }
+  .review + .review { margin-top: -1px; }
+  .review:first-child { border-radius: var(--radius) var(--radius) 0 0; }
+  .review:last-child  { border-radius: 0 0 var(--radius) var(--radius); }
+
+  .review--featured {                   /* [FIGMA] nền trắng, bóng 0 32 64 4% */
+    z-index: 1;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-card);
+  }
+
+  .review__stars {                      /* [MẪU] Star (1) 23×22; [FIGMA] hàng 152×24, sao cách 32 */
+    width: 152px;
+    height: 24px;
+    background: url("../../assets/icon/Star (1).png") 1px 0 no-repeat, url("../../assets/icon/Star (1).png") 33px 0 no-repeat, url("../../assets/icon/Star (1).png") 65px 0 no-repeat, url("../../assets/icon/Star (1).png") 97px 0 no-repeat, url("../../assets/icon/Star (1).png") 129px 0 no-repeat;
+  }
+
+  .review__text { margin-top: 36px; }   /* [FIGMA] chữ y11020 − sao đáy 10984 */
+
+  .review__author {
+    position: relative;
+    margin-top: 36px;                   /* [FIGMA] avatar y11184 − chữ đáy 11148 */
+    min-height: 80px;
+    padding: 9px 0 0 104px;             /* [FIGMA] tên x287 = 183 + 104, y +9 */
+  }
+  .review__avatar { position: absolute; left: 0; top: 0; border-radius: 50%; }
+  .review--b .review__avatar { top: 1px; }    /* [ĐO] mobile */
+  .review--b .review__name { position: relative; top: 2px; }   /* [ĐO] mobile: tên 2 dòng y15945 */
+  .review--d .review__avatar { top: -1px; }   /* [ĐO] y11456 / mobile y16768 */
+  .review__name { display: block; }
+  .review__company { display: block; margin: 3px 0 -10px; }   /* [FIGMA] y11228; đáy âm: Figma tính đệm dưới từ avatar khi tên 2 dòng */
+
+  .testimonials__more { margin-top: 48px; }   /* [ĐO] nút y16960 */
+  .testimonials__more > .button { line-height: 44px; }   /* [ĐO] mobile: chữ SEE ALL cao hơn 2px */
+
+  @media (width >= 64rem) {
+    .testimonials { padding-top: 124px; }   /* [FIGMA] eyebrow y10668 − 10544 */
+    .testimonials__title {
+      max-width: 420px;
+      margin-top: 20px;                 /* [FIGMA] H2 y10720 */
+      font-size: var(--h2-size);
+      line-height: var(--h2-lh);
+      letter-spacing: var(--h2-ls);
+    }
+    .testimonials__list { margin-top: 64px; }   /* [FIGMA] thẻ y10912 */
+
+    .review {
+      width: calc(50% + 0.5px);         /* [FIGMA] 586, chồng viền 1px */
+      padding-inline: 47px;             /* [FIGMA] x183 = 135 + 48 */
+    }
+    .review + .review { margin-top: 0; }
+    .review--featured, .review--c { float: left; clear: left; }
+    .review--b, .review--d { float: right; clear: right; margin-left: -1px; }
+    .review--b .review__avatar { top: 0; }
+    .review--b .review__name { top: 0; }
+    .review--featured { border-radius: var(--radius) 0 0 0; }
+    .review--b { border-radius: 0 var(--radius) 0 0; }
+    .review--c { margin-top: -1px; border-radius: 0 0 0 var(--radius); }
+    .review--d { position: relative; top: -63px; border-radius: 0 0 var(--radius) 0; }   /* [FIGMA] y11247 — float không lên cao hơn thẻ 3 nên dùng top */
+
+    .testimonials__more { margin-top: 64px; }   /* [ĐO] nút y11712 */
+    .testimonials__more > .button { line-height: 50px; }
+  }
+}

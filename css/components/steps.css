@@ -1,0 +1,64 @@
+/* How we work: giới thiệu + 3 bước đánh số. */
+@layer components {
+  .steps {
+    position: relative;
+    padding-top: 93px;                  /* [ĐO] eyebrow y2980 */
+  }
+
+  .steps__title { margin-top: 16px; }   /* [ĐO] H3 y3020 */
+  .steps__copy  { margin-top: 16px; }   /* [ĐO] y3180 */
+  .steps__intro > .text-link { display: inline-block; margin-top: 32px; }  /* [FIGMA] Read More y3308 */
+
+  .steps__list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 72px;                   /* [FIGMA] số 1 y3412 − 3340 */
+    padding-bottom: 60px;               /* [ĐO] đáy 3716 → đường kẻ 3776 */
+    border-bottom: 1px solid var(--line);   /* [FIGMA] Rectangle 329×1 y3776 */
+  }
+
+  .steps__item {
+    position: relative;
+    min-height: 80px;
+    padding-left: 72px;                 /* [FIGMA] chữ x95 = 23 + 72 */
+    padding-top: 5px;                   /* [FIGMA] chữ y3417 = số 3412 + 5 */
+  }
+  .steps__item + .steps__item { margin-top: 32px; }   /* [FIGMA] bước 112 = 80 + 32 */
+
+  .steps__num {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: var(--h1-size);          /* [FIGMA] H1 800 72/80 −2 */
+    line-height: var(--h1-lh);
+    letter-spacing: var(--h1-ls);
+    font-weight: var(--weight-xbold);
+    color: var(--text-primary);
+  }
+
+  .steps__text { display: block; }
+
+  @media (width >= 64rem) {
+    .steps {
+      padding-top: 140px;               /* [ĐO] eyebrow y2236 − 2096 */
+      min-height: 625px;                /* [ĐO] 2096 → đường kẻ 2720 */
+    }
+    .steps::before {                    /* đường kẻ trong khung nội dung, y2720 */
+      content: ""; position: absolute; left: var(--gutter); right: var(--gutter); bottom: 0;
+      border-top: 1px solid var(--line);
+    }
+    .steps::after { content: ""; display: table; clear: both; }
+
+    .steps__intro { float: left; width: 470px; }
+    .steps__title { margin-top: 16px; }           /* [ĐO] H3 y2284 */
+    .steps__copy  { margin-top: 32px; }           /* [ĐO] y2412 */
+    .steps__intro > .text-link { margin-top: 32px; }  /* [ĐO] y2508 */
+
+    .steps__list {
+      margin: 0 0 0 51.28%;             /* [ĐO] số x735 = 135 + 600 */
+      padding: 72px 0 0;                /* [ĐO] số 1 y2308 − 2236 */
+      border: 0;
+    }
+    .steps__item { padding-left: 100px; padding-top: 22px; } /* [ĐO] chữ x835, giữa số (y+22) */
+  }
+}

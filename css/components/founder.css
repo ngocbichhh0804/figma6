@@ -1,0 +1,53 @@
+/* Founder words: ảnh + trích dẫn */
+@layer components {
+  .founder {
+    position: relative;
+    margin-top: 101px;                  /* [ĐO] ảnh y14192 */
+    padding-bottom: 88px;               /* [FIGMA] đáy chữ 14776 → hết nền tối 14864 */
+  }
+  .founder::after { content: ""; display: table; clear: both; }
+
+  .founder__photo { width: 100%; max-width: 570px; border-radius: 0; }
+
+  .founder__body { position: relative; margin-top: 41px; }   /* [ĐO] eyebrow y14492 */
+
+  .founder__mark {                      /* [MẪU] dấu ngoặc kép 100×80 #494A69 */
+    position: absolute;
+    right: 0;                           /* [FIGMA] x252 + 100 = 352 */
+    top: 9px;                           /* [FIGMA] y14501 */
+  }
+
+  .founder__quote {
+    position: relative;
+    margin-top: 29px;                   /* [ĐO] quote y14553 */
+    font-size: var(--h4-size);          /* [FIGMA] mobile H4 700 24/32 */
+    line-height: var(--h4-lh);
+    font-weight: var(--weight-bold);
+  }
+
+  .founder__name {
+    display: block;
+    margin-top: 33px;                   /* [FIGMA] tên y14714 */
+  }
+  .founder__role {
+    display: block;
+    margin-top: 6px;                    /* [FIGMA] Founder y14752 */
+  }
+
+  @media (width >= 64rem) {
+    .founder {
+      margin-top: 164px;                /* [ĐO] ảnh y9920 */
+      padding-bottom: 176px;            /* [FIGMA] ảnh đáy 10368 → hết nền tối 10544 */
+    }
+    .founder__photo { float: left; width: 48.72%; }
+    .founder__body { margin: 0 0 0 59.83%; padding-top: 44px; }   /* [FIGMA] eyebrow y9964 */
+    .founder__mark { right: auto; left: 324px; top: 53px; }      /* [FIGMA] 1159,9973 */
+    .founder__quote {
+      margin-top: 33px;                 /* [FIGMA] y10029 */
+      font-size: var(--h3-size);        /* [FIGMA] H3 800 40/48 */
+      line-height: var(--h3-lh);
+      font-weight: var(--weight-xbold);
+    }
+    .founder__name { margin-top: 45px; }   /* [FIGMA] y10266 */
+  }
+}

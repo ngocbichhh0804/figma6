@@ -1,0 +1,14 @@
+/* =========================================================================
+   Font: Epilogue (SIL OFL 1.1) — đúng font trong Figma, không phải thay.
+   Bản variable (trục wght 100–900), chỉ bảng mã latin, tự lưu trong
+   assets/fonts/ chứ không gọi Google Fonts.
+   ========================================================================= */
+@layer reset {
+  @font-face {
+    font-family: "Epilogue";
+    src: url("../assets/fonts/epilogue-latin-wght-normal.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+}

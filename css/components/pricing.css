@@ -1,0 +1,96 @@
+/* Bảng giá: 3 gói, gói giữa nổi (trắng, cao hơn 48px, badge Popular). */
+@layer components {
+  .pricing { padding-top: 121px; }      /* [ĐO] eyebrow y17132 */
+
+  .pricing__title {
+    margin-top: 17px;                   /* [FIGMA] H3 y17181 */
+    font-size: var(--h3-size);
+    line-height: var(--h3-lh);
+    letter-spacing: 0;
+  }
+
+  .pricing__list { margin-top: 35px; }  /* [FIGMA] thẻ y17312 */
+  .pricing__list::after { content: ""; display: table; clear: both; }
+
+  .plan {
+    position: relative;
+    padding: 43px 27px 47px;            /* [FIGMA] eyebrow +44, x51 (viền 1) */
+    border: 1px solid var(--line);
+  }
+  .plan--first { border-radius: var(--radius) var(--radius) 0 0; }
+  .plan--last  { border-radius: 0 0 var(--radius) var(--radius); margin-top: -1px; }
+
+  .plan--popular {                      /* [FIGMA] trắng, bóng 0 32 64 #391400 4% */
+    z-index: 1;
+    margin-top: -1px;
+    padding-top: 92px;                  /* [ĐO] eyebrow +93 (mobile) */
+    padding-bottom: 48px;               /* [ĐO] mobile cao 593 */
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-card);
+  }
+
+  .plan__badge {                        /* [FIGMA] pill 92×38 #EF6D58 bo 19 */
+    position: absolute;
+    left: 2px;                          /* [ĐO] mobile x26 */
+    top: 31px;                          /* [ĐO] y12096 = 12064 + 32 */
+    width: 92px;
+    height: 38px;
+    border-radius: var(--radius-pill);
+    background-color: var(--accent);
+    font-size: var(--body-size);
+    line-height: 38px;
+    text-align: center;
+    color: var(--color-white);
+  }
+
+  .plan__price { margin-top: 17px; }    /* [FIGMA] giá y12205 */
+  .plan__copy  { margin-top: 15px; max-width: 295px; }   /* [FIGMA] y12268, w295 */
+
+  .plan__features { margin-top: 32px; } /* [FIGMA] dòng đầu y12364 */
+
+  .plan__feature {
+    position: relative;
+    padding-left: 32px;                 /* [FIGMA] chữ x215 = 183 + 32 */
+    font-size: var(--body-size);
+    line-height: var(--body-lh);
+    color: var(--text-muted);           /* [FIGMA] dòng không có: Gray */
+  }
+  .plan__feature + .plan__feature { margin-top: 16px; }   /* [FIGMA] bước 48 */
+  .plan__feature::before {              /* [MẪU] minus.png 16×16 tại +6 */
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    background: url("../../assets/icon/minus.png") no-repeat;
+  }
+  .plan__feature--yes { color: var(--text-primary); }
+  .plan__feature--yes::before { background-image: url("../../assets/icon/plus.png"); }
+
+  .plan > .button { margin-top: 36px; } /* [FIGMA] nút y12528 */
+
+  @media (width >= 64rem) {
+    .pricing { padding-top: 108px; }    /* [ĐO] eyebrow y11868 − nút đáy 11760 */
+    .pricing__title {
+      max-width: 380px;
+      margin-top: 20px;                 /* [FIGMA] H2 y11920 */
+      font-size: var(--h2-size);
+      line-height: var(--h2-lh);
+      letter-spacing: var(--h2-ls);
+    }
+    .pricing__list { margin-top: 16px; }   /* [FIGMA] thẻ nổi y12064 */
+
+    .plan {
+      float: left;
+      width: calc((100% + 2px) / 3);    /* [FIGMA] 391, chồng viền 1px */
+      margin-top: 48px;                 /* [FIGMA] y12112 */
+      padding-inline: 47px;             /* [FIGMA] x183 */
+    }
+    .plan + .plan { margin-left: -1px; }
+    .plan--first { border-radius: var(--radius) 0 0 var(--radius); }
+    .plan--last  { border-radius: 0 var(--radius) var(--radius) 0; }
+    .plan--popular { margin-top: 0; padding-top: 91px; padding-bottom: 47px; border-radius: var(--radius) var(--radius) 0 0; }
+    .plan__badge { left: 39px; }        /* [ĐO] x565 = 525 + 40 */
+  }
+}

@@ -1,0 +1,69 @@
+/* FAQ: <details name="faq"> — mở một mục thì mục khác tự đóng, không JS. */
+@layer components {
+  .faq { padding-top: 92px; }           /* [ĐO] eyebrow y19020 */
+  .faq::after { content: ""; display: table; clear: both; }
+
+  .faq__title { margin-top: 17px; }     /* [FIGMA] H3 */
+  .faq__copy  { margin-top: 16px; }     /* [ĐO] */
+  .faq__intro > .text-link { display: inline-block; margin-top: 32px; }   /* [FIGMA] Contact Us */
+
+  .faq__list { margin-top: 36px; }      /* [ĐO] khung y19424 */
+
+  .faq__item {
+    position: relative;
+    border: 1px solid var(--line);
+  }
+  .faq__item + .faq__item { margin-top: -1px; }
+  .faq__item:first-child { border-radius: var(--radius) var(--radius) 0 0; }
+  .faq__item:last-child  { border-radius: 0 0 var(--radius) var(--radius); }
+
+  .faq__item[open] {                    /* [FIGMA] mục mở: trắng, bóng 0 32 64 4% */
+    z-index: 1;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-card);
+  }
+
+  .faq__question {
+    display: block;
+    position: relative;
+    padding: 40px 72px 40px 27px;       /* [FIGMA] tiêu đề +41, x51; chừa chỗ icon */
+    list-style: none;
+    cursor: pointer;
+  }
+  .faq__question::-webkit-details-marker { display: none; }
+  .faq__question::after {               /* [MẪU] up.png 32×32 — mục đóng xoay 180° */
+    content: "";
+    position: absolute;
+    right: 27px;                        /* [FIGMA] icon x292 = 352 − 28 − 32 */
+    top: 40px;
+    width: 32px;
+    height: 32px;
+    background: url("../../assets/icon/up.png") no-repeat;
+    transform: rotate(180deg);
+    transition: transform var(--duration-fast);
+  }
+  .faq__item[open] .faq__question::after { transform: none; }
+  .faq__question:hover { color: var(--accent); }
+  .faq__item:not([open]) .faq__question { padding-bottom: 39px; }  /* [FIGMA] chồng viền: bước = tiêu đề + 80 */
+
+  .faq__answer {
+    margin-top: -22px;                  /* [ĐO] chữ = tiêu đề đáy + 16 */
+    padding: 0 27px 37px;
+  }
+
+  @media (width >= 64rem) {
+    .faq { padding-top: 175px; }        /* [ĐO] khung câu hỏi y12800 */
+    .faq__intro { float: left; width: 470px; margin-top: -18px; }   /* [ĐO] eyebrow y12780 */
+    .faq__copy { margin-top: 31px; }    /* [FIGMA] y12956 */
+
+    .faq__list {
+      margin: 0 0 0 51.28%;             /* [FIGMA] x735, y12800 */
+    }
+    .faq__question { padding: 42px 96px 38px 47px; }   /* [FIGMA] x783; [ĐO] tiêu đề y12843 */
+    .faq__item:not([open]) .faq__question { padding-bottom: 37px; }
+    .faq__item[open] .faq__question { padding-bottom: 37px; }
+    .faq__item[open] .faq__answer { margin-top: -4px; }
+    .faq__question::after { right: 33px; top: 40px; }   /* [FIGMA] icon x1239 y12840 */
+    .faq__answer { margin-top: -5px; padding: 0 47px 36px 49px; } /* [FIGMA] x785 y12908, w470 */
+  }
+}

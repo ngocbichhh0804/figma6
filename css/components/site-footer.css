@@ -1,0 +1,70 @@
+/* Footer: logo, 2 cột menu, mạng xã hội, dòng bản quyền.
+   Mobile: mọi thứ canh giữa, xếp dọc. */
+@layer components {
+  .site-footer {
+    position: relative;
+    padding-top: 121px;                 /* [FIGMA] logo y26505 − banner đáy 26384 */
+    padding-bottom: 36px;               /* [FIGMA] đáy 27324 → 27360 */
+    text-align: center;
+  }
+
+  .site-footer__brand { line-height: 34px; margin-bottom: -2px; }   /* [ĐO] Agency y26510 */
+
+  .site-footer__col { margin-top: 51px; }   /* [ĐO] MENU y26588 */
+  .site-footer__col + .site-footer__col { margin-top: 48px; }   /* [FIGMA] SERVICE y26812 */
+  .site-footer__list { margin-top: 16px; }
+  .site-footer__link {
+    display: inline-block;
+    font-size: var(--body-size);        /* [FIGMA] Text 16/32 */
+    line-height: var(--body-lh);
+    color: var(--text-primary);
+  }
+  .site-footer__link:hover { color: var(--accent); }
+
+  .site-footer__social { margin-top: 52px; font-size: 0; }   /* [FIGMA] y27040 */
+  .site-footer__social > li { display: inline-block; vertical-align: top; }
+  .site-footer__social > li + li { margin-left: 8px; }       /* [FIGMA] bước 56 */
+  .site-footer__soc {
+    display: block;
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--accent);
+  }
+  .site-footer__soc > img { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+  .site-footer__soc:hover { background-color: var(--color-dark); }
+
+  .site-footer__bottom {
+    margin-top: 64px;                   /* [FIGMA] kẻ y27152 */
+    padding-top: 43px;                  /* [FIGMA] chữ y27196 */
+    border-top: 1px solid var(--line);
+  }
+  .site-footer__copy { max-width: 210px; margin-inline: auto; }   /* [FIGMA] w198, 2 dòng */
+  .site-footer__legal { margin-top: 32px; font-size: 0; }        /* [FIGMA] y27292 */
+  .site-footer__legal > a + a { margin-left: 70px; }             /* [FIGMA] x50 / x220 */
+
+  @media (width >= 64rem) {
+    .site-footer {
+      height: 464px;                    /* [ĐO] 16832 → 17296 */
+      padding: 83px var(--gutter) 0;    /* [ĐO] logo y16912 */
+      text-align: left;
+    }
+    .site-footer__brand { float: left; width: 300px; line-height: 40px; padding-top: 3px; }   /* [ĐO] */
+    .site-footer__col,
+    .site-footer__col + .site-footer__col { float: left; width: 300px; margin: 0; padding-top: 9px; }   /* [FIGMA] x435 / x735; [ĐO] MENU y16932 */
+    .site-footer__list { margin-top: 16px; }   /* [ĐO] About y16972 */
+    .site-footer__social { position: absolute; right: var(--gutter); top: 80px; margin: 0; }   /* [ĐO] y16912 */
+    .site-footer__bottom {
+      position: absolute;
+      left: var(--gutter);
+      right: var(--gutter);
+      top: 336px;                       /* [ĐO] kẻ y17168 */
+      margin: 0;
+      padding-top: 43px;                /* [FIGMA] chữ y17212 */
+    }
+    .site-footer__copy { float: left; max-width: none; }
+    .site-footer__legal { float: right; margin: 0; }
+    .site-footer__legal > a + a { margin-left: 68px; }           /* [FIGMA] x1200 */
+  }
+}

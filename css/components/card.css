@@ -1,0 +1,39 @@
+/* Thẻ viền #F3D1BF: icon tròn cam 80 + tiêu đề H4 + mô tả + link */
+@layer components {
+  .card {
+    position: relative;
+    border: 1px solid var(--line);      /* [FIGMA] */
+    background-color: var(--color-blush);
+  }
+
+  .card--raised {                       /* [FIGMA] nền trắng, bóng 0 32 64 #391400 4% */
+    z-index: 1;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-card);
+  }
+
+  .card__icon {
+    display: block;
+    position: relative;
+    width: 80px;                        /* [FIGMA] Oval 80 #EF6C57 */
+    height: 80px;
+    border-radius: 50%;
+    background-color: #ef6c57;          /* [FIGMA] */
+  }
+  .card__icon > img {
+    position: absolute;
+    left: 24px;                         /* [FIGMA] icon 32 tại +24 */
+    top: 24px;
+  }
+
+  .card__icon--img { background: none; }
+  .card__icon--img > img { left: 0; top: 0; }   /* [ĐO] cắt từ ảnh export — chờ icon gốc */
+
+  .card__title { margin-top: 41px; }    /* [FIGMA] H4 +169 = 48 + 80 + 41 */
+  .card__copy  { margin-top: 19px; }    /* [FIGMA] Text +220 = 169 + 32 + 19 */
+
+  .card__link {                         /* [ĐO] neo đáy: link cách đáy thẻ 52 (y5916 / 7756) */
+    position: absolute;
+    bottom: 52px;
+  }
+}

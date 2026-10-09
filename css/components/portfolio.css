@@ -1,0 +1,164 @@
+/* Latest Work: bộ lọc radio + :has() (không JS), lưới ảnh dự án.
+   Mobile: bộ lọc hiển thị như ô chọn 329×48, 3 dự án xếp dọc.
+   Desktop: tab ngang canh giữa, lưới 470/670 — 670/470, khe 30 × 32. */
+@layer components {
+  .dark-band { padding-top: 92px; }     /* [FIGMA] eyebrow y8844 − 8752 */
+
+  .portfolio { text-align: center; }
+
+  .portfolio__title {
+    margin-top: 17px;                   /* [FIGMA] H3 y8893 */
+    font-size: var(--h3-size);          /* [FIGMA] mobile H3 40/48 */
+    line-height: var(--h3-lh);
+    letter-spacing: 0;
+  }
+
+  /* ---------- Bộ lọc ---------- */
+  .portfolio__filters {
+    position: relative;
+    z-index: 2;
+    height: 48px;                       /* [FIGMA] ô chọn 329×48 */
+    margin-top: 35px;                   /* [ĐO] y8976 */
+    border-radius: var(--radius);
+    background-color: var(--color-white);
+    text-align: left;
+  }
+  .portfolio__filters::after {          /* tam giác cam 10×6 [FIGMA] */
+    content: "";
+    position: absolute;
+    right: 18px;
+    top: 21px;
+    border-top: 6px solid var(--accent);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+  }
+
+  .portfolio__filter {
+    display: none;
+    padding-left: 16px;
+    font-size: var(--body-size);        /* [FIGMA] Text 16/32 */
+    line-height: 48px;
+    color: var(--text-muted);
+    cursor: pointer;
+  }
+  .portfolio__filter > sup { display: none; }
+  .portfolio__filter:has(:checked) { display: block; }
+
+  /* Mở danh sách khi focus vào ô (bàn phím: Tab rồi phím mũi tên) */
+  .portfolio__filters:focus-within,
+  .portfolio__filters:hover { height: auto; padding-bottom: 8px; box-shadow: var(--shadow-card); }
+  .portfolio__filters:focus-within .portfolio__filter,
+  .portfolio__filters:hover .portfolio__filter { display: block; }
+  .portfolio__filter:has(:focus-visible) { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+  /* ---------- Lưới ---------- */
+  .portfolio__grid { margin-top: 48px; }  /* [FIGMA] thẻ đầu y9072 */
+  .portfolio__grid::after { content: ""; display: table; clear: both; }
+
+  .work {
+    position: relative;
+    height: 416px;                      /* [FIGMA] 329×416 */
+    overflow: hidden;
+    border-radius: var(--radius);
+    text-align: left;
+  }
+  .work + .work { margin-top: 32px; }   /* [FIGMA] bước 448 */
+  .work--narrow:last-child { display: none; }  /* mobile chỉ có 3 dự án [FIGMA] */
+
+  .work__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;                  /* mobile cắt ảnh 470/670 về 329 */
+    object-position: left top;          /* [ĐO] Figma giữ mép trái ảnh */
+  }
+
+  .work__tag {
+    position: absolute;
+    left: 28px;                         /* [ĐO] mobile tag x51 = thẻ + 28 */
+    top: 256px;                         /* [FIGMA] tag y6736 = thẻ + 256 */
+    height: 38px;                       /* [FIGMA] pill 38, bo 19 */
+    padding-inline: 16px;
+    border-radius: var(--radius-pill);
+    background-color: var(--color-white);
+    font-size: var(--body-size);
+    line-height: 42px;                  /* [ĐO] chữ thấp hơn tâm pill 2px (Figma top 5) */
+    overflow: hidden;
+    color: var(--text-primary);
+  }
+
+  .work__name {
+    position: absolute;
+    left: 28px;                         /* [ĐO] mobile x51 */
+    top: 317px;                         /* [FIGMA] tên y6797 = thẻ + 317 */
+  }
+
+  /* Lọc: ẩn thẻ khác hạng mục đang chọn */
+  .portfolio:has([value="design"]:checked) .work:not([data-cat="design"]),
+  .portfolio:has([value="branding"]:checked) .work:not([data-cat="branding"]),
+  .portfolio:has([value="illustration"]:checked) .work:not([data-cat="illustration"]),
+  .portfolio:has([value="motion"]:checked) .work:not([data-cat="motion"]) { display: none; }
+  .portfolio:has([value="motion"]:checked) .work--narrow:last-child { display: block; }
+
+  .portfolio__more { margin-top: 48px; }  /* [FIGMA] nút y10432 */
+
+  /* ---------- Desktop ---------- */
+  @media (width >= 64rem) {
+    .portfolio__title {
+      margin-top: 20px;                 /* [FIGMA] H2 y6272 */
+      font-size: var(--h2-size);
+      line-height: var(--h2-lh);
+      letter-spacing: var(--h2-ls);
+    }
+
+    .portfolio__filters,
+    .portfolio__filters:focus-within,
+    .portfolio__filters:hover {
+      height: auto;
+      margin-top: 35px;                 /* [ĐO] hàng tab y6371 */
+      padding: 0;
+      background: none;
+      box-shadow: none;
+      font-size: 0;
+      text-align: center;
+    }
+    .portfolio__filters::after { content: none; }
+
+    .portfolio__filter,
+    .portfolio__filter:has(:checked),
+    .portfolio__filters:focus-within .portfolio__filter,
+    .portfolio__filters:hover .portfolio__filter {
+      display: inline-block;
+      position: relative;
+      padding: 8px 0 0;                 /* [FIGMA] chữ top 8, số mũ top 0 */
+      margin: 0 30px;                   /* [ĐO] khe 60 giữa các chữ */
+      font-size: var(--body-size);
+      line-height: var(--body-lh);
+      color: var(--text-on-dark-muted); /* [FIGMA] Text_Light_Gray */
+    }
+    .portfolio__filter:has(:checked) { color: var(--text-on-dark); }
+    .portfolio__filter:last-of-type { left: 2px; }   /* [ĐO] Motion x950 */
+    .portfolio__filter:hover { color: var(--text-on-dark); }
+
+    .portfolio__filter > sup {          /* [FIGMA] Text_Small 14/24, ngay sau chữ */
+      display: block;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      font-size: var(--small-size);
+      line-height: var(--small-lh);
+      vertical-align: baseline;
+    }
+
+    .portfolio__grid { margin-top: 65px; }   /* [ĐO] thẻ y6480 */
+
+    .work { float: left; margin: 0 0 32px; }
+    .work__tag, .work__name { left: 48px; }   /* [FIGMA] desktop x183 = thẻ + 48 */
+    .work + .work { margin-top: 0; }
+    .work--narrow { width: calc((100% - 30px) * 470 / 1140); }   /* [FIGMA] 470 */
+    .work--wide   { width: calc((100% - 30px) * 670 / 1140); }   /* [FIGMA] 670 */
+    .work:nth-child(odd)  { margin-right: 30px; }                /* [FIGMA] khe 30 */
+    .work--narrow:last-child { display: block; }
+
+    .portfolio__more { margin-top: 32px; }   /* [FIGMA] nút y7408 */
+  }
+}

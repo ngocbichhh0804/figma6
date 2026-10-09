@@ -1,0 +1,78 @@
+/* =========================================================================
+   Design token — Figma6 (frame 1_Home_Agency_1440 / 1_Home_Agency_375)
+
+   File này chỉ chứa giá trị DÙNG CHUNG: bảng màu, font, thang chữ, bo góc,
+   chuyển động. Số đo riêng của từng component ghi thẳng trong file
+   component đó, kèm nhãn nguồn gốc bên cạnh:
+
+   [FIGMA]  đọc thẳng từ panel inspector của Figma
+   [ĐO]     đo từ ảnh export 1:1 của bản thiết kế
+   [MẪU]    lấy từ file asset được cung cấp
+   [ƯỚC]    ước lượng, còn chờ xác nhận lại trong Figma
+   ========================================================================= */
+@layer tokens {
+  :root {
+    /* ---------- Màu: giá trị gốc (tên theo style Figma) ---------- */
+    --color-dark: #391400;            /* [FIGMA] Text_Dark                    */
+    --color-dark-64: rgb(57 20 0 / 0.64); /* [FIGMA] Text_Dark_Gray #391400 64% */
+    --color-accent: #ef6d58;          /* [FIGMA] Text_Dark_Accent / Light_Accent */
+    --color-white: #ffffff;           /* [FIGMA] Text_Light                   */
+    --color-white-64: rgb(255 255 255 / 0.64); /* [FIGMA] Text_Light_Gray     */
+    --color-night: #28293e;           /* [ĐO]    nền section tối              */
+    --color-night-line: #3a3c56;      /* [FIGMA] viền thẻ trên nền tối        */
+    --color-blush: #fdf0e9;           /* [FIGMA] nền trang hồng nhạt          */
+    --color-blush-line: #f3d1bf;      /* [FIGMA] viền thẻ, đường kẻ           */
+    --color-skeleton: #f5ded1;        /* [FIGMA] thanh giả chữ trong minh hoạ */
+    --color-sand: #e7c4b2;            /* [FIGMA] nét vẽ trang trí             */
+    --color-peach: #f9e5da;           /* [FIGMA] khối nền minh hoạ            */
+    --color-yellow: #f7cc47;          /* [FIGMA] vàng                         */
+    --color-star: #f6d021;            /* [FIGMA] sao đánh giá                 */
+    --color-purple: #b550f8;          /* [FIGMA] tím                          */
+
+    /* ---------- Màu: theo ngữ nghĩa ---------- */
+    --surface-page: var(--color-blush);
+    --surface-dark: var(--color-night);
+    --surface-card: var(--color-white);
+    --text-primary: var(--color-dark);
+    --text-muted: var(--color-dark-64);
+    --text-on-dark: var(--color-white);
+    --text-on-dark-muted: var(--color-white-64);
+    --accent: var(--color-accent);
+    --accent-stroke: var(--color-accent);
+    --line: var(--color-blush-line);
+    --line-dark: var(--color-night-line);
+
+    /* [FIGMA] bóng chung */
+    --shadow-button: 0 3px 9px rgb(57 20 0 / 0.08);   /* Button/Secondary */
+    --shadow-card: 0 32px 64px rgb(57 20 0 / 0.04);   /* thẻ nổi          */
+    --shadow-float: 0 24px 48px rgb(85 30 0 / 0.0819);/* thẻ minh hoạ     */
+
+    /* ---------- Chữ: Epilogue (OFL) — đúng font trong Figma ---------- */
+    --font-sans: "Epilogue", system-ui, sans-serif;
+
+    /* [FIGMA] thang chữ: size / line-height / letter-spacing */
+    --h1-size: 72px;  --h1-lh: 80px;  --h1-ls: -2px;   /* H1 800 */
+    --h2-size: 56px;  --h2-lh: 64px;  --h2-ls: -1px;   /* H2 800 */
+    --h3-size: 40px;  --h3-lh: 48px;                   /* H3 800 */
+    --h4-size: 24px;  --h4-lh: 32px;                   /* H4 700 */
+    --h5-size: 16px;  --h5-lh: 32px;  --h5-ls: 3px;    /* H5 400 uppercase */
+    --big-size: 20px; --big-lh: 32px;                  /* Text_Big   */
+    --body-size: 16px; --body-lh: 32px;                /* Text       */
+    --small-size: 14px; --small-lh: 24px;              /* Text_Small */
+
+    --weight-regular: 400;
+    --weight-bold: 700;
+    --weight-xbold: 800;
+    --weight-black: 900;
+
+    /* ---------- Hình khối, chuyển động ---------- */
+    --radius: 6px;                    /* [FIGMA] bo góc thẻ, nút        */
+    --radius-pill: 19px;              /* [FIGMA] tag 38px cao           */
+    --duration-fast: 160ms;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* ---------- Khung ---------- */
+    --gutter: 23px;                   /* [FIGMA] lề mobile (375 − 329) / 2 */
+    --content-w: 1170px;              /* [FIGMA] nội dung desktop x135 → 1305 */
+  }
+}

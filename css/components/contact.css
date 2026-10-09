@@ -1,0 +1,89 @@
+/* Bản đồ + form Get In Touch + 3 ô liên hệ.
+   Mobile: form ở trên, bản đồ 375×720 ở dưới. Desktop: form đè lên bản đồ. */
+@layer components {
+  .contact__map {
+    position: relative;
+    padding-top: 128px;                 /* [FIGMA] form y23616 − nút đáy 23488 */
+    padding-bottom: 782px;              /* [ĐO] bản đồ y24144 (720 cao) */
+  }
+
+  .contact__map-img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 720px;                      /* [MẪU] map.png 1440×720 */
+    object-fit: cover;
+  }
+
+  .contact__pin {                       /* [MẪU] pin.png 72 */
+    position: absolute;
+    left: calc(50% - 36px);             /* [ƯỚC] mobile canh giữa */
+    bottom: 324px;
+  }
+
+  .contact__form {
+    position: relative;
+    padding: 58px 28px 48px;            /* [ĐO] tiêu đề y15353, x51 */
+    border-radius: var(--radius);
+    background-color: var(--color-white);
+  }
+  .contact__field { margin-top: 16px; } /* [ĐO] bước 64 */
+  .contact__title + .visually-hidden + .contact__field { margin-top: 23px; }   /* [ĐO] ô đầu y15408 */
+  .contact__submit { display: block; margin: 32px 0 0 auto; }   /* [ĐO] nút y+368, căn phải */
+
+  .contact__info { margin-top: 32px; }  /* [ĐO] ô y24896 */
+  .contact__info::after { content: ""; display: table; clear: both; }
+
+  .info {
+    position: relative;
+    height: 192px;                      /* [FIGMA] 391×192 */
+    padding: 31px 0 0 27px;             /* [FIGMA] icon +32, x+28 */
+    border: 1px solid var(--line);
+  }
+  .info + .info { margin-top: 0; }      /* [ĐO] mobile bước 192, viền không chồng */
+  .info:first-child { border-radius: var(--radius) var(--radius) 0 0; }
+  .info:last-child  { border-radius: 0 0 var(--radius) var(--radius); }
+
+  .info__icon {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: 64px;                        /* [FIGMA] Oval 64 #EF6D58 */
+    height: 64px;
+    border-radius: 50%;
+    background-color: var(--accent);
+  }
+  .info__icon > img { position: absolute; left: 0; top: 0; }   /* [ĐO] cắt từ ảnh export — chờ icon gốc */
+
+  .info__label {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: 4px;                           /* [ĐO] */
+    margin-left: 19px;                  /* [ĐO] chữ x270 */
+  }
+
+  .info__value {
+    display: block;
+    margin-top: 27px;                   /* [ĐO] y+122 */
+    color: var(--text-primary);
+  }
+
+  @media (width >= 64rem) {
+    .contact__map { height: 720px; padding: 128px 0 0; }   /* [FIGMA] map y15168, form y15296 */
+    .contact__map-img { top: 0; bottom: auto; }
+    .contact__pin { left: calc(50% + 214px); bottom: auto; top: 324px; }   /* [FIGMA] 934,15492 = tâm 720 + 214 */
+
+    .contact__form { width: 470px; padding-inline: 48px; }   /* [FIGMA] x183 */
+    .contact__info { margin-top: 80px; }   /* [FIGMA] y15968 */
+    .info {
+      float: left;
+      width: calc((100% + 2px) / 3);
+      padding-left: 47px;
+    }
+    .info + .info { margin: 0 0 0 -1px; }
+    .info:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+    .info:last-child  { border-radius: 0 var(--radius) var(--radius) 0; }
+  }
+}

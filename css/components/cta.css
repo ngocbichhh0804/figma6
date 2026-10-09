@@ -1,0 +1,63 @@
+/* Get started: hộp hồng trên nền tối, huy hiệu sao cam, minh hoạ thẻ + cô gái */
+@layer components {
+  .cta { padding-top: 69px; }           /* [FIGMA] hộp y10624 − 75 − nút đáy 10480 (padding: tránh gộp margin) */
+
+  .cta__box {
+    position: relative;
+    margin-top: 75px;                   /* [FIGMA] sao nhô lên trên hộp 75px */
+    height: 832px;                      /* [ĐO] 10624 → 11456 */
+    padding: 92px 0 0 28px;             /* [FIGMA] eyebrow y10716, x51 */
+    border-radius: var(--radius);
+    background-color: var(--color-blush);
+    color: var(--text-primary);
+    --tone-strong: var(--text-primary);
+    --tone-muted: var(--text-muted);
+  }
+
+  .cta__badge {                         /* [MẪU] icon.png: sao cam 148 + quà */
+    position: absolute;
+    left: 12px;                         /* [FIGMA] sao x35 */
+    top: -75px;
+    width: 148px;
+    height: 148px;
+    background: url("../../assets/icon/icon.png") no-repeat;
+  }
+  .cta__badge > img { display: none; }
+
+  .cta__title { margin-top: 13px; max-width: 260px; }   /* [FIGMA] H4 y10761, w248 */
+  .cta__body > .button { margin-top: 23px; }  /* [FIGMA] nút y10848 */
+
+  .cta__art {
+    position: absolute;
+    left: -10px;                        /* [FIGMA] ảnh gộp 351×232 tại x13 */
+    top: 301px;                         /* [FIGMA] y10925 − 10624 */
+    width: 351px;
+  }
+  .cta__cloud {                         /* [FIGMA] 226×194 tại 53,11224 */
+    position: absolute; left: 40px; top: 299px; width: 226px;
+  }
+  .cta__woman {                         /* [FIGMA] 191×317 tại 97,11139 */
+    position: absolute; left: 84px; top: 214px; width: 191px;
+  }
+
+  @media (width >= 64rem) {
+    .cta { padding-top: 117px; }        /* [FIGMA] sao y7573 − nút đáy 7456 */
+
+    .cta__box {
+      height: 336px;                    /* [FIGMA] 1170×336 */
+      padding: 92px 0 0 100px;          /* [FIGMA] eyebrow y7740, x235 */
+    }
+    .cta__badge { left: 84px; }         /* [FIGMA] sao x219 */
+
+    .cta__art { left: 0; top: 0; width: 100%; height: 100%; }
+    .cta__art-mobile { display: none; }
+    /* 1024–1439: chỉ giữ cô gái + mây, neo theo mép phải [FIGMA 1305 − x − w] */
+    .cta__cloud { left: auto; right: 96px; top: 47px; width: 282px; }
+    .cta__woman { left: auto; right: 83px; top: -60px; width: 239px; }
+  }
+
+  @media (width >= 90rem) {
+    .cta__cloud, .cta__woman { display: none; }
+    .cta__art > .art__desk { left: 405px; top: -68px; }   /* [ĐO] ảnh cắt 540,7580 − hộp 135,7648 */
+  }
+}

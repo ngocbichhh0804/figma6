@@ -1,0 +1,45 @@
+/* Latest Blog Articles: 3 bài. Desktop 3 cột 370, khe 30. */
+@layer components {
+  .blog { position: relative; padding-top: 96px; }     /* [ĐO] eyebrow y21548 */
+
+  .blog__title {
+    margin-top: 17px;
+    font-size: var(--h3-size);
+    line-height: var(--h3-lh);
+    letter-spacing: 0;
+  }
+
+  .blog__all { margin-top: 37px; }      /* [ĐO] nút y21728 */
+
+  .blog__list {
+    margin-top: 47px;                   /* [ĐO] ảnh y21824 */
+    padding-bottom: 48px;               /* [ĐO] ngày đáy → đường kẻ */
+    border-bottom: 1px solid var(--line);
+  }
+  .blog__list::after { content: ""; display: table; clear: both; }
+
+  .post + .post { margin-top: 52px; }   /* [ĐO] ảnh kế y22288 */
+  .post__img { width: 100%; aspect-ratio: 329 / 224; object-fit: cover; object-position: left top; border-radius: 4px; }   /* [ĐO] Figma giữ mép trái ảnh */
+  .post__cat { margin-top: 28px; }      /* [ĐO] y+252 */
+  .post__title { margin-top: 15px; max-width: 338px; }   /* [FIGMA] y+297, w338 */
+  .post__title > a:hover { color: var(--accent); }
+  .post__date { margin-top: 17px; }     /* [ĐO] y+380 */
+
+  @media (width >= 64rem) {
+    .blog { padding-top: 113px; }       /* [ĐO] eyebrow y14220 */
+    .blog__title {
+      max-width: 340px;
+      margin-top: 20px;                 /* [FIGMA] H2 y14272 */
+      font-size: var(--h2-size);
+      line-height: var(--h2-lh);
+      letter-spacing: var(--h2-ls);
+    }
+    .blog__all { position: absolute; right: var(--gutter); top: 229px; margin: 0; }   /* [ĐO] y14336 */
+    .blog__list { margin-top: 63px; padding-bottom: 68px; }   /* [ĐO] ảnh y14464 */   /* [FIGMA] ảnh y14464; kẻ y14944 */
+    .post { float: left; width: calc((100% - 60px) / 3); }
+    .post + .post { margin: 0 0 0 30px; }
+    .post__img { aspect-ratio: auto; height: 224px; }   /* [FIGMA] 370×224 */
+    .post__cat { margin-top: 26px; }    /* [FIGMA] y+250 */
+    .post__date { margin-top: 19px; }   /* [FIGMA] y+380 */
+  }
+}

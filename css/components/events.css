@@ -1,0 +1,93 @@
+/* Explore Future Conferences: 3 thẻ sự kiện viền tối */
+@layer components {
+  .events {
+    margin-top: 140px;                  /* [FIGMA] eyebrow y11596 − hộp CTA đáy 11456 */
+    text-align: center;
+  }
+
+  .events__title {
+    max-width: 440px;                   /* [FIGMA] w426, 2 dòng */
+    margin: 17px auto 0;                /* [FIGMA] H3 y11645 */
+    font-size: var(--h3-size);
+    line-height: var(--h3-lh);
+    letter-spacing: 0;
+  }
+
+  .events__list { margin-top: 35px; text-align: left; }   /* [FIGMA] thẻ y11776 */
+  .events__list::after { content: ""; display: table; clear: both; }
+
+  .event {
+    position: relative;
+    padding: 35px 27px 35px;            /* [FIGMA] nội dung x51 = 23 + 28, ngày +36 (viền 1) */
+    border: 1px solid var(--line-dark); /* [FIGMA] #3A3C56 */
+    border-radius: var(--radius);
+  }
+  .event + .event { margin-top: 32px; } /* [FIGMA] bước 480 = 448 + 32 */
+
+  .event__date {
+    font-size: 0;
+    white-space: nowrap;
+  }
+  .event__day {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15px;                 /* [ĐO] tháng x234 / mobile x110 */
+    font-size: var(--h1-size);          /* [FIGMA] H1 800 72/80 −2 */
+    line-height: var(--h1-lh);
+    letter-spacing: var(--h1-ls);
+    font-weight: var(--weight-xbold);
+  }
+  .event:nth-child(3) .event__day { margin-right: 18px; }   /* [ĐO] tháng sau số "2" (x1036 / mobile) */
+
+  .event__month {
+    display: inline-block;
+    vertical-align: top;
+    width: 127px;                       /* [FIGMA] 2 dòng "November / 2021" */
+    margin-top: 5px;                    /* [FIGMA] tháng y +41 */
+    white-space: normal;
+  }
+
+  .event__time {
+    position: relative;
+    margin-top: 8px;                    /* [ĐO] giờ y +124 */
+    padding-left: 24px;                 /* [FIGMA] chữ x+24 sau đồng hồ 16 */
+    padding-bottom: 35px;
+    border-bottom: 1px solid var(--line-dark);  /* [FIGMA] đường kẻ +192 */
+    font-size: var(--body-size);
+    line-height: var(--body-lh);
+  }
+  .event__time::before {                /* [MẪU] Shape2.png đồng hồ cam 16×16, y +131 */
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 16px;
+    height: 16px;
+    background: url("../../assets/icon/Shape2.png") no-repeat;
+  }
+
+  .event__name { margin-top: 42px; }    /* [FIGMA] tên +233 */
+  .event__copy { margin-top: 18px; }    /* [FIGMA] mô tả +284 */
+  .event > .text-link { display: inline-block; margin-top: 32px; }  /* [FIGMA] link +380 */
+
+  .events__more { margin-top: 48px; }   /* [FIGMA] nút y13264 */
+
+  @media (width >= 64rem) {
+    .events { margin-top: 140px; }      /* [FIGMA] eyebrow y8124 − hộp đáy 7984 */
+    .events__title {
+      margin-top: 20px;                 /* [FIGMA] H2 y8176 */
+      margin-inline: auto;
+      font-size: var(--h2-size);
+      line-height: var(--h2-lh);
+      letter-spacing: var(--h2-ls);
+    }
+    .events__list { margin-top: 64px; } /* [FIGMA] thẻ y8368 */
+    .event {
+      float: left;
+      width: calc((100% - 60px) / 3);   /* [FIGMA] 370, khe 30 */
+      padding-inline: 39px;             /* [FIGMA] nội dung x175 = 135 + 40 */
+    }
+    .event + .event { margin: 0 0 0 30px; }
+    .events__more { margin-top: 64px; } /* [FIGMA] nút y8880 */
+  }
+}

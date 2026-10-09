@@ -1,0 +1,84 @@
+/* Section hai cột: ảnh/minh hoạ + khối chữ (About, Video, Features, Service).
+   Mobile: xếp dọc, minh hoạ ở trên. Desktop: minh hoạ 570px + chữ 470px
+   bắt đầu x835 (= 135 + 700) [FIGMA]. Không flex/grid: float + margin. */
+@layer components {
+  .split {
+    position: relative;
+  }
+
+  .split__media {
+    display: block;
+    position: relative;
+  }
+
+  .split__body > .eyebrow { margin: 0; }
+  .split__title { margin-top: var(--split-title-gap, 17px); }
+  .split__lead  { margin-top: var(--split-lead-gap, 29px); }
+  .split__copy  { margin-top: var(--split-copy-gap, 18px); }
+  .split__button { margin-top: var(--split-button-gap, 32px); }
+
+  /* ---------- About ---------- */
+  .split--about { padding-top: 71px; padding-bottom: 111px; }  /* [FIGMA] ảnh y1448 − 1377; nút đáy 2240 → stats 2352 */
+  .split--about .split__body { padding-top: 16px; }        /* [FIGMA] eyebrow y1804 − ảnh đáy 1788 */
+  .split--about { --split-title-gap: 17px; --split-lead-gap: 29px; --split-copy-gap: 18px; --split-button-gap: 37px; }
+
+  /* ---------- Video ---------- */
+  .split--video { padding-top: 63px; }                     /* [FIGMA] ảnh y3840 − 3777 */
+  .split--video .split__body { padding-top: 24px; }        /* [ĐO] eyebrow y4076 − ảnh đáy 4052 */
+  .split--video { --split-title-gap: 17px; --split-copy-gap: 15px; }
+
+  /* ---------- Features ---------- */
+  .split--features { padding-top: 84px; }                  /* [FIGMA] ảnh y4464 − đáy chữ video 4380 */
+  .split--features .split__body { padding-top: 4px; }      /* [FIGMA] eyebrow y4796 − ảnh đáy 4792 */
+  .split--features { --split-title-gap: 17px; --split-lead-gap: 13px; }
+  .split--features .split__title { font-size: var(--h3-size); line-height: var(--h3-lh); letter-spacing: 0; }
+
+  /* ---------- Service ---------- */
+  .split--service { padding-top: 112px; }                  /* [ĐO] ảnh y6319 − đáy thẻ 6207 */
+  .split--service .split__body { padding-top: 6px; }
+  .split--service { --split-title-gap: 17px; --split-lead-gap: 13px; --split-button-gap: 44px; }
+  .split--service .split__title { font-size: var(--h3-size); line-height: var(--h3-lh); letter-spacing: 0; margin-right: -40px; }  /* [FIGMA] dòng 1 tràn khung 329 (tới x361) */
+
+  /* ---------- Desktop ---------- */
+  @media (width >= 64rem) {
+    .split::after { content: ""; display: table; clear: both; }
+
+    .split__media {
+      float: left;
+      width: 48.72%;                    /* [FIGMA] 570 / 1170 */
+      max-width: 570px;
+    }
+
+    .split__body {
+      margin-left: 59.83%;              /* [FIGMA] (835 − 135) / 1170 */
+    }
+
+    /* Features: chữ bên trái, minh hoạ bên phải */
+    .split--features .split__media { float: right; }
+    .split--features .split__body { float: left; margin-left: 0; width: 470px; }
+    .split--features .split__title { max-width: 420px; }   /* [FIGMA] w397, xuống dòng sau "Site" */
+
+    .split--about {
+      padding-bottom: 0;
+      padding-top: 98px;                /* [ĐO] 1171 − 1073 */
+      min-height: 847px;                /* [ĐO] 1073 → 1920 */
+      --split-title-gap: 21px; --split-lead-gap: 25px; --split-copy-gap: 18px; --split-button-gap: 36px;
+    }
+    .split--about .split__body { padding-top: 73px; }      /* [ĐO] eyebrow y1244 */
+    .split--about .split__title,
+    .split--features .split__title,
+    .split--service .split__title { margin-right: 0; font-size: var(--h2-size); line-height: var(--h2-lh); letter-spacing: var(--h2-ls); }
+
+    .split--video { padding-top: 127px; min-height: 663px; } /* [ĐO] ảnh y2848 − 2721 */
+    .split--video .split__body { padding-top: 60px; }        /* [ĐO] eyebrow y2908 */
+    .split--video { --split-title-gap: 16px; --split-copy-gap: 32px; }
+
+    .split--features { padding-top: 0; min-height: 768px; }  /* 3384 → 4152 */
+    .split--features .split__body { padding-top: 100px; }    /* [FIGMA] eyebrow y3484 */
+    .split--features { --split-title-gap: 20px; --split-lead-gap: 26px; }
+
+    .split--service { padding-top: 0; min-height: 668px; }   /* 4560 → 5228 */
+    .split--service .split__body { padding-top: 188px; }     /* [FIGMA] eyebrow y4748 */
+    .split--service { --split-title-gap: 20px; --split-lead-gap: 26px; --split-button-gap: 36px; }
+  }
+}

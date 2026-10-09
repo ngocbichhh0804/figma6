@@ -1,0 +1,32 @@
+/* Trích dẫn nhỏ có avatar tròn 64 (section Service) */
+@layer components {
+  .quote {
+    position: relative;
+    margin-top: 30px;                   /* [FIGMA] avatar y6936 − đáy lead 6906 */
+    padding-left: 84px;                 /* [FIGMA] chữ x107 = 23 + 84 */
+    min-height: 64px;
+  }
+
+  .quote__avatar {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .quote__text { padding-top: 8px; }   /* [FIGMA] quote y6944 = avatar + 8 */
+
+  .quote__name {
+    margin-top: 4px;                    /* [ĐO] tên y7020 */
+    font-size: var(--body-size);        /* [FIGMA] Text 16/32 */
+    line-height: var(--body-lh);
+    color: var(--text-primary);
+  }
+
+  .split--service .split__button { margin-top: 20px; }  /* [ĐO] nút y7072 */
+
+  @media (width >= 64rem) {
+    .quote__text { max-width: 386px; }  /* [FIGMA] w386 */
+    .quote__name { margin-top: 12px; }  /* [FIGMA] tên y5116 */
+    .split--service .split__button { margin-top: 36px; }  /* [FIGMA] nút y5184 */
+  }
+}

@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+node_modules/
+*.log
+.snap-tmp-*.html
+
+# Ảnh export 2x thô từ Figma — chỉ commit bản đã nén.
+assets/img/raw/
+
+# File tạm của script đo/chụp
+.snapm-*.html
+.el-*.html
+
+# Gói tải về từ Figma Community — không đưa vào repo
+*.zip

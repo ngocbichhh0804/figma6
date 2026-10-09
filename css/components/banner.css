@@ -1,0 +1,52 @@
+/* Banner cam "We're Help To Build Your Dream Project" */
+@layer components {
+  .banner { padding-top: 128px; }       /* [FIGMA] hộp y25600 − ô đáy 25472 */
+
+  .banner__box {
+    position: relative;
+    padding: 333px 28px 48px;           /* [FIGMA] H3 y25933 = hộp + 333 */
+    border-radius: var(--radius);
+    background-color: var(--accent);
+    --tone-strong: var(--text-on-dark);
+    --tone-muted: var(--text-on-dark-muted);
+  }
+
+  .banner__title {
+    font-size: var(--h3-size);          /* [FIGMA] mobile H3 40/48 */
+    line-height: var(--h3-lh);
+    letter-spacing: 0;
+  }
+  .banner__copy { margin-top: 15px; }   /* [FIGMA] y26140 */
+  .banner__body > .button { margin-top: 20px; }   /* [FIGMA] y26288 */
+
+  .banner__art {
+    position: absolute;
+    left: 29px;                         /* [FIGMA] ảnh gộp 273×264 tại 52,25632 */
+    top: 32px;
+    width: 273px;
+  }
+
+  @media (width >= 64rem) {
+    .banner { padding-top: 130px; }     /* [FIGMA] hộp y16290 */
+    .banner__box {
+      height: 542px;                    /* [FIGMA] 1170×542 */
+      padding: 94px 0 0 100px;          /* [FIGMA] H2 y16384, x235 */
+    }
+    .banner__title {
+      max-width: 420px;
+      font-size: var(--h2-size);
+      line-height: var(--h2-lh);
+      letter-spacing: var(--h2-ls);
+    }
+    .banner__copy { margin-top: 28px; max-width: 470px; }   /* [ĐO] y16604 */
+    .banner__body > .button { margin-top: 36px; }           /* [ĐO] y16702 */
+
+    .banner__art { left: auto; right: 48px; top: 139px; width: 273px; }   /* [ƯỚC] 1024–1439: ảnh gộp */
+  }
+
+  @media (width >= 90rem) {
+    .banner__art { left: 0; right: auto; top: 0; width: 100%; height: 100%; }
+    .banner__art-mobile { display: none; }
+    .banner__art > .art__desk { left: 670px; top: 55px; }   /* [ĐO] ảnh cắt 805,16345 − hộp 135,16290 */
+  }
+}

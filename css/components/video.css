@@ -1,0 +1,46 @@
+/* Ảnh video + nút play (không phát thật — link tới bản video) */
+@layer components {
+  .video {
+    max-width: 570px;
+    border-radius: var(--radius);
+  }
+
+  .video__poster { width: 100%; }       /* [MẪU] Bitmap (2) 570×368, mobile thu về 329×212 */
+
+  .video__play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 148px;                       /* [FIGMA] Oval 148×148 */
+    height: 148px;
+    margin: -74px 0 0 -74px;
+    border: 1px solid rgb(255 255 255 / 0.6);   /* [ĐO] */
+    border-radius: 50%;
+  }
+  .video__play::after {                 /* tam giác play trắng */
+    content: "";
+    position: absolute;
+    left: 67px;                         /* [ĐO] tam giác 20×28 tại 413,3018 */
+    top: 60px;
+    border-left: 20px solid var(--color-white);
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+  }
+  .video:hover .video__play { border-color: var(--color-white); }
+
+  .video__time {
+    position: absolute;
+    left: 12px;                         /* [ĐO] nhãn 1:45 */
+    bottom: 13px;                       /* [ĐO] mobile */
+    padding: 4px 12px;
+    border-radius: 4px;
+    background-color: rgb(57 20 0 / 0.24);
+    font-size: 15.5px;                  /* [ĐO] chữ 1:45 */
+    line-height: var(--small-lh);
+    color: var(--color-white);
+  }
+
+  @media (width >= 64rem) {
+    .video__time { left: 21px; bottom: 20px; font-size: 15.5px; }  /* [ĐO] chữ 1:45 */
+  }
+}

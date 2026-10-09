@@ -1,0 +1,25 @@
+/* Minh hoạ của các section hai cột (About, Features, Service).
+   Mobile → 1439: ảnh gộp .art__mobile [MẪU] do designer export.
+   ≥ 1440: ảnh gộp .art__desk cắt 1:1 từ export khung 1440 [ĐO] — các mảnh
+   rời (nét vẽ xoay, sao, lò xo) không có bản export đúng hướng nên ghép
+   lại sẽ lệch; ảnh cắt cùng độ phân giải 1x với asset gốc.
+   .art__desk dùng chung cho hero, CTA, banner (vị trí trong file tương ứng). */
+@layer components {
+  .art__desk { display: none; }
+  .art__mobile { width: 100%; max-width: 329px; }
+
+  @media (width >= 64rem) and (width < 90rem) {
+    .art__mobile { margin-inline: auto; }
+  }
+
+  @media (width >= 90rem) {
+    .art__mobile { display: none; }
+    .art { min-height: 1px; }
+    .art__desk { display: block; position: absolute; max-width: none; }
+
+    /* toạ độ = góc ảnh cắt − góc khung media [ĐO] */
+    .art--about .art__desk    { left: 4px;  top: 3px; }    /* 139,1174 − 135,1171 */
+    .art--features .art__desk { left: 43px; top: 47px; }   /* 778,3431 − 735,3384 */
+    .art--service .art__desk  { left: 9px;  top: 160px; }  /* 144,4720 − 135,4560 */
+  }
+}

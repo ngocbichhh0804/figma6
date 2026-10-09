@@ -1,0 +1,41 @@
+/* How Our Agency Can Help: 3 thẻ dịch vụ */
+@layer components {
+  .services {
+    padding-top: 124px;                 /* [FIGMA] eyebrow y7244 − nút đáy 7120 */
+    padding-bottom: 114px;              /* [FIGMA] thẻ đáy 8638 → nền tối 8752 */
+  }
+
+  .services__title { margin: 17px -40px 0 0; }   /* [FIGMA] H3 y7293; dòng 1 tràn tới x357 */
+  .services__list  { margin-top: 35px; }   /* [FIGMA] thẻ y7424 */
+
+  .services__card {
+    min-height: 400px;                  /* [FIGMA] 329×400; khổ hẹp cao theo nội dung */
+    padding: 47px 0 96px 27px;          /* chừa chỗ cho link neo đáy */             /* [FIGMA] nội dung x51 = 23 + 28 */
+  }
+  .services__card:first-child { min-height: 416px; border-radius: var(--radius) var(--radius) 0 0; }  /* [FIGMA] */
+  .services__card:last-child  { border-radius: 0 0 var(--radius) var(--radius); }
+  .services__card + .services__card { margin-top: -1px; }
+  .services__card .card__copy { max-width: 273px; }  /* [FIGMA] w273 */
+
+  @media (width >= 64rem) {
+    .services {
+      padding-top: 188px;               /* [ĐO] eyebrow y5420 */
+      padding-bottom: 128px;            /* [ĐO] thẻ đáy 6000 → nền tối 6128 */
+    }
+    .services__title { margin: 17px 0 0; max-width: 340px; }  /* [FIGMA] H3 y5469, w336 */
+    .services__list::after { content: ""; display: table; clear: both; }
+
+    .services__card,
+    .services__card:first-child {
+      float: left;
+      width: calc((100% + 2px) / 3);    /* [FIGMA] 391 ×3 chồng viền 1px */
+      min-height: 400px;
+      padding: 47px 0 96px 47px;           /* [FIGMA] nội dung +48 */
+      border-radius: 0;
+    }
+    .services__card + .services__card { margin: 0 0 0 -1px; }
+    .services__card:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+    .services__card:last-child  { border-radius: 0 var(--radius) var(--radius) 0; }
+    .services__card .card__copy { max-width: 294px; }  /* [FIGMA] w294 */
+  }
+}

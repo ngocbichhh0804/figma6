@@ -1,0 +1,47 @@
+/* Our Awards: bảng 3 hàng ngăn bằng đường kẻ #F3D1BF */
+@layer components {
+  .awards { padding-top: 91px; text-align: center; }    /* [ĐO] H3 y20333 */
+
+  .awards__list {
+    margin-top: 35px;                   /* [FIGMA] đường kẻ y20416 */
+    border-top: 1px solid var(--line);
+  }
+
+  .award {
+    position: relative;
+    padding: 31px 0 20px;               /* [ĐO] ảnh +32, bước 320 */
+    border-bottom: 1px solid var(--line);
+  }
+  .award__img { margin-inline: auto; border-radius: 4px; }   /* [MẪU] 120×80 */
+  .award__name { margin-top: 26px; font-weight: var(--weight-regular); }   /* [FIGMA] Text_Big 400 (h3 mặc định 800) */
+  .award__date { margin-top: 2px; }
+  .award__org  { margin-top: 16px; }
+  .award__logo { margin: 0 auto; }
+
+  .awards__more { margin-top: 42px; }   /* [ĐO] y21420 */
+  /* [FIGMA] 2 hộp chữ: "Want more awards?" 155 canh phải, "Explore Now" 96, cách 8 */
+  .awards__more { height: 32px; font-size: 0; }
+  .awards__more .copy { display: inline-block; vertical-align: top; width: 155px; text-align: right; }
+  .awards__more .text-link { display: inline-block; vertical-align: top; width: 96px; margin-left: 8px; text-align: left; }
+  @media (width >= 64rem) {
+    .awards__more { padding-left: 5px; }   /* [ĐO] x593 / x756 */
+  }
+
+  @media (width >= 64rem) {
+    .awards { padding-top: 157px; }     /* [ĐO] H3 y13565 */
+    .awards__list { margin-top: 67px; } /* [FIGMA] đường kẻ y13680 */
+
+    .award {
+      height: 112px;                    /* [ĐO] bước 112 */
+      padding: 15px 0 0;                /* [FIGMA] ảnh y13696 */
+      text-align: left;
+    }
+    .award__img { margin: 0; }
+    .award__name { position: absolute; left: 144px; top: 41px; margin: 0; }   /* [FIGMA] x279 y13722 */
+    .award__date { position: absolute; left: 0; right: 0; top: 43px; margin: 0; text-align: center; }  /* [FIGMA] y13724 */
+    .award__org  { position: absolute; right: 72px; top: 43px; margin: 0; }   /* [FIGMA] đến x1233 */
+    .award__logo { position: absolute; right: 0; top: 31px; margin: 0; }      /* [FIGMA] x1257 y13712 */
+
+    .awards__more { margin-top: 59px; } /* [FIGMA] y14076 */
+  }
+}

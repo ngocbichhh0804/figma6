@@ -1,0 +1,48 @@
+/* Nút: Light/Button/Primary, Secondary và nút viền trên nền tối.
+   [FIGMA] cao 48, bo 6, chữ Epilogue 900 14/100% IN HOA, căn giữa. */
+@layer components {
+  .button {
+    display: inline-block;
+    vertical-align: top;
+    height: 48px;                       /* [FIGMA] */
+    padding-inline: 22px;               /* [ƯỚC] bề ngang lấy theo width cố định bên dưới */
+    border-radius: var(--radius);
+    font-size: 14px;                    /* [FIGMA] */
+    line-height: 48px;
+    font-weight: var(--weight-black);
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+    transition: background-color var(--duration-fast), color var(--duration-fast), box-shadow var(--duration-fast);
+  }
+
+  .button--primary {                    /* [FIGMA] #EF6D58, chữ trắng */
+    background-color: var(--accent);
+    color: var(--color-white);
+  }
+  .button--primary:hover { background-color: #e05a45; }  /* [ƯỚC] trạng thái hover */
+
+  .button--secondary {                  /* [FIGMA] trắng, bóng 0 3 9 8% */
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    box-shadow: var(--shadow-button);
+  }
+  .button--secondary:hover { box-shadow: 0 6px 18px rgb(57 20 0 / 0.14); }
+
+  .button--outline {                    /* [FIGMA] viền 1px trắng 29.57% trên nền tối */
+    border: 1px solid rgb(255 255 255 / 0.2957);
+    color: var(--color-white);
+    line-height: 48px;                  /* [ĐO] (trừ viền 2px) */
+  }
+  .button--outline:hover { border-color: var(--color-white); }
+
+  @media (width >= 64rem) {
+    .button { line-height: 50px; }      /* [ĐO] desktop: chữ thấp hơn tâm hộp 1px */
+    .button--outline { line-height: 48px; }
+  }
+
+  /* Bề ngang cố định theo Figma */
+  .button--w138 { width: 138px; padding-inline: 0; }  /* [FIGMA] HOW WE WORK…? xem component */
+  .button--w154 { width: 154px; padding-inline: 0; }  /* [FIGMA] CONTACT US / HOW WE WORK */
+  .button--w170 { width: 170px; padding-inline: 0; }  /* [FIGMA] EXPLORE MORE / DISCOVER ALL */
+}

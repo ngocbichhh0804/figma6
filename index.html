@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Agency — We’re Help To Build Your Dream Project</title>
+    <meta name="description" content="Agency provides a full service range including technical skills, design, business understanding." />
+
+    <!-- Thứ tự layer khai báo một lần; nhờ vậy không cần !important. -->
+    <style>
+      @layer reset, tokens, base, layout, components, utilities;
+    </style>
+
+    <link rel="preload" href="assets/fonts/epilogue-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components/text.css" />
+    <link rel="stylesheet" href="css/components/button.css" />
+    <link rel="stylesheet" href="css/components/site-header.css" />
+    <link rel="stylesheet" href="css/components/hero.css" />
+    <link rel="stylesheet" href="css/components/logos.css" />
+    <link rel="stylesheet" href="css/components/split.css" />
+    <link rel="stylesheet" href="css/components/stats.css" />
+    <link rel="stylesheet" href="css/components/steps.css" />
+    <link rel="stylesheet" href="css/components/video.css" />
+    <link rel="stylesheet" href="css/components/art.css" />
+    <link rel="stylesheet" href="css/components/checklist.css" />
+    <link rel="stylesheet" href="css/components/card.css" />
+    <link rel="stylesheet" href="css/components/highlights.css" />
+    <link rel="stylesheet" href="css/components/quote.css" />
+    <link rel="stylesheet" href="css/components/services.css" />
+    <link rel="stylesheet" href="css/components/portfolio.css" />
+    <link rel="stylesheet" href="css/components/cta.css" />
+    <link rel="stylesheet" href="css/components/events.css" />
+    <link rel="stylesheet" href="css/components/team.css" />
+    <link rel="stylesheet" href="css/components/founder.css" />
+    <link rel="stylesheet" href="css/components/testimonials.css" />
+    <link rel="stylesheet" href="css/components/pricing.css" />
+    <link rel="stylesheet" href="css/components/faq.css" />
+    <link rel="stylesheet" href="css/components/awards.css" />
+    <link rel="stylesheet" href="css/components/blog.css" />
+    <link rel="stylesheet" href="css/components/newsletter.css" />
+    <link rel="stylesheet" href="css/components/contact.css" />
+    <link rel="stylesheet" href="css/components/banner.css" />
+    <link rel="stylesheet" href="css/components/site-footer.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+  </head>
+
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <!-- Khung Figma "1_Home_Agency_1440" 1440 × 17296 và "1_Home_Agency_375" 375 × 27360 -->
+    <div class="page page--home">
+
+      <!-- ================= HEADER + HERO (nền tối) ================= -->
+      <div class="section--dark hero-wrap">
+        <header class="site-header container">
+          <a class="site-header__brand" href="#top" aria-label="Agency — home">
+            <span class="site-header__logo"><img src="assets/icon/Polygon.png" width="46" height="44" alt="" /><img class="site-header__core" src="assets/icon/Polygon (1).png" width="19" height="18" alt="" /></span>
+            <span class="site-header__name">Agency</span>
+          </a>
+
+          <!-- Mobile: menu thu gọn bằng checkbox + label, không JS -->
+          <input class="site-header__switch visually-hidden" type="checkbox" id="menu-switch" />
+          <label class="site-header__toggle" for="menu-switch">
+            <span class="visually-hidden">Menu</span>
+            <span class="site-header__bars" aria-hidden="true"></span>
+          </label>
+          <nav class="site-header__nav" aria-label="Main">
+            <ul class="site-header__list" role="list">
+              <li><a class="site-header__link" href="#about">About</a></li>
+              <li><a class="site-header__link" href="#services">Services</a></li>
+              <li><a class="site-header__link" href="#pricing">Pricing</a></li>
+              <li><a class="site-header__link" href="#blog">Blog</a></li>
+            </ul>
+            <a class="button button--outline site-header__cta" href="#contact">Contact</a>
+          </nav>
+        </header>
+
+        <section class="hero container" id="top" aria-labelledby="hero-title">
+          <div class="hero__art" aria-hidden="true">
+            <img class="hero__art-mobile" src="assets/img/art-hero-mobile.png" width="329" height="334" alt="" />
+            <img class="art__desk" src="assets/img/art-hero-desktop.png" width="570" height="578" alt="" />
+          </div>
+          <div class="hero__body">
+            <p class="eyebrow">Modern Studio</p>
+            <h1 class="title title--h1 hero__title" id="hero-title">
+              <img class="hero__burst" src="assets/icon/Star.png" width="147" height="146" alt="" />
+              We’re Help<br class="hero__br" /> To Build Your<br class="hero__br" /> Dream Project
+            </h1>
+            <p class="copy hero__copy">Agency provides a full service range including technical skills, design, business understanding.</p>
+            <p class="hero__actions">
+              <a class="button button--primary button--w154" href="#how">How we work</a>
+              <a class="hero__link" href="#contact">Contact Us</a>
+            </p>
+            <figure class="hero__quote">
+              <img class="hero__avatar" src="assets/icon/Bitmap.png" width="48" height="48" alt="" />
+              <blockquote class="copy hero__said">"Put themselves in the merchant's shoes"</blockquote>
+              <figcaption class="hero__source">Meta Inc.</figcaption>
+            </figure>
+          </div>
+
+        </section>
+      </div>
+
+      <main id="main">
+        <!-- ================= LOGOS ================= -->
+        <section class="logos container" aria-label="Our clients">
+          <ul class="logos__list" role="list">
+            <li class="logos__item logos__item--1"><img src="assets/img/Bitmapr.png" width="147" height="42" alt="Digitalside" /></li>
+            <li class="logos__item logos__item--2"><img src="assets/img/Bitmap2.png" width="108" height="32" alt="Vortex" /></li>
+            <li class="logos__item logos__item--3"><img src="assets/img/3.png" width="119" height="47" alt="Travel Explorer" /></li>
+            <li class="logos__item logos__item--4"><img src="assets/img/Bitmapl.png" width="86" height="21" alt="Fuzion" /></li>
+            <li class="logos__item logos__item--5"><img src="assets/img/Bitmapg.png" width="126" height="24" alt="MediaFury" /></li>
+          </ul>
+        </section>
+
+        <!-- ================= ABOUT ================= -->
+        <section class="split split--about container" id="about" aria-labelledby="about-title">
+          <div class="split__media art art--about" aria-hidden="true">
+            <img class="art__mobile" src="assets/img/art-about-mobile.png" width="329" height="340" alt="" />
+            <img class="art__desk" src="assets/img/art-about-desktop.png" width="566" height="585" alt="" />
+          </div>
+          <div class="split__body">
+            <p class="eyebrow">About</p>
+            <h2 class="title title--h3 split__title" id="about-title">An Experience Design Agency</h2>
+            <p class="lead split__lead">Provides a full service range</p>
+            <p class="copy split__copy">Ability to put themselves in the merchant's shoes. It is meant to partner on the long run, and work as an extension of the merchant's team.</p>
+            <a class="button button--secondary button--w138 split__button" href="#about">About us</a>
+          </div>
+        </section>
+
+        <!-- ================= STATS ================= -->
+        <section class="stats container" aria-label="Agency in numbers">
+          <dl class="stats__list">
+            <div class="stats__item"><dt class="stats__label lead">Years of experience</dt><dd class="stats__value title title--h3">42%</dd></div>
+            <div class="stats__item"><dt class="stats__label lead">Agency members</dt><dd class="stats__value title title--h3">73+</dd></div>
+            <div class="stats__item"><dt class="stats__label lead">Projects complete</dt><dd class="stats__value title title--h3">5.000</dd></div>
+          </dl>
+        </section>
+
+        <!-- ================= HOW WE WORK ================= -->
+        <section class="steps container" id="how" aria-labelledby="how-title">
+          <div class="steps__intro">
+            <p class="eyebrow">How we work</p>
+            <h2 class="title title--h3 steps__title" id="how-title">Making Your<br class="br-m" /> Projects<br class="br-m" /> Look Awesome</h2>
+            <p class="copy steps__copy">Technical skills, design, business understanding, ability to put themselves in the merchant's shoes.</p>
+            <a class="text-link" href="#services">Read More</a>
+          </div>
+          <ol class="steps__list" role="list">
+            <li class="steps__item"><span class="steps__num" aria-hidden="true">1</span><span class="title title--h4 steps__text">Full service range including</span></li>
+            <li class="steps__item"><span class="steps__num" aria-hidden="true">2</span><span class="title title--h4 steps__text">Technical skills, design, business</span></li>
+            <li class="steps__item"><span class="steps__num" aria-hidden="true">3</span><span class="title title--h4 steps__text">Themselves in the merchant's</span></li>
+          </ol>
+        </section>
+
+        <!-- ================= VIDEO REEL ================= -->
+        <section class="split split--video container" aria-labelledby="video-title">
+          <a class="split__media video" href="#video" aria-label="Play video reel, 1 minute 45 seconds">
+            <img class="video__poster" src="assets/img/Bitmap (2).png" width="570" height="368" alt="" />
+            <span class="video__play" aria-hidden="true"></span>
+            <span class="video__time" aria-hidden="true">1:45</span>
+          </a>
+          <div class="split__body">
+            <p class="eyebrow">Video reel</p>
+            <h2 class="title title--h3 split__title" id="video-title">Unlock The Greatest Value Possible</h2>
+            <p class="copy split__copy">Design, business understanding, ability to put themselves in the merchant's shoes meant to partner.</p>
+          </div>
+        </section>
+
+        <!-- ================= FEATURES 1 ================= -->
+        <section class="split split--features container" aria-labelledby="features-title">
+          <div class="split__media art art--features" aria-hidden="true">
+            <img class="art__mobile" src="assets/img/art-features-mobile.png" width="329" height="328" alt="" />
+            <img class="art__desk" src="assets/img/art-features-desktop.png" width="527" height="525" alt="" />
+          </div>
+          <div class="split__body">
+            <p class="eyebrow">Features</p>
+            <h2 class="title title--h2 split__title" id="features-title">Give Your Site<br /> A New Look</h2>
+            <p class="lead split__lead">Service range including technical skills, design, business understanding.</p>
+            <ul class="checklist" role="list">
+              <li class="checklist__item">Range including technical skills</li>
+              <li class="checklist__item">Business understanding</li>
+              <li class="checklist__item">Partner on the long run</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ================= FEATURES 2 ================= -->
+        <section class="highlights container" aria-labelledby="highlights-title">
+          <div class="highlights__intro">
+            <p class="eyebrow" id="highlights-title">Features</p>
+            <p class="lead highlights__lead">Long run, and work as an extension of the merchant's team.</p>
+            <a class="text-link" href="#services">Read More</a>
+          </div>
+          <ul class="highlights__list" role="list">
+            <li class="card card--raised highlights__card">
+              <span class="card__icon"><img src="assets/icon/Combined Shape (3).png" width="32" height="32" alt="" /></span>
+              <h3 class="title title--h4 card__title">Professional</h3>
+              <p class="copy card__copy">Full service range including technical skills, design.</p>
+            </li>
+            <li class="card highlights__card highlights__card--flat">
+              <h3 class="title title--h4 card__title">Accessibility</h3>
+              <p class="copy card__copy">Business understanding, ability to put themselves.</p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ================= SERVICE: MAKING COMPLEX ================= -->
+        <section class="split split--service container" aria-labelledby="service-title">
+          <div class="split__media art art--service" aria-hidden="true">
+            <img class="art__mobile" src="assets/img/art-service-mobile.png" width="329" height="327" alt="" />
+            <img class="art__desk" src="assets/img/art-service-desktop.png" width="565" height="559" alt="" />
+          </div>
+          <div class="split__body">
+            <p class="eyebrow">Service</p>
+            <h2 class="title title--h2 split__title" id="service-title">Making Complex Digital Products</h2>
+            <p class="lead split__lead">Agency provides a full service range including technical skills, design, business.</p>
+            <figure class="quote">
+              <img class="quote__avatar" src="assets/icon/Bitmap (1).png" width="64" height="64" alt="" />
+              <blockquote class="copy copy--small quote__text">"Understanding, ability to put themselves in the merchant's shoes. It is meant to partner."</blockquote>
+              <figcaption class="quote__name">Jenny Murtaugh</figcaption>
+            </figure>
+            <a class="button button--secondary button--w138 split__button" href="#services">Explore</a>
+          </div>
+        </section>
+
+        <!-- ================= SERVICES: HOW OUR AGENCY CAN HELP ================= -->
+        <section class="services container" id="services" aria-labelledby="services-title">
+          <p class="eyebrow">Service</p>
+          <h2 class="title title--h3 services__title" id="services-title">How Our Agency Can Help</h2>
+          <ul class="services__list" role="list">
+            <li class="card services__card">
+              <span class="card__icon"><img src="assets/icon/Combined Shape (5).png" width="32" height="32" alt="" /></span>
+              <h3 class="title title--h4 card__title">Design</h3>
+              <p class="copy card__copy">Agency provides a full service range including technical skills, design.</p>
+              <a class="text-link card__link" href="#portfolio">Learn More</a>
+            </li>
+            <li class="card services__card">
+              <span class="card__icon card__icon--img"><img src="assets/icon/service-development.png" width="80" height="80" alt="" /></span>
+              <h3 class="title title--h4 card__title">Development</h3>
+              <p class="copy card__copy">Full service range including technical skills, design, business.</p>
+              <a class="text-link card__link" href="#portfolio">Discover More</a>
+            </li>
+            <li class="card services__card">
+              <span class="card__icon card__icon--img"><img src="assets/icon/service-marketing.png" width="80" height="80" alt="" /></span>
+              <h3 class="title title--h4 card__title">Marketing</h3>
+              <p class="copy card__copy">Technical skills, design, business understanding, ability.</p>
+              <a class="text-link card__link" href="#portfolio">Explore Now</a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ================= NỀN TỐI: PORTFOLIO → FOUNDER ================= -->
+        <div class="section--dark dark-band">
+          <section class="portfolio container" id="portfolio" aria-labelledby="portfolio-title">
+            <p class="eyebrow portfolio__eyebrow">Portfolio</p>
+            <h2 class="title title--h2 portfolio__title" id="portfolio-title">Latest Work</h2>
+
+            <!-- Lọc bằng radio + :has(), không JS -->
+            <fieldset class="portfolio__filters">
+              <legend class="visually-hidden">Filter projects</legend>
+              <label class="portfolio__filter"><input class="visually-hidden" type="radio" name="work" value="all" checked />Show All<sup>14</sup></label>
+              <label class="portfolio__filter"><input class="visually-hidden" type="radio" name="work" value="design" />Design<sup>6</sup></label>
+              <label class="portfolio__filter"><input class="visually-hidden" type="radio" name="work" value="branding" />Branding<sup>4</sup></label>
+              <label class="portfolio__filter"><input class="visually-hidden" type="radio" name="work" value="illustration" />Illustration<sup>3</sup></label>
+              <label class="portfolio__filter"><input class="visually-hidden" type="radio" name="work" value="motion" />Motion<sup>1</sup></label>
+            </fieldset>
+
+            <ul class="portfolio__grid" role="list">
+              <li class="work work--narrow" data-cat="design">
+                <img class="work__img" src="assets/img/Bitmap (2)1.png" width="470" height="416" alt="" />
+                <span class="work__tag">Design</span>
+                <h3 class="title title--h3 work__name">SOFA</h3>
+              </li>
+              <li class="work work--wide" data-cat="branding">
+                <img class="work__img" src="assets/img/Bitmap (4).png" width="670" height="416" alt="" />
+                <span class="work__tag">Branding</span>
+                <h3 class="title title--h3 work__name">KeyBoard</h3>
+              </li>
+              <li class="work work--wide" data-cat="illustration">
+                <img class="work__img" src="assets/img/Bitmap (6).png" width="670" height="416" alt="" />
+                <span class="work__tag">Illustration</span>
+                <h3 class="title title--h3 work__name">Work Media</h3>
+              </li>
+              <li class="work work--narrow" data-cat="motion">
+                <img class="work__img" src="assets/img/Bitmap (5).png" width="470" height="416" alt="" />
+                <span class="work__tag">Motion</span>
+                <h3 class="title title--h3 work__name">DDDone</h3>
+              </li>
+            </ul>
+            <p class="portfolio__more"><a class="button button--outline button--w170" href="#portfolio">Explore more</a></p>
+          </section>
+
+          <!-- CTA hồng trên nền tối -->
+          <section class="cta container" aria-labelledby="cta-title">
+            <div class="cta__box">
+              <span class="cta__badge" aria-hidden="true"><img src="assets/icon/Shape (1).png" width="32" height="32" alt="" /></span>
+              <div class="cta__body">
+                <p class="eyebrow">Get started</p>
+                <h2 class="title title--h4 cta__title" id="cta-title">We Help Companies Move Faster</h2>
+                <a class="button button--primary button--w154" href="#contact">Contact us</a>
+              </div>
+              <div class="cta__art" aria-hidden="true">
+                <img class="cta__art-mobile" src="assets/img/art-cta-mobile.png" width="351" height="232" alt="" />
+                <img class="cta__cloud" src="assets/icon/Path.png" width="282" height="242" alt="" />
+                <img class="cta__woman" src="assets/img/Bitmap (2)11.png" width="239" height="396" alt="" />
+                <img class="art__desk" src="assets/img/art-cta-desktop.png" width="690" height="404" alt="" />
+              </div>
+            </div>
+          </section>
+
+          <section class="events container" aria-labelledby="events-title">
+            <p class="eyebrow events__eyebrow">Events</p>
+            <h2 class="title title--h2 events__title" id="events-title">Explore Future&nbsp;<br class="br-d" /> Conferences</h2>
+            <ul class="events__list" role="list">
+              <li class="event">
+                <p class="event__date"><span class="event__day">3</span><span class="title title--h4 event__month">November 2021</span></p>
+                <p class="event__time"><time datetime="2021-11-03T09:00">9:00 am</time> – <time datetime="2021-11-03T15:00">3:00 pm</time></p>
+                <h3 class="title title--h4 event__name">Design Weeks</h3>
+                <p class="copy event__copy">Digital agency is a business you hire to outsource your digital.</p>
+                <a class="text-link" href="#events">Explore Now</a>
+              </li>
+              <li class="event">
+                <p class="event__date"><span class="event__day">15</span><span class="title title--h4 event__month">November 2021</span></p>
+                <p class="event__time"><time datetime="2021-11-15T13:00">1:00 pm</time> – <time datetime="2021-11-15T20:00">8:00 pm</time></p>
+                <h3 class="title title--h4 event__name">Interior Design</h3>
+                <p class="copy event__copy">Marketing efforts, instead of handling in-house.</p>
+                <a class="text-link" href="#events">Explore Now</a>
+              </li>
+              <li class="event">
+                <p class="event__date"><span class="event__day">2</span><span class="title title--h4 event__month">December 2021</span></p>
+                <p class="event__time"><time datetime="2021-12-02T10:00">10:00 am</time> – <time datetime="2021-12-02T14:00">2:00 pm</time></p>
+                <h3 class="title title--h4 event__name">The F design events</h3>
+                <p class="copy event__copy">Provide your business with a variety of digital solutions to promote.</p>
+                <a class="text-link" href="#events">Explore Now</a>
+              </li>
+            </ul>
+            <p class="events__more"><a class="button button--outline button--w170" href="#events">Explore more</a></p>
+          </section>
+
+          <section class="team container" aria-labelledby="team-title">
+            <p class="eyebrow">Our team</p>
+            <h2 class="title title--h2 team__title" id="team-title">Team of<br class="br-m" /> Designers<br /> and Developers</h2>
+            <p class="team__nav" aria-hidden="true"><span class="team__arrow team__arrow--prev"></span><span class="team__arrow team__arrow--next"></span></p>
+            <ul class="team__list" role="list">
+              <li class="member">
+                <span class="member__frame"><img class="member__photo member__photo--1" src="assets/img/Bitmap (2)2.png" width="196" height="247" alt="" /></span>
+                <h3 class="title title--h4 member__name">Azah Anyeni</h3>
+                <p class="copy member__role">Designer</p>
+              </li>
+              <li class="member">
+                <span class="member__frame"><img class="member__photo member__photo--2" src="assets/img/Bitmap (7).png" width="259" height="232" alt="" /></span>
+                <h3 class="title title--h4 member__name">Roelof Bekkenenks</h3>
+                <p class="copy member__role">React Developer</p>
+              </li>
+              <li class="member">
+                <span class="member__frame"><img class="member__photo member__photo--3" src="assets/img/Bitmap (8).png" width="205" height="238" alt="" /></span>
+                <h3 class="title title--h4 member__name">Leonardo Oliveira</h3>
+                <p class="copy member__role">Illustrator</p>
+              </li>
+              <li class="member">
+                <span class="member__frame"><img class="member__photo member__photo--4" src="assets/img/Bitmap (9).png" width="230" height="233" alt="" /></span>
+                <h3 class="title title--h4 member__name">Izabella Tabakova</h3>
+                <p class="copy member__role">Product Designer</p>
+              </li>
+            </ul>
+            <p class="team__dots" aria-hidden="true"><span class="team__dot team__dot--on"></span><span class="team__dot"></span><span class="team__dot"></span><span class="team__dot team__dot--m"></span><span class="team__dot team__dot--m"></span><span class="team__dot team__dot--m"></span></p>
+          </section>
+
+          <section class="founder container" aria-labelledby="founder-title">
+            <img class="founder__photo" src="assets/img/Bitmap (10).png" width="570" height="448" alt="Ren Delan, founder" />
+            <figure class="founder__body">
+              <p class="eyebrow" id="founder-title">Founder words</p>
+              <img class="founder__mark" src="assets/icon/Shape5.png" width="100" height="80" alt="" />
+              <blockquote class="title title--h3 founder__quote">Digital agency is a business you hire to outsource your digital marketing efforts</blockquote>
+              <figcaption><span class="lead founder__name">Ren Delan</span> <span class="copy copy--small founder__role">Founder</span></figcaption>
+            </figure>
+          </section>
+        </div>
+
+        <!-- ================= TESTIMONIALS ================= -->
+        <section class="testimonials container" aria-labelledby="testimonials-title">
+          <p class="eyebrow testimonials__eyebrow">Testimonials</p>
+          <h2 class="title title--h2 testimonials__title" id="testimonials-title">What Our&nbsp;<br /> Clients Saying</h2>
+          <ul class="testimonials__list" role="list">
+            <li class="review review--featured">
+              <p class="review__stars"><span class="visually-hidden">5 out of 5 stars</span></p>
+              <blockquote class="copy review__text">A digital agency is a business you hire to outsource your digital marketing efforts, instead of handling in-house. They can provide your business with a variety of digital solutions to promote your product or service online and help you.</blockquote>
+              <p class="review__author"><img class="review__avatar" src="assets/img/avatar-alan.png" width="80" height="80" alt="" /><span class="title title--h4 review__name">Alan Martí</span><span class="copy copy--strong review__company">Meta Inc.</span></p>
+            </li>
+            <li class="review review--b">
+              <p class="review__stars"><span class="visually-hidden">5 out of 5 stars</span></p>
+              <blockquote class="copy review__text">Provide your business with a variety of digital solutions to promote your product or service online.</blockquote>
+              <p class="review__author"><img class="review__avatar" src="assets/img/avatar-richardo.png" width="80" height="80" alt="" /><span class="title title--h4 review__name">Richardo Kann</span><span class="copy copy--strong review__company">Photogram</span></p>
+            </li>
+            <li class="review review--c">
+              <p class="review__stars"><span class="visually-hidden">5 out of 5 stars</span></p>
+              <blockquote class="copy review__text">Outsource your digital marketing efforts, instead of handling in-house. They can provide your business with a variety.</blockquote>
+              <p class="review__author"><img class="review__avatar" src="assets/img/avatar-graham.png" width="80" height="80" alt="" /><span class="title title--h4 review__name">Graham Griffiths</span><span class="copy copy--strong review__company">Twitor</span></p>
+            </li>
+            <li class="review review--d">
+              <p class="review__stars"><span class="visually-hidden">5 out of 5 stars</span></p>
+              <blockquote class="copy review__text">Promote your product or service online and help you hit your marketing goals and grow your business.</blockquote>
+              <p class="review__author"><img class="review__avatar" src="assets/img/avatar-maria.png" width="80" height="80" alt="" /><span class="title title--h4 review__name">Maria Trofimova</span><span class="copy copy--strong review__company">Whochat</span></p>
+            </li>
+          </ul>
+          <p class="testimonials__more"><a class="button button--secondary button--w138" href="#testimonials-title">See all</a></p>
+        </section>
+
+        <!-- ================= PRICING ================= -->
+        <section class="pricing container" id="pricing" aria-labelledby="pricing-title">
+          <p class="eyebrow">Pricing</p>
+          <h2 class="title title--h2 pricing__title" id="pricing-title">Check Our Pricing Plans</h2>
+          <ul class="pricing__list" role="list">
+            <li class="plan plan--first">
+              <h3 class="eyebrow plan__name">Consultation</h3>
+              <p class="title title--h3 plan__price">Free</p>
+              <p class="copy plan__copy">Your digital marketing efforts, instead of handling in-house.</p>
+              <ul class="plan__features" role="list">
+                <li class="plan__feature plan__feature--yes">Brand Design</li>
+                <li class="plan__feature">Market Analysis<span class="visually-hidden"> (not included)</span></li>
+                <li class="plan__feature">Production<span class="visually-hidden"> (not included)</span></li>
+              </ul>
+              <a class="button button--secondary button--w154" href="#contact">Contact us</a>
+            </li>
+            <li class="plan plan--popular">
+              <p class="plan__badge">Popular</p>
+              <h3 class="eyebrow plan__name">Design</h3>
+              <p class="title title--h3 plan__price">$1500</p>
+              <p class="copy plan__copy">Provide your business with a variety of digital solutions to promote.</p>
+              <ul class="plan__features" role="list">
+                <li class="plan__feature plan__feature--yes">Brand Design</li>
+                <li class="plan__feature plan__feature--yes">Market Analysis</li>
+                <li class="plan__feature">Production<span class="visually-hidden"> (not included)</span></li>
+              </ul>
+              <a class="button button--primary button--w154" href="#contact">Contact us</a>
+            </li>
+            <li class="plan plan--last">
+              <h3 class="eyebrow plan__name">Design+Code</h3>
+              <p class="title title--h3 plan__price">$2900</p>
+              <p class="copy plan__copy">Help you hit your marketing goals and grow your business.</p>
+              <ul class="plan__features" role="list">
+                <li class="plan__feature plan__feature--yes">Brand Design</li>
+                <li class="plan__feature plan__feature--yes">Market Analysis</li>
+                <li class="plan__feature plan__feature--yes">Production</li>
+              </ul>
+              <a class="button button--secondary button--w154" href="#contact">Contact us</a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ================= FAQ ================= -->
+        <section class="faq container" aria-labelledby="faq-title">
+          <div class="faq__intro">
+            <p class="eyebrow">FAQ</p>
+            <h2 class="title title--h3 faq__title" id="faq-title">Frequently Asked Questions</h2>
+            <p class="copy faq__copy">A digital agency is a business you hire to outsource your digital marketing efforts, instead of handling in-house.</p>
+            <a class="text-link" href="#contact">Contact Us</a>
+          </div>
+          <div class="faq__list">
+            <details class="faq__item" name="faq" open>
+              <summary class="title title--h4 faq__question">A digital agency is a business</summary>
+              <p class="copy faq__answer">Digital marketing efforts, instead of handling in-house. They can provide your business with a variety of digital solutions to promote your product or service online and help you hit your marketing goals and grow your business.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="title title--h4 faq__question">Hire to outsource your digital</summary>
+              <p class="copy faq__answer">Digital marketing efforts, instead of handling in-house. They can provide your business with a variety of digital solutions to promote your product or service online.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="title title--h4 faq__question">Marketing efforts</summary>
+              <p class="copy faq__answer">They can provide your business with a variety of digital solutions to promote your product or service online.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="title title--h4 faq__question">Can provide your business</summary>
+              <p class="copy faq__answer">Help you hit your marketing goals and grow your business.</p>
+            </details>
+          </div>
+        </section>
+
+        <!-- ================= AWARDS ================= -->
+        <section class="awards container" aria-labelledby="awards-title">
+          <h2 class="title title--h3 awards__title" id="awards-title">Our Awards</h2>
+          <ul class="awards__list" role="list">
+            <li class="award">
+              <img class="award__img" src="assets/img/Bitmap (2)4.png" width="120" height="80" alt="" />
+              <h3 class="lead award__name">SOFA</h3>
+              <p class="copy award__date"><time datetime="2021-10-25">25 Oct, 2021</time></p>
+              <p class="copy copy--strong award__org">Awwwards</p>
+              <img class="award__logo" src="assets/icon/Bitmap (11).png" width="48" height="48" alt="" />
+            </li>
+            <li class="award">
+              <img class="award__img" src="assets/img/Bitmap (4)6.png" width="120" height="80" alt="" />
+              <h3 class="lead award__name">KeyBoard</h3>
+              <p class="copy award__date"><time datetime="2021-10-19">19 Oct, 2021</time></p>
+              <p class="copy copy--strong award__org">CSS Design Awards</p>
+              <img class="award__logo" src="assets/icon/Bitmap (2).png" width="48" height="48" alt="" />
+            </li>
+            <li class="award">
+              <img class="award__img" src="assets/img/Bitmap (11).png" width="120" height="80" alt="" />
+              <h3 class="lead award__name">Work Media</h3>
+              <p class="copy award__date"><time datetime="2021-10-07">7 Oct, 2021</time></p>
+              <p class="copy copy--strong award__org">The FWA</p>
+              <img class="award__logo" src="assets/icon/Bitmap (3).png" width="48" height="48" alt="" />
+            </li>
+          </ul>
+          <p class="awards__more"><span class="copy">Want more awards?</span> <a class="text-link awards__link" href="#awards-title">Explore Now</a></p>
+        </section>
+
+        <!-- ================= BLOG ================= -->
+        <section class="blog container" id="blog" aria-labelledby="blog-title">
+          <p class="eyebrow">Our blog</p>
+          <h2 class="title title--h2 blog__title" id="blog-title">Latest Blog Articles</h2>
+          <a class="button button--secondary button--w170 blog__all" href="#blog">Discover all</a>
+          <ul class="blog__list" role="list">
+            <li class="post">
+              <img class="post__img" src="assets/img/Bitmap (12).png" width="370" height="224" alt="" />
+              <p class="lead post__cat">Stories</p>
+              <h3 class="title title--h4 post__title"><a href="#blog">Agency is a business you hire to outsource</a></h3>
+              <p class="copy post__date"><time datetime="2021-11-05">5 Nov, 2021</time></p>
+            </li>
+            <li class="post">
+              <img class="post__img" src="assets/img/Bitmap (13).png" width="370" height="224" alt="" />
+              <p class="lead post__cat">Design</p>
+              <h3 class="title title--h4 post__title"><a href="#blog">Outsource your digital marketing efforts</a></h3>
+              <p class="copy post__date"><time datetime="2021-10-29">29 Oct, 2021</time></p>
+            </li>
+            <li class="post">
+              <img class="post__img" src="assets/img/Bitmap (14).png" width="370" height="224" alt="" />
+              <p class="lead post__cat">Marketing</p>
+              <h3 class="title title--h4 post__title"><a href="#blog">Your business with a variety of digital</a></h3>
+              <p class="copy post__date"><time datetime="2021-10-21">21 Oct, 2021</time></p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ================= NEWSLETTER ================= -->
+        <section class="newsletter container" aria-labelledby="newsletter-title">
+          <h2 class="title title--h3 newsletter__title" id="newsletter-title">Newsletter</h2>
+          <form class="newsletter__form" action="#" method="post">
+            <label class="visually-hidden" for="nl-email">Your email</label>
+            <input class="field newsletter__field" id="nl-email" type="email" name="email" placeholder="Your email" autocomplete="email" required />
+            <button class="button button--secondary button--w170" type="submit">Subscribe</button>
+          </form>
+        </section>
+
+        <!-- ================= CONTACT: MAP + FORM + INFO ================= -->
+        <section class="contact" id="contact" aria-labelledby="contact-title">
+          <div class="contact__map">
+            <img class="contact__map-img" src="assets/img/map.png" width="1440" height="720" alt="" />
+            <img class="contact__pin" src="assets/icon/pin.png" width="72" height="72" alt="" />
+            <div class="container contact__inner">
+              <form class="contact__form" action="#" method="post">
+                <h2 class="title title--h4 contact__title" id="contact-title">Get In Touch</h2>
+                <label class="visually-hidden" for="ct-email">Your email</label>
+                <input class="field contact__field" id="ct-email" type="email" name="email" placeholder="Your email" autocomplete="email" required />
+                <label class="visually-hidden" for="ct-subject">Subject</label>
+                <select class="field field--select contact__field" id="ct-subject" name="subject">
+                  <option value="">Subject</option>
+                  <option>Design</option>
+                  <option>Development</option>
+                  <option>Marketing</option>
+                </select>
+                <label class="visually-hidden" for="ct-message">Message</label>
+                <textarea class="field field--area contact__field" id="ct-message" name="message" placeholder="Message" rows="2"></textarea>
+                <button class="button button--primary button--w154 contact__submit" type="submit">Submit now</button>
+              </form>
+            </div>
+          </div>
+
+          <ul class="contact__info container" role="list">
+            <li class="info">
+              <span class="info__icon info__icon--img"><img src="assets/icon/contact-phone.png" width="64" height="64" alt="" /></span>
+              <h3 class="eyebrow info__label">Phone</h3>
+              <a class="lead info__value" href="tel:+12345678900">+1 (234) 567-89-00</a>
+            </li>
+            <li class="info">
+              <span class="info__icon info__icon--img"><img src="assets/icon/contact-email.png" width="64" height="64" alt="" /></span>
+              <h3 class="eyebrow info__label">Email</h3>
+              <a class="lead info__value" href="mailto:info@agency.com">info@agency.com</a>
+            </li>
+            <li class="info">
+              <span class="info__icon info__icon--img"><img src="assets/icon/contact-address.png" width="64" height="64" alt="" /></span>
+              <h3 class="eyebrow info__label">Address</h3>
+              <p class="lead info__value">2247 Lunetta Street, TX 76301</p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ================= BANNER: DREAM PROJECT ================= -->
+        <section class="banner container" aria-labelledby="banner-title">
+          <div class="banner__box">
+            <div class="banner__body">
+              <h2 class="title title--h2 banner__title" id="banner-title">We’re Help<br /> To Build Your<br /> Dream Project</h2>
+              <p class="copy banner__copy">A digital agency is a business you hire to outsource your digital marketing efforts, instead of handling in-house.</p>
+              <a class="button button--secondary button--w154" href="#contact">Contact us</a>
+            </div>
+            <div class="banner__art" aria-hidden="true">
+              <img class="banner__art-mobile" src="assets/img/art-banner-mobile.png" width="273" height="264" alt="" />
+              <img class="art__desk" src="assets/img/art-banner-desktop.png" width="430" height="415" alt="" />
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- ================= FOOTER ================= -->
+      <footer class="site-footer container">
+        <p class="title title--h4 site-footer__brand">Agency</p>
+        <nav class="site-footer__col" aria-labelledby="ft-menu">
+          <h2 class="eyebrow site-footer__head" id="ft-menu">Menu</h2>
+          <ul class="site-footer__list" role="list">
+            <li><a class="site-footer__link" href="#about">About</a></li>
+            <li><a class="site-footer__link" href="#services">Services</a></li>
+            <li><a class="site-footer__link" href="#blog">Blog</a></li>
+            <li><a class="site-footer__link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="site-footer__col" aria-labelledby="ft-service">
+          <h2 class="eyebrow site-footer__head" id="ft-service">Service</h2>
+          <ul class="site-footer__list" role="list">
+            <li><a class="site-footer__link" href="#services">Design</a></li>
+            <li><a class="site-footer__link" href="#services">Development</a></li>
+            <li><a class="site-footer__link" href="#services">Marketing</a></li>
+            <li><a class="site-footer__link" href="#services">See More</a></li>
+          </ul>
+        </nav>
+        <ul class="site-footer__social" role="list">
+          <li><a class="site-footer__soc" href="#" aria-label="Facebook"><img src="assets/icon/facebook.png" width="10" height="16" alt="" /></a></li>
+          <li><a class="site-footer__soc" href="#" aria-label="Twitter"><img src="assets/icon/twitter.png" width="16" height="13" alt="" /></a></li>
+          <li><a class="site-footer__soc" href="#" aria-label="Instagram"><img src="assets/icon/instagram.png" width="16" height="16" alt="" /></a></li>
+        </ul>
+        <div class="site-footer__bottom">
+          <p class="copy site-footer__copy">Copyright © 2022 Laaqiq. All Rights Reserved.</p>
+          <p class="site-footer__legal"><a class="site-footer__link" href="#">Terms of Use</a><a class="site-footer__link" href="#">Privacy Policy</a></p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+/* Ba ô số liệu viền #F3D1BF. Mobile xếp dọc (329×176, chồng viền 1px),
+   desktop xếp ngang 3 × 390 (1170 / 3). */
+@layer components {
+  .stats__list {
+    border: 1px solid var(--line);      /* [FIGMA] */
+    border-radius: var(--radius);
+    background-color: var(--color-blush);
+  }
+
+  .stats__item {
+    position: relative;
+    height: 175px;                      /* [FIGMA] 176 chồng viền 1px */
+    padding: 44px 0 0 47px;             /* [FIGMA] số x71 y+45 (viền 1px) */
+  }
+  .stats__item + .stats__item { border-top: 1px solid var(--line); }
+
+  /* Số đứng trên nhãn nhưng trong DOM <dt> phải đi trước <dd> */
+  .stats__value {
+    position: absolute;
+    top: 44px;                          /* [FIGMA] 42% y2397 − ô 2352 − viền */
+    left: 47px;
+    margin: 0;
+  }
+  .stats__label {
+    margin-top: 61px;                   /* [FIGMA] nhãn y2458 = số + 61 */
+  }
+
+  @media (width >= 64rem) {
+    .stats__list { height: 176px; }
+    .stats__list::after { content: ""; display: table; clear: both; }
+    .stats__item {
+      float: left;
+      width: 33.333%;
+      height: 174px;
+      padding-left: 47px;
+    }
+    .stats__item + .stats__item { border-top: 0; border-left: 1px solid var(--line); }
+  }
+}
