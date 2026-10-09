@@ -51,4 +51,13 @@
       border-radius: 0 var(--radius) var(--radius) 0;
     }
   }
+
+  /* Trang About: đoạn mô tả thay cho link "Read More" */
+  .highlights--about { padding-top: 88px; }   /* [ĐO] mobile eyebrow y1708 − ảnh đáy 1620 */
+  .highlights__copy { margin-top: 18px; }     /* [FIGMA] y1692 − lead đáy 1674 */
+
+  @media (width >= 64rem) {
+    .highlights--about { padding-top: 128px; min-height: 0; }   /* [FIGMA] thẻ y1472 − ảnh đáy 1344 */
+    .highlights__copy { max-width: 370px; }   /* [FIGMA] w370 */
+  }
 }

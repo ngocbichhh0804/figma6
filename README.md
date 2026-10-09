@@ -9,8 +9,10 @@ bước build, **không JavaScript**.
 
 | Trang | Khung Figma | Sai lệch màu TB (/765) | Pixel lệch ≤ 30 | Ghi chú |
 | --- | --- | --- | --- | --- |
-| Homepage — desktop (`1_Home_Agency_1440`) | 1440 × 17296 | 2.2 | 98.8 % | ≤ 60: 99.1 %; 346 phần tử đo theo DOM, tất cả lệch ≤ 2px (chỉ còn khử răng cưa chữ) |
-| Homepage — mobile (`1_Home_Agency_375`) | 375 × 27360 | 6.9 | 96.5 % | ≤ 60: 97.5 % |
+| Homepage — desktop (`1_Home_Agency_1440`) | 1440 × 17296 | 1.7 | 98.9 % | ≤ 60: 99.1 %; 346 phần tử đo theo DOM, tất cả lệch ≤ 2px (chỉ còn khử răng cưa chữ) |
+| Homepage — mobile (`1_Home_Agency_375`) | 375 × 27360 | 2.9 | 98.0 % | ≤ 60: 98.7 % |
+| About — desktop (`2_About_Agency_1440`) | 1440 × 6160 | 1.3 | 99.1 % | ≤ 60: 99.4 %; 44/88 vùng khớp 0px, còn lại lệch ≤ 1px (khử răng cưa chữ) |
+| About — mobile (`2_About_Agency_375`) | 375 × 8640 | 3.6 | 97.6 % | ≤ 60: 98.5 %; 57/107 vùng khớp 0px, còn lại ≤ 1px (riêng tam giác play 3px) |
 
 Cả hai khung dùng chung **một** file `index.html`; mobile là CSS mặc định,
 desktop bật từ `64rem`, các mảnh minh hoạ dựng rời bật từ `90rem` (1440).
@@ -20,6 +22,25 @@ yếu là khử răng cưa chữ và ảnh minh hoạ ghép từ mảnh.
 Ảnh đối chiếu nằm trong `docs/comparison/<trang>/`. Tự kiểm trực tiếp: mở
 `dev/<trang>-overlay.html` (bốn chế độ Code only / Overlay 50% / Figma only /
 Slider — không JavaScript, nút là radio input đọc bằng `:has()`).
+
+### Trang About (`about.html`)
+
+Một file cho cả hai khung. Dùng lại header, highlights, stats, team, FAQ, logos,
+banner, footer của Home (thêm modifier `--about` / `--dark`, Home không đổi
+pixel nào). Khối mới: `page-hero`, `intro`, `gallery`, `reviews` (carousel),
+`about-band` (nền tối dừng giữa hộp banner).
+
+- **Ảnh video** `assets/img/about-video.png`: cắt từ export 1:1, xoá vòng play,
+  tam giác và nhãn 1:45 bằng nội suy để CSS vẽ lại → **cần ảnh gốc từ khách**.
+  Bốn ảnh `about-photo-1…4.png` cũng cắt từ export (1x).
+- **Logo trên nền tối** `logo-*-dark.png`: tô lại màu #5E6080 [ĐO] trên kênh
+  alpha của logo gốc (không có bản export tối).
+- **Testimonials**: thẻ hai bên mờ 24.29% chỉ hiện ở desktop; chấm, mũi tên chỉ
+  trang trí (không JS).
+- **FAQ**: câu cuối của câu trả lời đầu chỉ có trong khung desktop → bọc trong
+  `.faq__extra`, ẩn dưới 64rem. Link "Contact Me" chỉ có ở mobile.
+- Ảnh đối chiếu: `docs/comparison/about/`, `docs/comparison/about-mobile/`.
+  Overlay: `dev/about-overlay.html`, `dev/about-mobile-overlay.html`.
 
 ## Không flexbox, không grid
 
@@ -32,6 +53,11 @@ Bố cục dựng bằng kỹ thuật trước thời flexbox: `float` + `calc()
 | Font Figma | Thay bằng (OFL) | Weight |
 | --- | --- | --- |
 | Epilogue | Epilogue (đúng font, OFL — không phải thay) | 400, 700, 800, 900 — bản variable `assets/fonts/epilogue-latin-wght-normal.woff2` |
+
+Chrome đặt chân chữ Epilogue cao hơn Figma ~1px, nên `@font-face` dời baseline
+xuống bằng `ascent-override: 80.25%` / `descent-override: 22.25%` (tổng giữ
+nguyên 102.5%, chiều cao dòng không đổi). Đo trên cả 4 khung: 1.25% em là mức
+tốt nhất, 1.75% trở lên làm lệch ngược lại.
 
 ## Chỗ khác bản thiết kế
 
@@ -55,7 +81,11 @@ Bố cục dựng bằng kỹ thuật trước thời flexbox: `float` + `calc()
 
 ## Responsive
 
-Đã kiểm 17 khổ 320 → 2560 (`responsive.py`): **không khổ nào cuộn ngang**.
+About: 17 khổ 320 → 2560 + điện thoại xoay ngang 568/667/844 × 320: không khổ
+nào cuộn ngang. Khổ < 500 kiểm thêm bằng iframe (Chrome headless không thu cửa
+sổ dưới 500px). Cùng breakpoint với Home.
+
+Home: đã kiểm 17 khổ 320 → 2560 (`responsive.py`): **không khổ nào cuộn ngang**.
 Breakpoint: `48rem`, `64rem` (bố cục desktop), `75rem` (menu ngang), `80rem`,
 `90rem` (minh hoạ dựng mảnh, đúng pixel 1440). Cảnh báo còn lại: link chữ
 ("Read More"…) cao 32px nhưng < 24px ở một chiều khi đứng trong dòng — chấp
@@ -64,5 +94,7 @@ nhận vì các vùng bấm cách nhau ≥ 24px.
 ## Còn cần từ phía khách
 
 - SVG hoặc @2x cho các icon/ảnh ở mục "Icon cắt từ ảnh export".
+- Trang About: ảnh gốc video (570×448, không có nút play) và 4 ảnh 270×208
+  (bản @2x), logo bản trên nền tối.
 - `assets/img/Portfolio Template (Community).zip` và vài ảnh export trùng
   không dùng tới — chờ chị xác nhận trước khi xoá/đổi tên sang kebab-case.

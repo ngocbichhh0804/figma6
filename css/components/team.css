@@ -100,4 +100,10 @@
     .team__dots { margin-top: 48px; }   /* [ĐO] chấm y9728 */
     .team__dot--m { display: none; }    /* [FIGMA] desktop 3 chấm, mobile 6 */
   }
+
+  .team--about { margin-top: 108px; }   /* [ĐO] mobile eyebrow y3468 − nền tối 3360 */
+
+  @media (width >= 64rem) {
+    .team--about { margin-top: 92px; }  /* [ĐO] eyebrow y2348 − nền tối 2256 */
+  }
 }

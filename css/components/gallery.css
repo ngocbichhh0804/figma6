@@ -1,0 +1,44 @@
+/* Video lớn + lưới 4 ảnh 2 × 2. Desktop: video 570×448 bên trái, ảnh 270×208
+   bên phải [FIGMA]. Mobile: video 329 rộng, ảnh 156×120 [ĐO]. */
+@layer components {
+  .gallery { margin-top: 83px; }        /* [ĐO] mobile video y1087 − đoạn cuối 1004 */
+
+  .gallery__video { display: block; position: relative; max-width: none; overflow: hidden; }   /* video rộng bằng lưới ảnh ở mọi khổ */
+  .gallery__video > .video__poster { display: block; }
+
+  .gallery__list {
+    margin-top: 17px;                   /* [ĐO] mobile ảnh y1363 − video đáy 1346 */
+    font-size: 0;
+  }
+  .gallery__list::after { content: ""; display: table; clear: both; }
+
+  .gallery__item {
+    float: left;
+    width: calc((100% - 17px) / 2);     /* [ĐO] mobile 156, khe 17 */
+  }
+  .gallery__item:nth-child(2n) { margin-left: 17px; }
+  .gallery__item:nth-child(n + 3) { margin-top: 17px; }
+
+  .gallery__item > img {
+    display: block;
+    width: 100%;
+    border-radius: var(--radius);       /* [FIGMA] bo 6 */
+  }
+
+  @media (width >= 64rem) {
+    .gallery { margin-top: 116px; }     /* [FIGMA] video y896 − đoạn cuối 780 */
+    .gallery::after { content: ""; display: table; clear: both; }
+
+    .gallery__video {
+      float: left;
+      width: 48.72%;                    /* [FIGMA] 570 / 1170 */
+    }
+
+    .gallery__list {
+      margin: 0 0 0 51.28%;             /* [FIGMA] x735 = 135 + 600 */
+    }
+    .gallery__item { width: calc((100% - 30px) / 2); }   /* [FIGMA] 270, x735 / 1035 */
+    .gallery__item:nth-child(2n) { margin-left: 30px; }
+    .gallery__item:nth-child(n + 3) { margin-top: 32px; } /* [FIGMA] y1136 − 1104 */
+  }
+}

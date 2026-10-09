@@ -1,0 +1,40 @@
+nav-logo        130,10,300,70 light thr=90
+nav-links       440,25,1000,60 light thr=150
+nav-contact     1160,10,1310,70 light thr=150
+hero-title      540,150,900,240 light thr=150
+hero-copy       430,265,1010,330 light thr=120
+about-eyebrow   130,476,240,508 thr=200
+about-title     130,520,700,660 rows
+about-text      730,550,1310,780 rows thr=160
+video           135,896,705,1344 thr=250
+video-play      340,1040,500,1200 light thr=200
+video-time      150,1280,220,1330 light thr=200
+photo-1         735,896,1005,1104 thr=250
+photo-4         1035,1136,1305,1344 thr=250
+feat-eyebrow    130,1548,260,1580 thr=200
+feat-lead       130,1600,500,1680 rows
+feat-copy       130,1690,500,1800 rows thr=160
+card-pro        630,1470,975,1810 thr=200
+card-access     1010,1630,1260,1770 rows
+stats           130,1990,1300,2100 rows
+team-eyebrow    130,2348,260,2380 thr=150 light
+team-title      130,2395,700,2530 rows light thr=150
+team-arrows     1190,2475,1310,2530 light thr=150
+team-names      130,2885,1300,2955 rows light thr=150
+team-dots       670,3000,770,3030 light thr=60
+rev-eyebrow     640,3132,800,3164 light thr=100
+rev-title       500,3180,940,3320 rows light thr=150
+rev-card        383,3420,1060,3740 rows thr=200
+rev-dots        670,3835,770,3860 light thr=60
+faq-eyebrow     330,3996,400,4030 light thr=100
+faq-title       330,4040,930,4100 light thr=150
+faq-copy        330,4120,1070,4190 rows light thr=120
+faq-open        380,4290,1070,4490 rows thr=150
+faq-closed      380,4560,1070,4840 rows light thr=150
+logos           130,4975,1310,5035 light thr=70
+banner-title    230,5245,600,5440 rows light thr=200
+banner-copy     230,5470,690,5530 rows light thr=220
+banner-button   230,5565,400,5620 thr=200
+banner-art      770,5205,1210,5630 thr=250
+footer          130,5770,1310,5960 rows thr=150
+footer-bottom   130,6070,1310,6110 thr=150

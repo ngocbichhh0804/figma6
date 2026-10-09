@@ -67,4 +67,9 @@
     .site-footer__legal { float: right; margin: 0; }
     .site-footer__legal > a + a { margin-left: 68px; }           /* [FIGMA] x1200 */
   }
+
+  @media (width < 64rem) {
+    .site-footer--about { padding-top: 105px; padding-bottom: 34px; }   /* [ĐO] mobile "Agency" y7774; đáy trang 8640 */
+    .site-footer--about .site-footer__bottom { margin-top: 64px; }    /* [ĐO] mobile kẻ y8416 */
+  }
 }

@@ -59,11 +59,48 @@
     .faq__list {
       margin: 0 0 0 51.28%;             /* [FIGMA] x735, y12800 */
     }
-    .faq__question { padding: 42px 96px 38px 47px; }   /* [FIGMA] x783; [ĐO] tiêu đề y12843 */
-    .faq__item:not([open]) .faq__question { padding-bottom: 37px; }
-    .faq__item[open] .faq__question { padding-bottom: 37px; }
-    .faq__item[open] .faq__answer { margin-top: -4px; }
-    .faq__question::after { right: 33px; top: 40px; }   /* [FIGMA] icon x1239 y12840 */
-    .faq__answer { margin-top: -5px; padding: 0 47px 36px 49px; } /* [FIGMA] x785 y12908, w470 */
+    .faq__question { padding: var(--faq-q-pt, 42px) 96px 38px 47px; }   /* [FIGMA] x783; [ĐO] tiêu đề y12843 */
+    .faq__item:not([open]) .faq__question { padding-top: var(--faq-q-pt-closed, var(--faq-q-pt, 42px)); padding-bottom: var(--faq-q-pb, 37px); }
+    .faq__item[open] .faq__question { padding-bottom: var(--faq-q-pb-open, 37px); }
+    .faq__item[open] .faq__answer { margin-top: var(--faq-a-mt-open, -4px); }
+    .faq__question::after { right: var(--faq-icon-r, 33px); top: var(--faq-icon-t, 40px); }   /* [FIGMA] icon x1239 y12840 */
+    .faq__answer { margin-top: -5px; padding: 0 var(--faq-a-pr, 47px) var(--faq-a-pb, 36px) 49px; } /* [FIGMA] x785 y12908, w470 */
+  }
+
+  /* Trang About: một cột 770 canh giữa trên nền tối [FIGMA] */
+  .faq--about { padding-top: 112px; }   /* [ĐO] mobile eyebrow y5244 − chấm 5132 */
+  .faq--about .faq__item { border-color: var(--line-dark); }   /* [FIGMA] #3A3C56 */
+  .faq__extra { display: none; }        /* [FIGMA] câu cuối chỉ có ở khung desktop */
+
+  @media (width < 64rem) {
+    .faq--about .faq__copy { margin-top: 15px; }   /* [ĐO] mobile mô tả y5452 */
+    .faq--about .faq__list { margin-bottom: -1px; } /* [ĐO] mobile khung đáy 6464 */
+  }
+
+  .faq--about .faq__item[open] {
+    margin-bottom: 1px;                 /* [FIGMA] mục mở không chồng viền mục kế (viền tối lộ ra) */
+    border-color: var(--color-white);
+    --tone-strong: var(--text-primary);
+    --tone-muted: var(--text-muted);
+  }
+
+  @media (width >= 64rem) {
+    .faq--about {
+      max-width: calc(770px + 2 * var(--gutter));   /* [FIGMA] cột x335 → 1105 */
+      padding-top: 144px;               /* [ĐO] eyebrow y3996 − chấm đáy 3852 */
+      --faq-q-pt: 40px;                 /* [FIGMA] tiêu đề +41 (viền 1) */
+      --faq-q-pt-closed: 41px;          /* [ĐO] mục đóng: chữ y4573 */
+      --faq-q-pb: 38px;                 /* [FIGMA] mục đóng 770×113 */
+      --faq-q-pb-open: 35px;            /* [ĐO] trả lời y4364 */
+      --faq-a-mt-open: 0px;
+      --faq-a-pb: 35px;                 /* [ĐO] mục mở 272 */
+      --faq-a-pr: 89px;                 /* [ĐO] chữ trả lời rộng ~630, xuống dòng như Figma */
+      --faq-icon-r: 39px;               /* [FIGMA] icon x1033 */
+      --faq-icon-t: 39px;               /* [FIGMA] icon y4296 */
+    }
+    .faq__extra { display: inline; }
+    .faq--about .faq__intro { float: none; width: auto; margin-top: 0; }
+    .faq--about .text-link { display: none; }   /* [FIGMA] desktop không có "Contact Me" */
+    .faq--about .faq__list { margin: 68px 0 0; }   /* [ĐO] khung y4256 − mô tả đáy 4188 */
   }
 }

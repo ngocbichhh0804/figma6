@@ -1,0 +1,17 @@
+/* Dải nền tối của trang About: từ Team tới giữa hộp banner.
+   Nền tối dừng cách đáy hộp banner 96px (mobile) / 128px (desktop) [ĐO],
+   phần còn lại là nền trang. */
+@layer components {
+  .about-band {
+    display: flow-root;                 /* giữ margin của Team bên trong nền tối */
+    margin-top: 97px;                   /* [ĐO] mobile nền tối y3360 − ô số liệu đáy 3263 (khung số liệu dựng cao 527) */
+    background: linear-gradient(var(--surface-dark) calc(100% - 96px), var(--surface-page) 0);   /* [ĐO] tối tới y7568, hộp đáy 7664 */
+  }
+
+  @media (width >= 64rem) {
+    .about-band {
+      margin-top: 128px;                /* [ĐO] nền tối y2256 − ô số liệu đáy 2128 */
+      background-image: linear-gradient(var(--surface-dark) calc(100% - 128px), var(--surface-page) 0);   /* [ĐO] tối tới y5568, hộp đáy 5696 */
+    }
+  }
+}

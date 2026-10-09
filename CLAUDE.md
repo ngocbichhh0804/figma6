@@ -30,6 +30,8 @@ tiếng Anh trước khi bàn giao.
   ID để style.
 - **Pixel-perfect**: mỗi trang render đúng khổ khung Figma; đối chiếu bằng
   overlay + script so pixel. Đã chốt số đo thì không đổi.
+- `css/fonts.css` có `ascent-/descent-override` dời baseline Epilogue xuống
+  1.25% em cho khớp Figma — đổi số này là lệch chữ toàn site.
 - Font thương mại → thay bằng font OFL, tự lưu `.woff2` trong `assets/fonts/`
   (không gọi Google Fonts).
 
@@ -45,16 +47,23 @@ assets/fonts|icon|img/
 dev/pages.json           danh sách trang (nguồn sinh overlay)
 dev/*-overlay.html       đè ảnh Figma lên bản code (Code / 50% / Figma / Slider)
                          home = desktop 1440, home-mobile = mobile 375 (cùng index.html)
+                         about / about-mobile (cùng about.html)
 docs/comparison/<slug>/  <slug>-figma.png, -build, -side-by-side, -overlay, -difference
 ```
 
 ## Trạng thái các trang
 
 - **Homepage** (`index.html`): xong cả 2 khung — desktop `1_Home_Agency_1440`
-  (1440 × 17296, 98.8 % pixel lệch ≤ 30, mọi phần tử ≤ 2px) và mobile `1_Home_Agency_375`
-  (375 × 27360, 96.5 %). Overlay: `dev/home-overlay.html`,
+  (1440 × 17296, 98.9 % pixel lệch ≤ 30, mọi phần tử ≤ 2px) và mobile `1_Home_Agency_375`
+  (375 × 27360, 98.0 %). Overlay: `dev/home-overlay.html`,
   `dev/home-mobile-overlay.html`. Thông số: `docs/comparison/home/spec*.md`.
   Mobile là CSS mặc định; `64rem` bố cục desktop; `90rem` minh hoạ dựng mảnh.
+- **About** (`about.html`): xong cả 2 khung — `2_About_Agency_1440` (1440 × 6160,
+  99.1 % pixel lệch ≤ 30) và `2_About_Agency_375` (375 × 8640, 97.6 %).
+  Component mới: `page-hero`, `intro`, `gallery`, `reviews`, `about-band`;
+  component Home dùng lại qua modifier `--about`/`--dark` hoặc biến cục bộ
+  (`--faq-*`, `--banner-*`). Thông số: `docs/comparison/about/spec.md`.
+  Chụp khổ < 500px phải qua iframe (Chrome headless không thu nhỏ hơn 500).
 
 ## Chạy thử
 

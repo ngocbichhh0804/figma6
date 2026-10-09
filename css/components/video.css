@@ -43,4 +43,25 @@
   @media (width >= 64rem) {
     .video__time { left: 21px; bottom: 20px; font-size: 15.5px; }  /* [ĐO] chữ 1:45 */
   }
+
+  /* Trang About: ảnh 570×448, tam giác 22×32, nhãn giờ 47×34 [FIGMA] */
+  .video--about .video__play { border-color: rgb(255 255 255 / 0.5038); }   /* [FIGMA] viền trắng 50.38% */
+  .video--about .video__play::after {
+    left: 66px;                         /* [ĐO] phần trắng x413 (vòng 346 + viền 1) */
+    top: 58px;                          /* [ĐO] phần trắng y1106 → 1133 */
+    border-left-width: 20px;            /* [ĐO] phần trắng thấy được 19×25 (Figma bo góc 2) */
+    border-top-width: 14px;
+    border-bottom-width: 14px;
+  }
+  .video--about .video__time {
+    left: 16px;                         /* [ĐO] mobile nhãn x39 */
+    bottom: 13px;
+    padding: 1px 9px;                   /* [FIGMA] khung 47×34, chữ +9,+2 */
+    font-size: var(--body-size);        /* [FIGMA] Text 16/32 trắng */
+    line-height: var(--body-lh);
+  }
+
+  @media (width >= 64rem) {
+    .video--about .video__time { left: 24px; bottom: 21px; }   /* [FIGMA] khung 159,1288; [ĐO] chữ y1298 */
+  }
 }

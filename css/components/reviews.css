@@ -1,0 +1,82 @@
+/* Testimonials dạng carousel trên nền tối (trang About).
+   Dùng lại phần tử .review__* của testimonials.css. Thẻ giữa trắng 770×400;
+   desktop có 2 thẻ hai bên mờ 24.29% [FIGMA] — chỉ trang trí, không JS.
+   Mobile: một thẻ tràn hết bề ngang 375 [ĐO]. */
+@layer components {
+  .reviews {
+    padding-top: 145px;                 /* [ĐO] mobile eyebrow y4268 − đáy dòng chấm team 4123 */
+    text-align: center;
+  }
+
+  .reviews__title {
+    margin-top: 17px;                   /* [ĐO] mobile H3 */
+    font-size: var(--h3-size);          /* [ĐO] mobile H3 40/48 */
+    line-height: var(--h3-lh);
+    letter-spacing: 0;
+  }
+
+  .reviews__list {
+    position: relative;
+    margin: 35px calc(-1 * var(--gutter)) 0;   /* [ĐO] mobile thẻ y4448, tràn hết bề ngang */
+    text-align: left;
+  }
+
+  .reviews__card {
+    width: auto;
+    padding: 47px 50px;                 /* [ĐO] mobile sao x52 y+48 (viền 1) */
+    background-color: var(--color-white);
+    --tone-strong: var(--text-primary);
+    --tone-muted: var(--text-muted);
+  }
+  .reviews__card:first-child { border-radius: var(--radius); }
+
+  .reviews__card--prev,
+  .reviews__card--next { display: none; }
+
+  .reviews__dots {
+    margin-top: 48px;                   /* [ĐO] mobile chấm y5120 − thẻ đáy 5072 */
+    font-size: 0;
+    line-height: 0;                     /* dòng cao đúng 12px của chấm */
+  }
+  .reviews__dot {
+    display: inline-block;
+    width: 12px;                        /* [FIGMA] Oval 12, viền #4E4F6E */
+    height: 12px;
+    border: 1px solid #4e4f6e;
+    border-radius: 50%;
+  }
+  .reviews__dot + .reviews__dot { margin-left: 20px; }   /* [FIGMA] bước 32 */
+  .reviews__dot--on { border-color: var(--accent); background-color: var(--accent); }
+
+  @media (width >= 64rem) {
+    .reviews { padding-top: 96px; }     /* [ĐO] eyebrow y3132 − đáy dòng chấm team 3036 */
+    .reviews__title {
+      margin-top: 21px;                 /* [ĐO] H2 chữ y3188 */
+      font-size: var(--h2-size);
+      line-height: var(--h2-lh);
+      letter-spacing: var(--h2-ls);
+    }
+
+    .reviews__list { height: 400px; margin: 63px 0 0; }   /* [ĐO] thẻ y3376, 770×400 */
+
+    .reviews__card {
+      width: 770px;                     /* [FIGMA] */
+      max-width: 100%;
+      margin-inline: auto;
+      padding: 47px;                    /* [FIGMA] nội dung +48 (viền 1) */
+    }
+
+    .reviews__card--prev,
+    .reviews__card--next {
+      display: block;
+      position: absolute;
+      top: 0;
+      opacity: 0.2429;                  /* [FIGMA] block opacity 24.29% */
+    }
+    .reviews__card--next { left: calc(50% + 385px); }    /* [FIGMA] x1105 */
+    .reviews__card--prev { right: calc(50% + 384px); }   /* [FIGMA] x−434 → 336 */
+
+    .reviews__dots { margin-top: 64px; }  /* [ĐO] chấm y3840 − thẻ đáy 3776 */
+    .reviews__dot--m { display: none; }   /* [FIGMA] desktop 3 chấm, mobile 5 */
+  }
+}

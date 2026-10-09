@@ -31,4 +31,21 @@
     .logos__item--4 { left: 69.4%;  top: 86px; }  /* x947  y966 */
     .logos__item--5 { left: auto; right: 0; top: 87px; }  /* x1179 y967, sát mép phải */
   }
+
+  /* Trên nền tối (trang About): ảnh logo tô lại màu #5E6080 [ĐO]
+     (assets/img/logo-*-dark.png, cùng kênh alpha với logo gốc). */
+  .logos--dark { padding-top: 71px; }   /* [ĐO] mobile logo đầu y6583 − 47 − FAQ đáy 6465 */
+  .logos--dark .logos__list { border-bottom: 0; }
+
+  @media (width < 64rem) {
+    /* [ĐO] locate trên 2_About_Agency_375 (top tính từ 6536) — hàng thưa hơn trang Home */
+    .logos--dark .logos__item--1 { left: 1.82%; top: 47px; }    /* x29  y6583 */
+    .logos--dark .logos__item--3 { left: 6.08%; top: 133px; }   /* x43  y6669 */
+    .logos--dark .logos__item--4 { top: 146px; }                /* x229 y6682 */
+    .logos--dark .logos__item--5 { top: 238px; }                /* x125 y6774 */
+  }
+
+  @media (width >= 64rem) {
+    .logos--dark { padding-top: 44px; } /* [ĐO] logo y4982 − 73 − FAQ đáy 4865 */
+  }
 }

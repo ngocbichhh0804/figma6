@@ -1,0 +1,31 @@
+/* Hero trang con (About…): header + tiêu đề H1 canh giữa + một dòng mô tả,
+   trên nền tối cao 400px ở cả 2 khung [ĐO]. */
+@layer components {
+  .page-top { height: 400px; }          /* [ĐO] nền tối 0 → 400 (mobile + desktop) */
+
+  .page-hero {
+    padding-top: 65px;                  /* [ĐO] mobile: chữ "About Us" y148 */
+    text-align: center;
+  }
+
+  .page-hero__title {
+    font-size: clamp(44px, 14.94vw, var(--h2-size));   /* [ĐO] mobile H2 56/64; co lại dưới 375 */
+    line-height: var(--h2-lh);
+    letter-spacing: var(--h2-ls);
+  }
+
+  .page-hero__copy {
+    max-width: 570px;                   /* [FIGMA] 570 */
+    margin: 11px auto 0;                /* [ĐO] mobile: chữ y227 */
+  }
+
+  @media (width >= 64rem) {
+    .page-hero { padding-top: 84px; }   /* [FIGMA] H1 y164 − header 80 */
+    .page-hero__title {
+      font-size: var(--h1-size);        /* [FIGMA] H1 800 72/80 −2 */
+      line-height: var(--h1-lh);
+      letter-spacing: var(--h1-ls);
+    }
+    .page-hero__copy { margin-top: 24px; }   /* [FIGMA] y268 = 164 + 80 + 24 */
+  }
+}

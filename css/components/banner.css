@@ -29,8 +29,8 @@
   @media (width >= 64rem) {
     .banner { padding-top: 130px; }     /* [FIGMA] hộp y16290 */
     .banner__box {
-      height: 542px;                    /* [FIGMA] 1170×542 */
-      padding: 94px 0 0 100px;          /* [FIGMA] H2 y16384, x235 */
+      height: var(--banner-box-h, 542px);   /* [FIGMA] 1170×542 */
+      padding: var(--banner-pad-top, 94px) 0 0 100px;   /* [FIGMA] H2 y16384, x235 */
     }
     .banner__title {
       max-width: 420px;
@@ -47,6 +47,17 @@
   @media (width >= 90rem) {
     .banner__art { left: 0; right: auto; top: 0; width: 100%; height: 100%; }
     .banner__art-mobile { display: none; }
-    .banner__art > .art__desk { left: 670px; top: 55px; }   /* [ĐO] ảnh cắt 805,16345 − hộp 135,16290 */
+    .banner__art > .art__desk { left: var(--banner-art-x, 670px); top: var(--banner-art-y, 55px); }   /* [ĐO] ảnh cắt 805,16345 − hộp 135,16290 */
+  }
+
+  /* Trang About: hộp nằm vắt qua mép nền tối (xem about-band.css) */
+  .banner--about { padding-top: 119px; }   /* [ĐO] mobile hộp y6928 − logo khung đáy 6809 */
+
+  @media (width >= 64rem) {
+    .banner--about { padding-top: 50px; --banner-box-h: 544px; --banner-pad-top: 96px; }   /* [ĐO] hộp y5152, 1170×544; H2 y5248 */
+  }
+
+  @media (width >= 90rem) {
+    .banner--about { --banner-art-x: 640px; --banner-art-y: 58px; }   /* [ĐO] ảnh 775,5210 − hộp 135,5152 */
   }
 }

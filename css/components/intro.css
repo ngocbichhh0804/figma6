@@ -1,0 +1,37 @@
+/* Khối giới thiệu: eyebrow + H2 bên trái, hai đoạn văn bên phải (desktop).
+   Mobile xếp dọc. Không flex/grid: hai cột float. */
+@layer components {
+  .intro { padding-top: 76px; }         /* [ĐO] eyebrow y476 − nền tối 400 (cả 2 khung) */
+
+  .intro__title {
+    margin-top: 17px;                   /* [ĐO] mobile H3 */
+    font-size: var(--h3-size);          /* [ĐO] mobile H3 40/48 */
+    line-height: var(--h3-lh);
+    letter-spacing: 0;
+  }
+
+  .intro__body { margin-top: 31px; }    /* [ĐO] mobile: đoạn 1 y652 */
+  .intro__body > p + p { margin-top: 32px; }   /* [ĐO] khoảng giữa 2 đoạn (cả 2 khung) */
+
+  @media (width >= 64rem) {
+    .intro > .eyebrow,
+    .intro__title {
+      float: left;
+      clear: left;
+      width: 48.72%;                    /* [FIGMA] 570 / 1170 */
+    }
+    .intro__title {
+      max-width: 440px;                 /* [FIGMA] w417, xuống dòng sau "Experience" */
+      margin-top: 20px;                 /* [FIGMA] H2 y528 */
+      font-size: var(--h2-size);        /* [FIGMA] H2 56/64 −1 */
+      line-height: var(--h2-lh);
+      letter-spacing: var(--h2-ls);
+    }
+
+    .intro__body {
+      float: right;
+      width: 48.72%;                    /* [FIGMA] 570, x735 */
+      margin-top: 48px;                 /* [ĐO] đoạn 1 y556 = mép ngoài H2 508 + 48 (float không lên cao hơn float trước) */
+    }
+  }
+}

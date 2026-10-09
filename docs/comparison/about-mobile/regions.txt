@@ -1,0 +1,35 @@
+nav-logo        20,10,200,70 light thr=90
+nav-toggle      280,10,360,70 light thr=60
+hero-title      40,140,340,200 light thr=150
+hero-copy       30,220,345,315 rows light thr=120
+about-eyebrow   20,476,120,508 thr=200
+about-title     20,520,340,625 rows
+about-text      20,650,355,1000 rows thr=160
+video           23,1087,352,1346 thr=250
+video-play      170,1195,210,1240 light thr=235
+video-time      40,1300,90,1325 light thr=200
+photos          23,1363,352,1620 thr=250
+feat-eyebrow    20,1708,130,1740 thr=200
+feat-lead       20,1770,330,1860 rows
+feat-copy       20,1885,345,2005 rows thr=160
+cards           23,2048,352,2655 thr=250
+stats           60,2770,300,3240 rows
+team-eyebrow    20,3468,130,3500 light thr=100
+team-title      20,3510,350,3660 rows light thr=150
+team-names      20,3990,375,4055 rows light thr=150
+team-dots       90,4090,290,4112 light thr=60
+rev-eyebrow     100,4268,280,4300 light thr=100
+rev-title       30,4310,345,4415 rows light thr=150
+rev-card        40,4490,340,5030 rows thr=200
+rev-dots        100,5115,280,5137 light thr=60
+faq-eyebrow     20,5244,80,5276 light thr=100
+faq-title       20,5290,300,5440 rows light thr=150
+faq-copy        20,5450,350,5550 rows light thr=120
+faq-link        20,5580,130,5610 light thr=150
+faq-list        23,5648,352,6465 thr=250
+logos           20,6575,340,6805 light thr=70
+banner-art      45,6955,330,7230 thr=250
+banner-title    45,7255,330,7410 rows light thr=200
+banner-button   45,7565,215,7620 thr=200
+footer          20,7770,355,8360 rows thr=150
+footer-bottom   20,8410,355,8590 rows thr=150

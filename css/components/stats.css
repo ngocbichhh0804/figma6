@@ -36,4 +36,10 @@
     }
     .stats__item + .stats__item { border-top: 0; border-left: 1px solid var(--line); }
   }
+
+  .stats--about { margin-top: 81px; }   /* [ĐO] mobile ô y2736 − thẻ đáy 2655 */
+
+  @media (width >= 64rem) {
+    .stats--about { margin-top: 144px; }  /* [FIGMA] ô y1952 − thẻ đáy 1808 */
+  }
 }

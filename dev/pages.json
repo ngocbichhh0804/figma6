@@ -1,7 +1,33 @@
 {
   "name": "Figma6",
   "pages": [
-    { "slug": "home", "label": "1_Home_Agency_1440", "file": "index.html", "w": 1440, "h": 17296 },
-    { "slug": "home-mobile", "label": "1_Home_Agency_375", "file": "index.html", "w": 375, "h": 27360 }
+    {
+      "slug": "home",
+      "label": "1_Home_Agency_1440",
+      "file": "index.html",
+      "w": 1440,
+      "h": 17296
+    },
+    {
+      "slug": "home-mobile",
+      "label": "1_Home_Agency_375",
+      "file": "index.html",
+      "w": 375,
+      "h": 27360
+    },
+    {
+      "slug": "about",
+      "label": "2_About_Agency_1440",
+      "file": "about.html",
+      "w": 1440,
+      "h": 6160
+    },
+    {
+      "slug": "about-mobile",
+      "label": "2_About_Agency_375",
+      "file": "about.html",
+      "w": 375,
+      "h": 8640
+    }
   ]
 }
