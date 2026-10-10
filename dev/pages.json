@@ -56,6 +56,20 @@
       "file": "portfolio.html",
       "w": 375,
       "h": 4656
+    },
+    {
+      "slug": "single-project",
+      "label": "5_Single_Project_1440",
+      "file": "single-project.html",
+      "w": 1440,
+      "h": 4848
+    },
+    {
+      "slug": "single-project-mobile",
+      "label": "5_Single_Project_375",
+      "file": "single-project.html",
+      "w": 375,
+      "h": 6096
     }
   ]
 }

@@ -50,6 +50,7 @@ dev/*-overlay.html       đè ảnh Figma lên bản code (Code / 50% / Figma / 
                          about / about-mobile (cùng about.html)
                          services / services-mobile (cùng services.html)
                          portfolio / portfolio-mobile (cùng portfolio.html)
+                         single-project / single-project-mobile (cùng single-project.html)
 docs/comparison/<slug>/  <slug>-figma.png, -build, -side-by-side, -overlay, -difference
 ```
 
@@ -76,6 +77,12 @@ docs/comparison/<slug>/  <slug>-figma.png, -build, -side-by-side, -overlay, -dif
   thẻ mobile, desktop đổi chỗ bằng `work--swap-*`). Component mới: `pagination`; dùng lại
   `portfolio` (`--page`, `work--full/--half`), `banner`, `site-footer` (`--portfolio`).
   Thông số: `docs/comparison/portfolio/spec.md`.
+- **Single Project** (`single-project.html`): xong cả 2 khung — `5_Single_Project_1440`
+  (1440 × 4848, 99.4 % pixel lệch ≤ 30) và `5_Single_Project_375` (375 × 6096, 98.0 %).
+  Component mới: `project` (đầu trang, ảnh bìa, Problem/Solution, chia sẻ), `related`
+  (dùng lại `.work`); dùng lại `gallery` + `video--about`/`--project`, `banner--portfolio`
+  + `banner--project`, `site-footer--portfolio`. Ảnh `project-*.png` tạm cắt từ export
+  (chờ ảnh gốc). Thông số: `docs/comparison/single-project/spec.md`.
 
 ## Chạy thử
 

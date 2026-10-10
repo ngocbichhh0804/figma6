@@ -1,0 +1,28 @@
+/* "Related Projects": đường kẻ, tiêu đề H4, 2 thẻ dự án (dùng lại .work của
+   portfolio.css). Desktop 2 thẻ 570×416 khe 30; mobile 2 thẻ 329×416 xếp dọc
+   [FIGMA]. Thẻ thứ 2 khác nhau giữa 2 khung nên mỗi khổ hiện một thẻ. */
+@layer components {
+  .related { margin-top: 64px; }        /* [FIGMA] kẻ y3264 / y3120 − hàng chia sẻ đáy 3200 / 3056 */
+
+  .related__title {
+    padding-top: 72px;                  /* [FIGMA] H4 y3337 / y3193 − kẻ 3265 / 3121 */
+    border-top: 1px solid var(--line);  /* [FIGMA] 1170 / 329 × 1, #F3D1BF */
+  }
+
+  .related__grid { margin-top: 39px; }  /* [FIGMA] thẻ y3408 / y3264 − H4 đáy 3369 / 3225 */
+  .related__grid::after { content: ""; display: table; clear: both; }
+
+  .related__link { color: inherit; }
+  .related__link::after { content: ""; position: absolute; inset: 0; }   /* cả thẻ bấm được */
+  .related__link:focus-visible { outline: 0; }
+  .work:has(.related__link:focus-visible) { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .related__item--desktop { display: none; }
+
+  @media (width >= 64rem) {
+    .related__item--desktop { display: block; }
+    .related__item--mobile { display: none; }
+    .related .work { margin-bottom: 0; }
+    .related .work__img { object-position: center; }   /* [ĐO] ảnh phủ kín 570, cắt giữa (như trang Portfolio) */
+  }
+}

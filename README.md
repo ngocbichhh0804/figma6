@@ -15,6 +15,10 @@ bước build, **không JavaScript**.
 | About — mobile (`2_About_Agency_375`) | 375 × 8640 | 3.6 | 97.6 % | ≤ 60: 98.5 %; 57/107 vùng khớp 0px, còn lại ≤ 1px (riêng tam giác play 3px) |
 | Services — desktop (`3_Services_1440`) | 1440 × 3664 | 1.4 | 99.0 % | ≤ 60: 99.4 %; 47/77 vùng khớp 0px, còn lại ≤ 1px (khử răng cưa chữ) |
 | Services — mobile (`3_Services_375`) | 375 × 5152 | 2.8 | 97.6 % | ≤ 60: 98.7 %; 54/93 vùng khớp 0px, còn lại ≤ 1px (riêng dòng copyright lệch ngang 2px) |
+| Portfolio — desktop (`4_Portfolio_1_1440`) | 1440 × 3440 | 0.8 | 99.6 % | ≤ 60: 99.7 %; mọi khối lệch 0–1px |
+| Portfolio — mobile (`4_Portfolio_1_375`) | 375 × 4656 | 2.2 | 98.6 % | mọi khối lệch 0–1px |
+| Single Project — desktop (`5_Single_Project_1440`) | 1440 × 4848 | 0.7 | 99.4 % | ≤ 60: 99.7 %; 31/61 vùng khớp 0px, còn lại ≤ 1px (riêng 1 dòng Solution lệch ngang 3px) |
+| Single Project — mobile (`5_Single_Project_375`) | 375 × 6096 | 2.3 | 98.0 % | ≤ 60: 99.0 %; mọi khối lệch 0–1px (copyright khớp 0px nhờ `site-footer--project`) |
 
 Cả hai khung dùng chung **một** file `index.html`; mobile là CSS mặc định,
 desktop bật từ `64rem`, các mảnh minh hoạ dựng rời bật từ `90rem` (1440).
@@ -85,6 +89,32 @@ Một file cho cả hai khung. Dùng lại header, `page-hero`, `intro`, `steps`
 - Ảnh đối chiếu: `docs/comparison/portfolio/`, `docs/comparison/portfolio-mobile/`.
   Overlay: `dev/portfolio-overlay.html`, `dev/portfolio-mobile-overlay.html`.
 
+### Single Project (`single-project.html`)
+
+- Khung `5_Single_Project_1440` (1440 × 4848): sai lệch TB **0.7/765**, **99.4 %**
+  pixel lệch ≤ 30 (99.7 % ≤ 60). `regions.py`: 31/61 vùng khớp 0px, còn lại 1px
+  (mép trên chữ xám 64% do khác engine khử răng cưa). Dòng 2 đoạn Solution lệch
+  ngang 3px: Figma có khoảng trắng ở đầu dòng " long run" mà trình duyệt bỏ đi.
+- Khung `5_Single_Project_375` (375 × 6096): TB 2.3/765, **98.0 %** ≤ 30, mọi dòng
+  khớp vị trí 0–1px. Ảnh dùng chung bản desktop thu nhỏ nên lệch màu nhiều hơn.
+- Một file cho cả hai khung. Component mới: `project` (đầu trang, ảnh bìa,
+  Problem/Solution, hàng chia sẻ) và `related` (dùng lại thẻ `.work` của
+  portfolio). Dùng lại `gallery` + `video--about` của About (thêm `video--project`
+  cho tam giác play lớn hơn), banner qua `banner--portfolio banner--project` (chỉ
+  khác khoảng trên ở desktop: 160px), footer `site-footer--portfolio` + `site-footer--project` (mobile: dời chữ copyright và "Agency" 1px cho khớp Figma).
+- **Thẻ liên quan thứ 2 khác nhau giữa 2 khung** (desktop "Work Media", mobile
+  "KeyBoard") → HTML có cả hai thẻ, mỗi khổ hiện một (`related__item--desktop/--mobile`).
+- **Ảnh của trang chưa được export** → tạm cắt 1:1 từ ảnh export desktop:
+  `project-hero.png` (1170×720), `project-video.png` (570×448, xoá vòng play,
+  tam giác, nhãn 2:14 bằng nội suy để CSS vẽ lại), `project-photo-1…4.png`
+  (270×208). Mobile dùng chính các ảnh này thu nhỏ. **Cần ảnh gốc.**
+- **Icon tách từ ảnh export**: mũi tên `assets/icon/arrow-back.png` (15×10),
+  Pinterest `assets/icon/pinterest.png` (12×16). Logo Vortex nâu
+  `logo-vortex-tan.png` = logo gốc tô lại màu #BD8E74 [ĐO].
+- Ngắt dòng "…long run," ở đoạn Solution chỉ áp dụng khổ < 400px (khớp khung 375).
+- Ảnh đối chiếu: `docs/comparison/single-project/`, `docs/comparison/single-project-mobile/`.
+  Overlay: `dev/single-project-overlay.html`, `dev/single-project-mobile-overlay.html`.
+
 ## Không flexbox, không grid
 
 Bố cục dựng bằng kỹ thuật trước thời flexbox: `float` + `calc()`, `flow-root`,
@@ -124,6 +154,13 @@ tốt nhất, 1.75% trở lên làm lệch ngược lại.
 
 ## Responsive
 
+Single Project: 17 khổ 320 → 2560 + điện thoại xoay ngang 568/667/844 × 320:
+không khổ nào cuộn ngang. Khổ 320/360 kiểm thêm bằng iframe. Cảnh báo "chữ bị
+cắt" ở tag dự án như Portfolio (có chủ ý). Link "Back to portfolio" cao 12px →
+thêm vùng chạm 44px trong `@media (pointer: coarse)`. Khổ tablet (48–64rem) giữ
+cột chữ ≤ 570px `[ƯỚC]`. Sửa kèm banner dùng chung: dưới 375 ảnh minh hoạ co lại
+cho khỏi lòi ra ngoài hộp (375 trở lên không đổi pixel nào — đã so lại 4 trang cũ).
+
 Portfolio: 17 khổ 320 → 2560 + điện thoại xoay ngang 568/667/844 × 320: không
 khổ nào cuộn ngang. Cảnh báo "chữ bị cắt" ở tag dự án là có chủ ý (pill 38px,
 line-height 42px để hạ chữ 2px như Figma — giống trang chủ). Cùng breakpoint.
@@ -150,5 +187,8 @@ nhận vì các vùng bấm cách nhau ≥ 24px.
   (bản @2x), logo bản trên nền tối.
 - Trang Portfolio: ảnh gốc HandP (570×416 hoặc lớn hơn) và bản lớn của ảnh
   KeyBoard (≥ 1170×720).
+- Trang Single Project: ảnh gốc ảnh bìa (1170×720), video (570×448, không có nút
+  play), 4 ảnh 270×208 (nên kèm @2x); SVG mũi tên "Back to portfolio" và icon
+  Pinterest; logo Vortex bản màu nâu.
 - `assets/img/Portfolio Template (Community).zip` và vài ảnh export trùng
   không dùng tới — chờ chị xác nhận trước khi xoá/đổi tên sang kebab-case.

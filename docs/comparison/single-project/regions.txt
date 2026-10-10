@@ -1,0 +1,40 @@
+nav-logo        130,10,300,70 light thr=90
+nav-links       440,25,1000,60 light thr=150
+nav-contact     1160,10,1310,70 light thr=150
+back-arrow      430,112,455,134
+back-label      460,112,600,134
+title           430,175,880,345 rows
+lead            430,360,1010,430 rows
+copy            430,458,1010,556 rows thr=150
+cat-head        430,620,560,652
+cat-list        430,668,600,828 rows
+client-head     730,620,820,652
+client-logo     730,668,850,708 thr=200
+date-head       730,748,800,780
+date-value      730,794,830,826
+cover           135,896,1305,1616 thr=230
+problem-title   430,1690,620,1745
+problem-body    430,1770,1010,2000 rows thr=150
+video-ring      340,2208,500,2368 light thr=235
+video-time      155,2452,210,2492 light thr=230
+photo-1         735,2064,1005,2272 thr=230
+photo-4         1035,2304,1305,2512 thr=230
+solution-title  430,2585,620,2640
+solution-body   430,2665,1010,2895 rows thr=150
+share-label     680,2958,760,2986 thr=150
+share-icons     636,3004,804,3060 thr=230
+divider         135,3115,1305,3125 thr=245
+related-title   130,3190,350,3228
+sofa-tag        170,3510,290,3565 light thr=240
+sofa-name       170,3575,400,3635 light thr=245
+wm-tag          770,3510,920,3565 light thr=240
+wm-name         770,3575,1040,3635 light thr=245
+banner-title    230,3930,620,4130 light thr=245
+banner-copy     230,4150,720,4225 light thr=200
+banner-button   230,4250,400,4310 thr=200
+footer-brand    130,4465,240,4510
+footer-menu     430,4465,520,4650
+footer-service  730,4465,860,4650
+footer-social   1140,4460,1310,4515 thr=230
+footer-copy     130,4765,500,4795
+footer-legal    1020,4765,1310,4795

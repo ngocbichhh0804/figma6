@@ -24,6 +24,7 @@
     left: 29px;                         /* [FIGMA] ảnh gộp 273×264 tại 52,25632 */
     top: 32px;
     width: 273px;
+    max-width: calc(100% - 56px);       /* [ƯỚC] < 375: ảnh co lại, không lòi ra ngoài hộp */
   }
 
   @media (width >= 64rem) {
@@ -41,7 +42,7 @@
     .banner__copy { margin-top: 28px; max-width: 470px; }   /* [ĐO] y16604 */
     .banner__body > .button { margin-top: 36px; }           /* [ĐO] y16702 */
 
-    .banner__art { left: auto; right: 48px; top: 139px; width: 273px; }   /* [ƯỚC] 1024–1439: ảnh gộp */
+    .banner__art { left: auto; right: 48px; top: 139px; width: 273px; max-width: none; }   /* [ƯỚC] 1024–1439: ảnh gộp */
   }
 
   @media (width >= 90rem) {
@@ -62,6 +63,7 @@
   @media (width >= 64rem) {
     .banner--about { padding-top: 50px; }   /* [ĐO] hộp y5152 */
     .banner--services { padding-top: 141px; }   /* [ĐO] hộp y2656 (danh sách bước kéo lên 1px, xem steps.css) */
+    .banner--project { padding-top: 160px; }    /* [FIGMA] Single Project: hộp y3840 − thẻ liên quan đáy 3680 (mobile như Portfolio: 112) */
     .banner--about,
     .banner--services,
     .banner--portfolio { --banner-box-h: 544px; --banner-pad-top: 96px; }   /* [ĐO] About 1170×544, H2 y5248; [FIGMA] Services 1170×544, H2 y2752 */

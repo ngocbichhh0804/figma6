@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Work Media Project — Agency</title>
+    <meta name="description" content="Work Media Project: art direction, user interface, branding strategy, print design and 3D render for Vortex." />
+
+    <!-- Thứ tự layer khai báo một lần; nhờ vậy không cần !important. -->
+    <style>
+      @layer reset, tokens, base, layout, components, utilities;
+    </style>
+
+    <link rel="preload" href="assets/fonts/epilogue-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components/text.css" />
+    <link rel="stylesheet" href="css/components/button.css" />
+    <link rel="stylesheet" href="css/components/site-header.css" />
+    <link rel="stylesheet" href="css/components/video.css" />
+    <link rel="stylesheet" href="css/components/gallery.css" />
+    <link rel="stylesheet" href="css/components/project.css" />
+    <link rel="stylesheet" href="css/components/portfolio.css" />
+    <link rel="stylesheet" href="css/components/related.css" />
+    <link rel="stylesheet" href="css/components/art.css" />
+    <link rel="stylesheet" href="css/components/banner.css" />
+    <link rel="stylesheet" href="css/components/site-footer.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+  </head>
+
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <!-- Khung Figma "5_Single_Project_1440" 1440 × 4848 và "5_Single_Project_375" 375 × 6096 -->
+    <div class="page page--project">
+
+      <!-- ================= HEADER (nền tối 80px) ================= -->
+      <div class="section--dark">
+        <header class="site-header container">
+          <a class="site-header__brand" href="index.html" aria-label="Agency — home">
+            <span class="site-header__logo"><img src="assets/icon/Polygon.png" width="46" height="44" alt="" /><img class="site-header__core" src="assets/icon/Polygon (1).png" width="19" height="18" alt="" /></span>
+            <span class="site-header__name">Agency</span>
+          </a>
+
+          <!-- Mobile: menu thu gọn bằng checkbox + label, không JS -->
+          <input class="site-header__switch visually-hidden" type="checkbox" id="menu-switch" />
+          <label class="site-header__toggle" for="menu-switch">
+            <span class="visually-hidden">Menu</span>
+            <span class="site-header__bars" aria-hidden="true"></span>
+          </label>
+          <nav class="site-header__nav" aria-label="Main">
+            <ul class="site-header__list" role="list">
+              <li><a class="site-header__link" href="about.html">About</a></li>
+              <li><a class="site-header__link" href="services.html">Services</a></li>
+              <li><a class="site-header__link" href="index.html#pricing">Pricing</a></li>
+              <li><a class="site-header__link" href="index.html#blog">Blog</a></li>
+            </ul>
+            <a class="button button--outline site-header__cta" href="index.html#contact">Contact</a>
+          </nav>
+        </header>
+      </div>
+
+      <main id="main">
+        <article class="project" aria-labelledby="page-title">
+          <!-- ================= TIÊU ĐỀ + THÔNG TIN DỰ ÁN ================= -->
+          <header class="project-head container">
+            <a class="project-head__back" href="portfolio.html">Back to portfolio</a>
+            <h1 class="title project-head__title" id="page-title">Work Media<br /> Project</h1>
+            <p class="lead project-head__lead">Agency provides a full service range including technical skills, design, business understanding.</p>
+            <p class="copy project-head__copy">Outsource your digital marketing efforts, instead of handling in-house. They can provide your business with a variety of digital solutions to promote your product or service online and help you.</p>
+
+            <dl class="project-head__meta">
+              <div class="project-head__group project-head__group--category">
+                <dt class="eyebrow">Category</dt>
+                <dd>
+                  <ul class="project-head__list" role="list">
+                    <li>Art Direction</li>
+                    <li>User Interface</li>
+                    <li>Branding Strategy</li>
+                    <li>Print Design</li>
+                    <li>3D Render</li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="project-head__group project-head__group--client">
+                <dt class="eyebrow">Client</dt>
+                <dd><img class="project-head__logo" src="assets/img/logo-vortex-tan.png" width="108" height="32" alt="Vortex" /></dd>
+              </div>
+              <div class="project-head__group project-head__group--date">
+                <dt class="eyebrow">Date</dt>
+                <dd class="lead project-head__date"><time datetime="2021-12">Dec 2021</time></dd>
+              </div>
+            </dl>
+          </header>
+
+          <figure class="project__cover container">
+            <img src="assets/img/project-hero.png" width="1170" height="720" alt="Three cream round podiums stacked in front of an arched doorway" />
+          </figure>
+
+          <!-- ================= PROBLEM ================= -->
+          <section class="project__text project__text--problem container" aria-labelledby="problem-title">
+            <h2 class="title title--h3" id="problem-title">Problem</h2>
+            <div class="project__body">
+              <p class="copy">Ability to put themselves in the merchant's shoes. It is meant to partner on the long run, and work as an extension of the merchant's team.</p>
+              <p class="copy">A digital agency is a business you hire to outsource your digital marketing efforts, instead of handling in-house. They can provide your business with a variety of digital solutions to promote your product or service online and help you.</p>
+            </div>
+          </section>
+
+          <!-- ================= VIDEO + ẢNH (dùng lại gallery của About) ================= -->
+          <section class="gallery gallery--project container" aria-label="Project gallery">
+            <a class="video video--about video--project gallery__video" href="#video" aria-label="Play project video, 2 minutes 14 seconds">
+              <img class="video__poster" src="assets/img/project-video.png" width="570" height="448" alt="" />
+              <span class="video__play" aria-hidden="true"></span>
+              <span class="video__time" aria-hidden="true">2:14</span>
+            </a>
+            <ul class="gallery__list" role="list">
+              <li class="gallery__item"><img src="assets/img/project-photo-1.png" width="270" height="208" alt="Glossy white wave shape" /></li>
+              <li class="gallery__item"><img src="assets/img/project-photo-2.png" width="270" height="208" alt="Red and black tiles between white blocks" /></li>
+              <li class="gallery__item"><img src="assets/img/project-photo-3.png" width="270" height="208" alt="Silver ball on a curved grey surface" /></li>
+              <li class="gallery__item"><img src="assets/img/project-photo-4.png" width="270" height="208" alt="Pink vase beside purple columns" /></li>
+            </ul>
+          </section>
+
+          <!-- ================= SOLUTION ================= -->
+          <section class="project__text project__text--solution container" aria-labelledby="solution-title">
+            <h2 class="title title--h3" id="solution-title">Solution</h2>
+            <div class="project__body">
+              <p class="copy">Put themselves in the merchant's shoes. It is meant to partner on the long run,<br class="project__br" /> and work as an extension of the merchant's team.</p>
+              <p class="copy">Agency is a business you hire to outsource your digital marketing efforts, instead of handling in-house. They can provide your business with a variety of digital solutions to promote your product or service online and help you.</p>
+            </div>
+          </section>
+
+          <!-- ================= CHIA SẺ ================= -->
+          <div class="share container">
+            <p class="copy copy--small share__label" id="share-label">Share on</p>
+            <ul class="share__list" role="list" aria-labelledby="share-label">
+              <li><a class="share__link" href="#" aria-label="Share on Facebook"><img src="assets/icon/facebook.png" width="10" height="16" alt="" /></a></li>
+              <li><a class="share__link" href="#" aria-label="Share on Twitter"><img src="assets/icon/twitter.png" width="16" height="13" alt="" /></a></li>
+              <li><a class="share__link" href="#" aria-label="Share on Pinterest"><img src="assets/icon/pinterest.png" width="12" height="16" alt="" /></a></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- ================= DỰ ÁN LIÊN QUAN ================= -->
+        <section class="related container" aria-labelledby="related-title">
+          <h2 class="title title--h4 related__title" id="related-title">Related Projects</h2>
+          <!-- Figma vẽ thẻ thứ 2 khác nhau: desktop "Work Media", mobile "KeyBoard" → mỗi khổ hiện một thẻ -->
+          <ul class="related__grid" role="list">
+            <li class="work work--half">
+              <img class="work__img" src="assets/img/Bitmap (2)1.png" width="470" height="416" alt="" />
+              <span class="work__tag">Design</span>
+              <h3 class="title title--h3 work__name"><a class="related__link" href="portfolio.html">SOFA</a></h3>
+            </li>
+            <li class="work work--half related__item--desktop">
+              <img class="work__img" src="assets/img/Bitmap (6).png" width="670" height="416" alt="" />
+              <span class="work__tag">Illustration</span>
+              <h3 class="title title--h3 work__name"><a class="related__link" href="portfolio.html">Work Media</a></h3>
+            </li>
+            <li class="work work--half related__item--mobile">
+              <img class="work__img" src="assets/img/Bitmap (4).png" width="670" height="416" alt="" />
+              <span class="work__tag">Branding</span>
+              <h3 class="title title--h3 work__name"><a class="related__link" href="portfolio.html">KeyBoard</a></h3>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ================= BANNER: HELP TO BUILD ================= -->
+        <section class="banner banner--portfolio banner--project container" aria-labelledby="banner-title">
+          <div class="banner__box">
+            <div class="banner__body">
+              <h2 class="title title--h2 banner__title" id="banner-title">Help To Build<br /> Your Dream<br /> Project</h2>
+              <p class="copy banner__copy">A digital agency is a business you hire to outsource your digital marketing efforts, instead of handling in-house.</p>
+              <a class="button button--secondary button--w154" href="index.html#contact">Contact now</a>
+            </div>
+            <div class="banner__art" aria-hidden="true">
+              <img class="banner__art-mobile" src="assets/img/art-banner-mobile.png" width="273" height="264" alt="" />
+              <img class="art__desk" src="assets/img/art-banner-desktop.png" width="430" height="415" alt="" />
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- ================= FOOTER ================= -->
+      <footer class="site-footer site-footer--portfolio site-footer--project container">
+        <p class="title title--h4 site-footer__brand">Agency</p>
+        <nav class="site-footer__col" aria-labelledby="ft-menu">
+          <h2 class="eyebrow site-footer__head" id="ft-menu">Menu</h2>
+          <ul class="site-footer__list" role="list">
+            <li><a class="site-footer__link" href="about.html">About</a></li>
+            <li><a class="site-footer__link" href="services.html">Services</a></li>
+            <li><a class="site-footer__link" href="index.html#blog">Blog</a></li>
+            <li><a class="site-footer__link" href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="site-footer__col" aria-labelledby="ft-service">
+          <h2 class="eyebrow site-footer__head" id="ft-service">Service</h2>
+          <ul class="site-footer__list" role="list">
+            <li><a class="site-footer__link" href="services.html#design">Design</a></li>
+            <li><a class="site-footer__link" href="services.html#development">Development</a></li>
+            <li><a class="site-footer__link" href="services.html#marketing">Marketing</a></li>
+            <li><a class="site-footer__link" href="services.html">See More</a></li>
+          </ul>
+        </nav>
+        <ul class="site-footer__social" role="list">
+          <li><a class="site-footer__soc" href="#" aria-label="Facebook"><img src="assets/icon/facebook.png" width="10" height="16" alt="" /></a></li>
+          <li><a class="site-footer__soc" href="#" aria-label="Twitter"><img src="assets/icon/twitter.png" width="16" height="13" alt="" /></a></li>
+          <li><a class="site-footer__soc" href="#" aria-label="Instagram"><img src="assets/icon/instagram.png" width="16" height="16" alt="" /></a></li>
+        </ul>
+        <div class="site-footer__bottom">
+          <p class="copy site-footer__copy"><span class="site-footer__copy-1">Copyright © 2022 Laaqiq.</span> All Rights Reserved.</p>
+          <p class="site-footer__legal"><a class="site-footer__link" href="#">Terms of Use</a><a class="site-footer__link" href="#">Privacy Policy</a></p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

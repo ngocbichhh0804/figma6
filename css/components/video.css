@@ -64,4 +64,11 @@
   @media (width >= 64rem) {
     .video--about .video__time { left: 24px; bottom: 21px; }   /* [FIGMA] khung 159,1288; [ĐO] chữ y1298 */
   }
+
+  /* Trang Single Project: như About, tam giác lớn hơn (phần trắng 20×28 tại 413,2274) */
+  .video--project .video__play::after {
+    border-left-width: 21px;            /* [ĐO] regions.py khớp 0px */
+    border-top-width: 15px;
+    border-bottom-width: 15px;
+  }
 }
