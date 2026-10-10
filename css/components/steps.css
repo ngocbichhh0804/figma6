@@ -61,4 +61,25 @@
     }
     .steps__item { padding-left: 100px; padding-top: 22px; } /* [ĐO] chữ x835, giữa số (y+22) */
   }
+
+  /* Trang Services: đứng sau accordion (khoảng đệm do .accordion lo),
+     không kẻ đáy; desktop không có "Read More". */
+  .steps--services { padding-top: 0; }
+  .steps--services .steps__title { margin-top: 17px; }   /* [FIGMA] H3 y2653 = eyebrow 2604 + 32 + 17 (desktop y2189, cùng 17) */
+  .steps--services .steps__copy  { margin-top: 15px; }   /* [FIGMA] y2812 = đáy H3 2797 + 15 */
+  .steps--services .steps__list {
+    margin-top: 71px;                   /* [ĐO] nét số khớp 0px (Figma: số 1 y3044 = Read More + 72) */
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  .steps--services .steps__item { padding-top: 6px; }   /* [ĐO] chữ khớp 0px khi số kéo lên 1px (Figma: chữ = số + 5) */
+
+  @media (width >= 64rem) {
+    .steps--services { padding-top: 0; min-height: 0; }   /* [FIGMA] số 3 đáy 2516 = đáy section */
+    .steps--services::before { content: none; }
+    .steps--services .steps__copy  { margin-top: 32px; }  /* [ĐO] y2324 nét chữ khớp 0px */
+    .steps--services .steps__list  { margin-top: 0; padding-top: 71px; }  /* [ĐO] nét số khớp 0px (Figma: số y2212 = eyebrow + 72) */
+    .steps--services .steps__item  { padding-top: 21px; }  /* [FIGMA] chữ y2233 = số 2212 + 21 */
+    .steps--services .steps__intro > .text-link { display: none; }   /* [FIGMA] khung 1440 không có link */
+  }
 }

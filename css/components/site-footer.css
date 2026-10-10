@@ -69,7 +69,9 @@
   }
 
   @media (width < 64rem) {
-    .site-footer--about { padding-top: 105px; padding-bottom: 34px; }   /* [ĐO] mobile "Agency" y7774; đáy trang 8640 */
-    .site-footer--about .site-footer__bottom { margin-top: 64px; }    /* [ĐO] mobile kẻ y8416 */
+    .site-footer--about,
+    .site-footer--services { padding-top: 105px; padding-bottom: 34px; }   /* [ĐO] mobile "Agency" y7774; đáy trang 8640. Services [FIGMA] y4281 − hộp 4176 */
+    .site-footer--about .site-footer__bottom,
+    .site-footer--services .site-footer__bottom { margin-top: 64px; }    /* [ĐO] mobile kẻ y8416; Services [FIGMA] y4928 */
   }
 }

@@ -13,6 +13,8 @@ bước build, **không JavaScript**.
 | Homepage — mobile (`1_Home_Agency_375`) | 375 × 27360 | 2.9 | 98.0 % | ≤ 60: 98.7 % |
 | About — desktop (`2_About_Agency_1440`) | 1440 × 6160 | 1.3 | 99.1 % | ≤ 60: 99.4 %; 44/88 vùng khớp 0px, còn lại lệch ≤ 1px (khử răng cưa chữ) |
 | About — mobile (`2_About_Agency_375`) | 375 × 8640 | 3.6 | 97.6 % | ≤ 60: 98.5 %; 57/107 vùng khớp 0px, còn lại ≤ 1px (riêng tam giác play 3px) |
+| Services — desktop (`3_Services_1440`) | 1440 × 3664 | 1.4 | 99.0 % | ≤ 60: 99.4 %; 47/77 vùng khớp 0px, còn lại ≤ 1px (khử răng cưa chữ) |
+| Services — mobile (`3_Services_375`) | 375 × 5152 | 2.8 | 97.6 % | ≤ 60: 98.7 %; 54/93 vùng khớp 0px, còn lại ≤ 1px (riêng dòng copyright lệch ngang 2px) |
 
 Cả hai khung dùng chung **một** file `index.html`; mobile là CSS mặc định,
 desktop bật từ `64rem`, các mảnh minh hoạ dựng rời bật từ `90rem` (1440).
@@ -41,6 +43,24 @@ pixel nào). Khối mới: `page-hero`, `intro`, `gallery`, `reviews` (carousel)
   `.faq__extra`, ẩn dưới 64rem. Link "Contact Me" chỉ có ở mobile.
 - Ảnh đối chiếu: `docs/comparison/about/`, `docs/comparison/about-mobile/`.
   Overlay: `dev/about-overlay.html`, `dev/about-mobile-overlay.html`.
+
+### Trang Services (`services.html`)
+
+Một file cho cả hai khung. Dùng lại header, `page-hero`, `intro`, `steps`,
+`checklist`, `banner`, footer (thêm modifier `--services`, Home và About không
+đổi pixel nào, đã so lại cả hai). Khối mới: `accordion`.
+
+- **Accordion dịch vụ** dùng `<details name="service">`: mở mục này thì mục kia
+  đóng, không JS. Mũi tên là `up.png` xoay 180° khi đóng (khớp ảnh Figma). Link
+  footer "Design / Development / Marketing" trỏ tới `services.html#design`…
+- **Nội dung mục Development / Marketing khi mở**: Figma chỉ vẽ mục Design mở,
+  nên chữ hai mục kia là chữ tạm → **cần khách gửi nội dung**.
+- **"Deve-lopment", "Marke-ting"** ở mobile ngắt bằng `&shy;` (chỉ hiện gạch nối
+  khi khung hẹp). Dưới 375 tiêu đề thu còn 28px để không đè nút mũi tên (`[ƯỚC]`).
+- "Read More" ở khối How we work chỉ có trong khung mobile.
+- Header/footer của Home và About giờ trỏ "Services" sang `services.html`.
+- Ảnh đối chiếu: `docs/comparison/services/`, `docs/comparison/services-mobile/`.
+  Overlay: `dev/services-overlay.html`, `dev/services-mobile-overlay.html`.
 
 ## Không flexbox, không grid
 
@@ -80,6 +100,11 @@ tốt nhất, 1.75% trở lên làm lệch ngược lại.
   Figma (`margin-right: -40px`).
 
 ## Responsive
+
+Services: 17 khổ 320 → 2560 + điện thoại xoay ngang 568/667/844 × 320: không
+khổ nào cuộn ngang, không cảnh báo. Khổ 320 thử thêm trong trình duyệt (mở/đóng
+accordion). Cùng breakpoint với Home, thêm một mốc `23.4375rem` (375) cho cỡ chữ
+tiêu đề accordion.
 
 About: 17 khổ 320 → 2560 + điện thoại xoay ngang 568/667/844 × 320: không khổ
 nào cuộn ngang. Khổ < 500 kiểm thêm bằng iframe (Chrome headless không thu cửa

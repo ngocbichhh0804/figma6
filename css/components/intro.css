@@ -34,4 +34,16 @@
       margin-top: 48px;                 /* [ĐO] đoạn 1 y556 = mép ngoài H2 508 + 48 (float không lên cao hơn float trước) */
     }
   }
+
+  /* Trang Services: tiêu đề H3 ở cả 2 khung, hạ thấp hơn About 16px */
+  .intro--services .intro__title { margin-top: 33px; }   /* [FIGMA] H3 y541 = eyebrow 476 + 32 + 33 (cả 2 khung) */
+
+  @media (width >= 64rem) {
+    .intro--services .intro__title {
+      max-width: 470px;                 /* [FIGMA] w470 */
+      font-size: var(--h3-size);        /* [FIGMA] H3 800 40/48 */
+      line-height: var(--h3-lh);
+      letter-spacing: 0;
+    }
+  }
 }

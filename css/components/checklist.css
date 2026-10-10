@@ -12,6 +12,8 @@
     line-height: var(--body-lh);
     color: var(--text-muted);
   }
+  .checklist--strong .checklist__item { color: var(--text-primary); }   /* [FIGMA] Services: Text_Dark */
+
   .checklist__item + .checklist__item { margin-top: 14px; }  /* [FIGMA] bước 48 */
 
   .checklist__item::before {

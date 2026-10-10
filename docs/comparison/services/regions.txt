@@ -1,0 +1,42 @@
+nav-logo        130,10,300,70 light thr=90
+nav-links       440,25,1000,60 light thr=150
+nav-contact     1160,10,1310,70 light thr=150
+hero-title      540,150,900,240 light thr=150
+hero-copy       430,265,1010,330 light thr=120
+intro-eyebrow   130,476,240,508 thr=200
+intro-title     130,530,700,740 rows
+intro-text      730,550,1310,780 rows thr=160
+line-1          135,875,1305,885 thr=25
+design-icon     130,920,220,1015 thr=200
+design-title    245,930,700,1010 rows
+design-up       1265,945,1310,990 thr=200
+line-2          135,1050,1305,1062 thr=25
+panel-title     730,1125,1310,1285 rows
+panel-text      730,1300,1310,1410 rows thr=160
+check-1         730,1445,1000,1485 thr=160
+check-3         730,1540,1000,1580 thr=160
+line-3          135,1675,1305,1685 thr=25
+dev-icon        130,1720,220,1815 thr=200
+dev-title       245,1730,700,1810 rows
+dev-down        1265,1745,1310,1790 thr=200
+line-4          135,1850,1305,1862 thr=25
+mkt-icon        130,1895,220,1990 thr=200
+mkt-title       245,1905,700,1990 rows
+line-5          135,2026,1305,2038 thr=25
+how-eyebrow     130,2140,300,2172 thr=200
+how-title       130,2185,700,2290 rows
+how-copy        130,2310,700,2385 rows thr=160
+step-1          730,2205,1310,2295 rows
+step-2          730,2318,1310,2408 rows
+step-3          730,2430,1310,2520 rows
+banner-box      120,2640,1320,3215 thr=60
+banner-title    230,2745,700,2950 light rows thr=150
+banner-copy     230,2965,700,3040 light rows thr=100
+banner-btn      230,3060,400,3125 thr=150
+banner-art      770,2705,1210,3135 thr=200
+ft-brand        130,3285,240,3325 thr=200
+ft-menu         430,3285,700,3480 rows thr=160
+ft-service      730,3285,1000,3480 rows thr=160
+ft-social       1140,3275,1310,3335 thr=200
+ft-line         135,3530,1305,3542 thr=25
+ft-bottom       130,3575,1310,3615 rows thr=160

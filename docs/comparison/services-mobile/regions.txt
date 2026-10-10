@@ -1,0 +1,34 @@
+nav-logo        20,10,200,70 light thr=90
+nav-toggle      280,10,360,70 light thr=60
+hero-title      40,135,340,215 light thr=150
+hero-copy       30,215,345,320 light rows thr=120
+intro-eyebrow   20,476,140,508 thr=200
+intro-title     20,535,352,885 rows
+intro-text      20,900,355,1260 rows thr=160
+design-icon     20,1385,110,1480 thr=200
+design-title    130,1405,300,1470 rows
+design-up       315,1410,355,1455 thr=200
+panel-title     20,1570,355,1680 rows
+panel-text      20,1700,355,1905 rows thr=160
+check-1         20,1940,250,1984 thr=160
+check-3         20,2036,250,2080 thr=160
+dev-icon        20,2185,110,2280 thr=200
+dev-title       130,2205,315,2315 rows
+dev-down        315,2210,355,2255 thr=200
+mkt-icon        20,2360,110,2455 thr=200
+mkt-title       130,2380,315,2490 rows
+how-eyebrow     20,2600,200,2640 thr=200
+how-title       20,2650,352,2800 rows
+how-copy        20,2805,352,2910 rows thr=160
+how-more        20,2935,140,2975 thr=160
+step-1          20,3040,352,3125 rows
+step-3          20,3264,352,3350 rows
+banner-art      45,3465,330,3740 thr=200
+banner-title    45,3765,340,3920 light rows thr=150
+banner-copy     45,3925,340,4065 light rows thr=100
+banner-btn      45,4080,215,4140 thr=150
+ft-brand        130,4275,250,4320 thr=200
+ft-menu         120,4355,260,4560 rows thr=160
+ft-service      120,4580,260,4785 rows thr=160
+ft-social       100,4810,280,4870 thr=200
+ft-bottom       30,4965,345,5110 rows thr=160

@@ -48,6 +48,7 @@ dev/pages.json           danh sách trang (nguồn sinh overlay)
 dev/*-overlay.html       đè ảnh Figma lên bản code (Code / 50% / Figma / Slider)
                          home = desktop 1440, home-mobile = mobile 375 (cùng index.html)
                          about / about-mobile (cùng about.html)
+                         services / services-mobile (cùng services.html)
 docs/comparison/<slug>/  <slug>-figma.png, -build, -side-by-side, -overlay, -difference
 ```
 
@@ -64,6 +65,11 @@ docs/comparison/<slug>/  <slug>-figma.png, -build, -side-by-side, -overlay, -dif
   component Home dùng lại qua modifier `--about`/`--dark` hoặc biến cục bộ
   (`--faq-*`, `--banner-*`). Thông số: `docs/comparison/about/spec.md`.
   Chụp khổ < 500px phải qua iframe (Chrome headless không thu nhỏ hơn 500).
+- **Services** (`services.html`): xong cả 2 khung — `3_Services_1440` (1440 × 3664,
+  99.0 % pixel lệch ≤ 30) và `3_Services_375` (375 × 5152, 97.6 %). Component mới:
+  `accordion` (`<details name="service">`); dùng lại `intro`, `steps`, `checklist`,
+  `banner`, `site-footer` qua modifier `--services`/`--strong`.
+  Thông số: `docs/comparison/services/spec.md`.
 
 ## Chạy thử
 

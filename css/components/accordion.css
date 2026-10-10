@@ -1,0 +1,101 @@
+/* Trang Services: 3 dịch vụ dạng accordion bằng <details name="service">
+   (mở mục này thì mục kia đóng, không JS). Mũi tên tròn up.png [MẪU];
+   khi đóng xoay 180° thành mũi tên xuống (khớp ảnh Figma, rmse 3.5 [ĐO]). */
+@layer components {
+  .accordion {
+    --acc-head-pad: 52px;               /* [FIGMA] mobile: tiêu đề y1413 − kẻ 1360 − 1 */
+    padding-top: 100px;                 /* [FIGMA] kẻ đầu y1360 − đáy đoạn văn 1260 (desktop 880 − 780) */
+    padding-bottom: 91px;               /* [FIGMA] mobile: eyebrow How we work y2604 − kẻ 2513 */
+  }
+
+  .accordion__item {
+    border-top: 1px solid var(--line);  /* [FIGMA] Rectangle 329×1 #F3D1BF */
+  }
+  .accordion__item:last-child { border-bottom: 1px solid var(--line); }   /* [FIGMA] kẻ y2512 */
+
+  .accordion__head {
+    display: block;
+    position: relative;
+    min-height: 143px;                  /* [FIGMA] kẻ 1360 → 1504 */
+    padding: var(--acc-head-pad) 41px 27px 113px;   /* [FIGMA] chữ x136; khung chữ 175 (x136 → 311); dòng 2 đáy 2309 → kẻ 2336 */
+    list-style: none;
+    cursor: pointer;
+  }
+  .accordion__head::-webkit-details-marker { display: none; }
+
+  .accordion__icon {
+    position: absolute;
+    left: 0;
+    top: 31px;                          /* [FIGMA] icon y1392 = kẻ 1360 + 32 */
+  }
+
+  .accordion__icon--cut { left: -1px; }   /* [ĐO] icon cắt từ export nằm ở x134 / x22 */
+
+  .accordion__head::after {             /* nút tròn mũi tên 32×32, x320 */
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 55px;                          /* [FIGMA] y1416 = kẻ + 56 */
+    width: 32px;
+    height: 32px;
+    background: url("../../assets/icon/up.png") no-repeat;
+    transform: rotate(180deg);          /* đóng: mũi tên xuống */
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+  .accordion__item[open] > .accordion__head::after { transform: none; }
+
+  .accordion__head:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+  .accordion__title {
+    font-size: var(--h3-size);          /* [FIGMA] mobile H3 800 40/48 */
+    line-height: var(--h3-lh);
+    hyphens: manual;                    /* "Deve-lopment", "Marke-ting" như Figma: &shy; chỉ ngắt khi hẹp */
+  }
+  .accordion__head:hover .accordion__title { color: var(--accent); }
+
+  @media (width < 23.4375rem) {         /* dưới 375: khung chữ hẹp hơn 175, "lopment" sẽ đè nút mũi tên */
+    .accordion__head { padding-right: 36px; }                   /* [ƯỚC] sát nút mũi tên 32 hơn */
+    .accordion__title { font-size: 28px; line-height: 36px; }   /* [ƯỚC] Figma không vẽ khổ này; "lopment" vừa 320 */
+  }
+
+  .accordion__body {
+    padding: 72px 0 84px;               /* [FIGMA] H4 y1577 − kẻ 1505; [ĐO] mục check cuối cao 34 (2 + 32) → kẻ 2160 */
+    border-top: 1px solid var(--line);  /* [FIGMA] kẻ y1504 */
+  }
+
+  .accordion__heading {
+    font-size: var(--h4-size);          /* [FIGMA] mobile H4 700 24/32 */
+    line-height: var(--h4-lh);
+    font-weight: var(--weight-bold);
+  }
+  .accordion__copy { margin-top: 35px; }    /* [FIGMA] Text y1708 − đáy H4 1673 */
+  .accordion__list { margin-top: 46px; }    /* [FIGMA] check y1946 − đáy chữ 1900 */
+
+  @media (width >= 64rem) {
+    .accordion { padding-bottom: 107px; }   /* [FIGMA] eyebrow y2140 − kẻ 2033 */
+
+    .accordion__head {
+      min-height: 175px;                /* [FIGMA] kẻ 880 → 1056 */
+      padding: 59px 64px 0 116px;       /* [FIGMA] H2 y940 = kẻ 880 + 1 + 59; x251 = 135 + 116 */
+    }
+    .accordion__icon { top: 47px; }     /* [FIGMA] icon y928 = kẻ + 48 */
+    .accordion__head::after { top: 71px; }   /* [FIGMA] mũi tên y952, x1273 */
+
+    .accordion__title {
+      font-size: var(--h2-size);        /* [FIGMA] H2 800 56/64 −1 */
+      line-height: var(--h2-lh);
+      letter-spacing: var(--h2-ls);
+    }
+
+    .accordion__body {
+      padding: 76px 0 100px 51.28%;     /* [FIGMA] H3 y1133 − kẻ 1057, x735 = 135 + 600; [ĐO] mục check cuối đáy 1580 → kẻ 1680 */
+    }
+    .accordion__heading {
+      max-width: 570px;                 /* [FIGMA] w570 */
+      font-size: var(--h3-size);        /* [FIGMA] H3 800 40/48 */
+      line-height: var(--h3-lh);
+      font-weight: var(--weight-xbold);
+    }
+    .accordion__copy { margin-top: 31px; }   /* [FIGMA] Text y1308 − đáy H3 1277 */
+  }
+}
