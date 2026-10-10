@@ -1,0 +1,33 @@
+/* Phân trang: 5 ô 48×48 canh giữa, bước 56 (khe 8). Ô đang xem nền cam.
+   Mobile và desktop cùng cỡ [FIGMA]; chỉ khác khoảng cách tới lưới phía trên. */
+@layer components {
+  .pagination {
+    margin-top: 48px;                   /* [ĐO] mobile y2784 − thẻ cuối đáy 2736; desktop 2272 − 2192 − 32 (lề dưới thẻ) */
+    text-align: center;
+  }
+
+  .pagination__list { padding: 0; font-size: 0; }
+  .pagination__list > li { display: inline-block; margin-inline: 4px; }   /* [FIGMA] x584, 640… bước 56 */
+
+  .pagination__link {
+    display: block;
+    width: 48px;                        /* [FIGMA] Light/Button/Primary 48×48 */
+    height: 48px;
+    padding-top: 18px;                  /* [FIGMA] chữ top 18 */
+    border-radius: var(--radius);
+    background-color: var(--surface-card);
+    box-shadow: var(--shadow-button);   /* [ĐO] bóng nhạt dưới ô trắng */
+    font-size: var(--small-size);       /* [FIGMA] Epilogue 900 14/100% uppercase */
+    font-weight: var(--weight-black);
+    line-height: 14px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    transition: background-color var(--duration-fast) var(--ease-out);
+  }
+  .pagination__link:hover { background-color: var(--color-peach); }
+  .pagination__link[aria-current="page"] {
+    background-color: var(--accent);   /* [FIGMA] #EF6D58 */
+    box-shadow: none;
+    color: var(--text-on-dark);
+  }
+}

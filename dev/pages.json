@@ -42,6 +42,20 @@
       "file": "services.html",
       "w": 375,
       "h": 5152
+    },
+    {
+      "slug": "portfolio",
+      "label": "4_Portfolio_1_1440",
+      "file": "portfolio.html",
+      "w": 1440,
+      "h": 3440
+    },
+    {
+      "slug": "portfolio-mobile",
+      "label": "4_Portfolio_1_375",
+      "file": "portfolio.html",
+      "w": 375,
+      "h": 4656
     }
   ]
 }

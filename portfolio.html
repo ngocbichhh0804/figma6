@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Portfolio — Agency</title>
+    <meta name="description" content="Agency provides a full service range including technical skills, design, business understanding." />
+
+    <!-- Thứ tự layer khai báo một lần; nhờ vậy không cần !important. -->
+    <style>
+      @layer reset, tokens, base, layout, components, utilities;
+    </style>
+
+    <link rel="preload" href="assets/fonts/epilogue-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components/text.css" />
+    <link rel="stylesheet" href="css/components/button.css" />
+    <link rel="stylesheet" href="css/components/site-header.css" />
+    <link rel="stylesheet" href="css/components/page-hero.css" />
+    <link rel="stylesheet" href="css/components/portfolio.css" />
+    <link rel="stylesheet" href="css/components/pagination.css" />
+    <link rel="stylesheet" href="css/components/art.css" />
+    <link rel="stylesheet" href="css/components/banner.css" />
+    <link rel="stylesheet" href="css/components/site-footer.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+  </head>
+
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <!-- Khung Figma "4_Portfolio_1_1440" 1440 × 3440 và "4_Portfolio_1_375" 375 × 4656 -->
+    <div class="page page--portfolio">
+
+      <!-- ================= HEADER + HERO (nền tối) ================= -->
+      <div class="section--dark page-top">
+        <header class="site-header container">
+          <a class="site-header__brand" href="index.html" aria-label="Agency — home">
+            <span class="site-header__logo"><img src="assets/icon/Polygon.png" width="46" height="44" alt="" /><img class="site-header__core" src="assets/icon/Polygon (1).png" width="19" height="18" alt="" /></span>
+            <span class="site-header__name">Agency</span>
+          </a>
+
+          <!-- Mobile: menu thu gọn bằng checkbox + label, không JS -->
+          <input class="site-header__switch visually-hidden" type="checkbox" id="menu-switch" />
+          <label class="site-header__toggle" for="menu-switch">
+            <span class="visually-hidden">Menu</span>
+            <span class="site-header__bars" aria-hidden="true"></span>
+          </label>
+          <nav class="site-header__nav" aria-label="Main">
+            <ul class="site-header__list" role="list">
+              <li><a class="site-header__link" href="about.html">About</a></li>
+              <li><a class="site-header__link" href="services.html">Services</a></li>
+              <li><a class="site-header__link" href="index.html#pricing">Pricing</a></li>
+              <li><a class="site-header__link" href="index.html#blog">Blog</a></li>
+            </ul>
+            <a class="button button--outline site-header__cta" href="index.html#contact">Contact</a>
+          </nav>
+        </header>
+
+        <section class="page-hero container" aria-labelledby="page-title">
+          <h1 class="title title--h1 page-hero__title" id="page-title">Portfolio</h1>
+          <p class="copy page-hero__copy">Agency provides a full service range including technical skills, design, business understanding.</p>
+        </section>
+      </div>
+
+      <main id="main">
+        <!-- ================= DỰ ÁN: LỌC (radio + :has(), không JS) + LƯỚI ================= -->
+        <section class="portfolio portfolio--page container" id="work" aria-label="Projects">
+          <fieldset class="portfolio__filters">
+            <legend class="visually-hidden">Filter projects</legend>
+            <label class="portfolio__filter"><input class="visually-hidden" type="radio" name="work" value="all" checked />Show All<sup>14</sup></label>
+            <label class="portfolio__filter"><input class="visually-hidden" type="radio" name="work" value="design" />Design<sup>6</sup></label>
+            <label class="portfolio__filter"><input class="visually-hidden" type="radio" name="work" value="branding" />Branding<sup>4</sup></label>
+            <label class="portfolio__filter"><input class="visually-hidden" type="radio" name="work" value="illustration" />Illustration<sup>3</sup></label>
+            <label class="portfolio__filter"><input class="visually-hidden" type="radio" name="work" value="motion" />Motion<sup>1</sup></label>
+          </fieldset>
+
+          <ul class="portfolio__grid" role="list">
+            <li class="work work--full" data-cat="branding">
+              <img class="work__img" src="assets/img/Bitmap (4).png" width="670" height="416" alt="" />
+              <span class="work__tag"><span class="work__tag-m">Design</span><span class="work__tag-d">Branding</span></span>
+              <h2 class="title title--h3 work__name">KeyBoard</h2>
+            </li>
+            <li class="work work--half" data-cat="design">
+              <img class="work__img" src="assets/img/Bitmap (2)1.png" width="470" height="416" alt="" />
+              <span class="work__tag">Design</span>
+              <h2 class="title title--h3 work__name">SOFA</h2>
+            </li>
+            <!-- Mobile Figma xếp DDDone trước Work Media; desktop đổi chỗ lại bằng position: relative -->
+            <li class="work work--half work--swap-r" data-cat="motion">
+              <img class="work__img work__img--zoom" src="assets/img/Bitmap (5).png" width="470" height="416" alt="" />
+              <span class="work__tag"><span class="work__tag-m">Branding</span><span class="work__tag-d">Motion</span></span>
+              <h2 class="title title--h3 work__name">DDDone</h2>
+            </li>
+            <li class="work work--half work--swap-l" data-cat="illustration">
+              <img class="work__img" src="assets/img/Bitmap (6).png" width="670" height="416" alt="" />
+              <span class="work__tag">Illustration</span>
+              <h2 class="title title--h3 work__name">Work Media</h2>
+            </li>
+            <li class="work work--half" data-cat="branding">
+              <img class="work__img work__img--center" src="assets/img/portfolio-handp.png" width="570" height="416" alt="" />
+              <span class="work__tag">Branding</span>
+              <h2 class="title title--h3 work__name">HandP</h2>
+            </li>
+          </ul>
+
+          <nav class="pagination" aria-label="Projects pages">
+            <ol class="pagination__list" role="list">
+              <li><a class="pagination__link" href="#work" aria-current="page">1</a></li>
+              <li><a class="pagination__link" href="#work">2</a></li>
+              <li><a class="pagination__link" href="#work">3</a></li>
+              <li><a class="pagination__link" href="#work">4</a></li>
+              <li><a class="pagination__link" href="#work">5</a></li>
+            </ol>
+          </nav>
+        </section>
+
+        <!-- ================= BANNER: HELP TO BUILD ================= -->
+        <section class="banner banner--portfolio container" aria-labelledby="banner-title">
+          <div class="banner__box">
+            <div class="banner__body">
+              <h2 class="title title--h2 banner__title" id="banner-title">Help To Build<br /> Your Dream<br /> Project</h2>
+              <p class="copy banner__copy">A digital agency is a business you hire to outsource your digital marketing efforts, instead of handling in-house.</p>
+              <a class="button button--secondary button--w154" href="index.html#contact">Contact now</a>
+            </div>
+            <div class="banner__art" aria-hidden="true">
+              <img class="banner__art-mobile" src="assets/img/art-banner-mobile.png" width="273" height="264" alt="" />
+              <img class="art__desk" src="assets/img/art-banner-desktop.png" width="430" height="415" alt="" />
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- ================= FOOTER ================= -->
+      <footer class="site-footer site-footer--portfolio container">
+        <p class="title title--h4 site-footer__brand">Agency</p>
+        <nav class="site-footer__col" aria-labelledby="ft-menu">
+          <h2 class="eyebrow site-footer__head" id="ft-menu">Menu</h2>
+          <ul class="site-footer__list" role="list">
+            <li><a class="site-footer__link" href="about.html">About</a></li>
+            <li><a class="site-footer__link" href="services.html">Services</a></li>
+            <li><a class="site-footer__link" href="index.html#blog">Blog</a></li>
+            <li><a class="site-footer__link" href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="site-footer__col" aria-labelledby="ft-service">
+          <h2 class="eyebrow site-footer__head" id="ft-service">Service</h2>
+          <ul class="site-footer__list" role="list">
+            <li><a class="site-footer__link" href="services.html#design">Design</a></li>
+            <li><a class="site-footer__link" href="services.html#development">Development</a></li>
+            <li><a class="site-footer__link" href="services.html#marketing">Marketing</a></li>
+            <li><a class="site-footer__link" href="services.html">See More</a></li>
+          </ul>
+        </nav>
+        <ul class="site-footer__social" role="list">
+          <li><a class="site-footer__soc" href="#" aria-label="Facebook"><img src="assets/icon/facebook.png" width="10" height="16" alt="" /></a></li>
+          <li><a class="site-footer__soc" href="#" aria-label="Twitter"><img src="assets/icon/twitter.png" width="16" height="13" alt="" /></a></li>
+          <li><a class="site-footer__soc" href="#" aria-label="Instagram"><img src="assets/icon/instagram.png" width="16" height="16" alt="" /></a></li>
+        </ul>
+        <div class="site-footer__bottom">
+          <p class="copy site-footer__copy"><span class="site-footer__copy-1">Copyright © 2022 Laaqiq.</span> All Rights Reserved.</p>
+          <p class="site-footer__legal"><a class="site-footer__link" href="#">Terms of Use</a><a class="site-footer__link" href="#">Privacy Policy</a></p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,6 +1,7 @@
 /* Latest Work: bộ lọc radio + :has() (không JS), lưới ảnh dự án.
    Mobile: bộ lọc hiển thị như ô chọn 329×48, 3 dự án xếp dọc.
-   Desktop: tab ngang canh giữa, lưới 470/670 — 670/470, khe 30 × 32. */
+   Desktop: tab ngang canh giữa, lưới 470/670 — 670/470, khe 30 × 32.
+   Trang Portfolio (.portfolio--page): nền sáng, 1 thẻ 1170×720 + 4 thẻ 570×416. */
 @layer components {
   .dark-band { padding-top: 92px; }     /* [FIGMA] eyebrow y8844 − 8752 */
 
@@ -88,6 +89,7 @@
 
   .work__name {
     position: absolute;
+    color: var(--text-on-dark);         /* [FIGMA] Text_Light (cả trên nền sáng) */
     left: 28px;                         /* [ĐO] mobile x51 */
     top: 317px;                         /* [FIGMA] tên y6797 = thẻ + 317 */
   }
@@ -160,5 +162,88 @@
     .work--narrow:last-child { display: block; }
 
     .portfolio__more { margin-top: 32px; }   /* [FIGMA] nút y7408 */
+  }
+
+  /* ---------- Trang Portfolio: nền sáng, 5 dự án ---------- */
+  .portfolio--page { padding-top: 32px; }   /* [ĐO] mobile ô chọn y432 − nền tối đáy 400 */
+  .portfolio--page .portfolio__filters {
+    margin-top: 0;
+    border: 1px solid var(--line);      /* [FIGMA] viền 1px #F3D1BF */
+  }
+  @media (width < 64rem) {
+    .portfolio--page .portfolio__filter {
+      padding-left: 15px;               /* [ĐO] chữ x40 = ô 23 + viền 1 + 16 */
+      line-height: 48px;                /* [ĐO] chữ y449: tâm dòng tính cả viền */
+    }
+    .portfolio--page .portfolio__filters::after { right: 15px; top: 20px; }   /* [ĐO] tam giác x325, y453 */
+  }
+  .portfolio--page .work__img--center { object-position: center top; }   /* [ĐO] mobile HandP cắt giữa */
+  .portfolio--page .work__img--zoom {   /* [ĐO] mobile DDDone: ảnh phóng rộng 570 (cao 505), cắt góc trên trái */
+    width: calc(100% * 570 / 329);
+    max-width: none;
+    height: auto;
+  }
+  /* Figma ghi nhãn khác nhau giữa 2 khung (KeyBoard, DDDone) → mỗi khổ hiện một nhãn */
+  .work__tag-d { display: none; }
+
+  @media (width >= 64rem) {
+    .portfolio--page { padding-top: 69px; }   /* [ĐO] hàng tab y469 − 400 */
+    .portfolio--page .portfolio__filters {
+      margin-top: 0;
+      padding-right: 7px;               /* [ĐO] số mũ cuối lệch tâm: "Show All" x433 */
+      border: 0;
+    }
+    .portfolio--page .portfolio__filter { color: var(--text-muted); }   /* [FIGMA] Text_Dark_Gray */
+    .portfolio--page .portfolio__filter:has(:checked),
+    .portfolio--page .portfolio__filter:hover { color: var(--text-primary); }   /* [FIGMA] Text_Dark */
+    .portfolio--page .portfolio__filter > sup {
+      top: -1px;                        /* [ĐO] số mũ y473 (đệm trên tab đã bớt 1px) */
+      color: var(--text-muted);         /* [ĐO] số mũ luôn Dark 64%, kể cả tab đang chọn */
+    }
+    .portfolio--page .portfolio__filter:nth-of-type(n+3) > sup { margin-left: 1px; }   /* [ĐO] số 4/3/1 x742/886/1001 */
+    .portfolio--page .portfolio__filter { padding-top: 7px; }   /* [ĐO] chữ y473 (thấp 1px nếu để 8) */
+    /* [ĐO] Chrome dựng mỗi chữ hẹp hơn Figma ~1px → bù riêng từng tab để x khớp 433/558/671/801/946 */
+    .portfolio--page .portfolio__filter:nth-of-type(1) { left: -1px; }
+    .portfolio--page .portfolio__filter:nth-of-type(2) { left: -1px; }
+    .portfolio--page .portfolio__filter:nth-of-type(3) { left: -1px; }
+    .portfolio--page .portfolio__filter:nth-of-type(4) { left: 0; }
+    .portfolio--page .portfolio__filter:nth-of-type(5) { left: 1px; }
+    .portfolio--page .portfolio__grid { margin-top: 64px; }   /* [FIGMA] thẻ đầu y576 */
+
+    .portfolio--page .work__img { object-position: center; }   /* [ĐO] ảnh phủ kín, cắt giữa */
+    .portfolio--page .work:nth-child(odd) { margin-right: 0; }
+    .portfolio--page .work:nth-child(even) { margin-right: 30px; }   /* [FIGMA] SOFA x135, Work Media x735 */
+
+    .work--full {
+      width: 100%;
+      height: 720px;                    /* [FIGMA] 1170×720 */
+    }
+    .work--full .work__img { object-position: center top; }   /* [ĐO] KeyBoard giữ mép trên */
+    .work--full .work__tag { top: 544px; }   /* [ĐO] tag y1120 − thẻ 576 */
+    .work--full .work__name {
+      top: 608px;                       /* [FIGMA] y1184 − 576 */
+      font-size: var(--h2-size);        /* [FIGMA] H2 800 56/64 −1 */
+      line-height: var(--h2-lh);
+      letter-spacing: var(--h2-ls);
+    }
+    .work--half { width: calc((100% - 30px) / 2); }   /* [FIGMA] 570, khe 30 */
+
+    .portfolio--page .work__img--zoom { width: 100%; height: 100%; }
+    .work__tag-m { display: none; }
+    .work__tag-d { display: inline; }
+
+    /* HTML theo thứ tự mobile (DDDone trước Work Media); desktop đổi chỗ 2 ô
+       cùng cỡ: bước ngang (100% + 30px) / 2, bước dọc 416 + 32 [FIGMA].
+       Chỉ đổi khi xem "Show All" — lọc thì thẻ xếp lại tự nhiên. */
+    .portfolio:has([value="all"]:checked) .work--swap-r {
+      position: relative;
+      left: calc((100% + 30px) / -2);
+      top: 448px;
+    }
+    .portfolio:has([value="all"]:checked) .work--swap-l {
+      position: relative;
+      left: calc((100% + 30px) / 2);
+      top: -448px;
+    }
   }
 }

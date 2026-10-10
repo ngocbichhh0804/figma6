@@ -56,15 +56,20 @@
   /* Trang Services: hộp như About trên nền sáng */
   .banner--services { padding-top: 93px; }   /* [ĐO] mobile hộp y3440 (danh sách bước kéo lên 1px, xem steps.css) */
 
+  /* Trang Portfolio: hộp như Services, ngay dưới hàng phân trang */
+  .banner--portfolio { padding-top: 112px; }   /* [ĐO] hộp y2944 − phân trang đáy 2832 (mobile); desktop 2432 − 2320 */
+
   @media (width >= 64rem) {
     .banner--about { padding-top: 50px; }   /* [ĐO] hộp y5152 */
     .banner--services { padding-top: 141px; }   /* [ĐO] hộp y2656 (danh sách bước kéo lên 1px, xem steps.css) */
     .banner--about,
-    .banner--services { --banner-box-h: 544px; --banner-pad-top: 96px; }   /* [ĐO] About 1170×544, H2 y5248; [FIGMA] Services 1170×544, H2 y2752 */
+    .banner--services,
+    .banner--portfolio { --banner-box-h: 544px; --banner-pad-top: 96px; }   /* [ĐO] About 1170×544, H2 y5248; [FIGMA] Services 1170×544, H2 y2752 */
   }
 
   @media (width >= 90rem) {
     .banner--about,
-    .banner--services { --banner-art-x: 640px; --banner-art-y: 58px; }   /* [ĐO] ảnh 775,5210 − hộp 135,5152; Services 775,2714 − 135,2656 */
+    .banner--services,
+    .banner--portfolio { --banner-art-x: 640px; --banner-art-y: 58px; }   /* [ĐO] ảnh 775,5210 − hộp 135,5152; Services 775,2714 − 135,2656 */
   }
 }

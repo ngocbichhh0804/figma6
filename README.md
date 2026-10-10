@@ -62,6 +62,29 @@ Một file cho cả hai khung. Dùng lại header, `page-hero`, `intro`, `steps`
 - Ảnh đối chiếu: `docs/comparison/services/`, `docs/comparison/services-mobile/`.
   Overlay: `dev/services-overlay.html`, `dev/services-mobile-overlay.html`.
 
+### Portfolio (`portfolio.html`)
+
+- Khung `4_Portfolio_1_1440` (1440 × 3440): sai lệch TB **0.8/765**, **99.6 %**
+  pixel lệch ≤ 30 (99.7 % ≤ 60). `regions.py`: mọi khối lệch 0–1px (1px là mép
+  chữ do khác engine dựng chữ).
+- Khung `4_Portfolio_1_375` (375 × 4656): TB 2.2/765, **98.6 %** ≤ 30, mọi khối
+  lệch 0–1px. Figma mobile khác desktop: DDDone xếp trước Work Media, tag
+  KeyBoard "Design" / DDDone "Branding", ảnh DDDone phóng rộng 570. HTML theo
+  thứ tự mobile; desktop đổi chỗ 2 ô cùng cỡ bằng `position: relative`
+  (`work--swap-r/-l`, chỉ khi "Show All"); tag theo khổ bằng `work__tag-m/-d`.
+  Lọc vẫn theo hạng mục desktop (`data-cat`).
+- Dùng lại `portfolio` (bộ lọc radio + `:has()`) qua modifier `portfolio--page`
+  (nền sáng, thẻ `work--full` 1170×720 + `work--half` 570×416); banner/footer qua
+  `banner--portfolio`, `site-footer--portfolio`. Component mới: `pagination`.
+- 4 ảnh thẻ là ảnh của trang chủ (`Bitmap (4)/(2)1/(6)/(5).png`), Figma phóng/cắt
+  bằng `object-fit: cover` — khớp gần tuyệt đối. **Ảnh HandP** chưa có asset:
+  cắt từ ảnh export (`assets/img/portfolio-handp.png`, 570×416, xoá tag/tên
+  bằng nội suy) — cần khách gửi ảnh gốc. Ảnh KeyBoard bị phóng 670 → 1170px nên
+  hơi mờ — nên xin bản lớn.
+- Phân trang là link tĩnh (`#work`), chưa có trang 2–5.
+- Ảnh đối chiếu: `docs/comparison/portfolio/`, `docs/comparison/portfolio-mobile/`.
+  Overlay: `dev/portfolio-overlay.html`, `dev/portfolio-mobile-overlay.html`.
+
 ## Không flexbox, không grid
 
 Bố cục dựng bằng kỹ thuật trước thời flexbox: `float` + `calc()`, `flow-root`,
@@ -101,6 +124,10 @@ tốt nhất, 1.75% trở lên làm lệch ngược lại.
 
 ## Responsive
 
+Portfolio: 17 khổ 320 → 2560 + điện thoại xoay ngang 568/667/844 × 320: không
+khổ nào cuộn ngang. Cảnh báo "chữ bị cắt" ở tag dự án là có chủ ý (pill 38px,
+line-height 42px để hạ chữ 2px như Figma — giống trang chủ). Cùng breakpoint.
+
 Services: 17 khổ 320 → 2560 + điện thoại xoay ngang 568/667/844 × 320: không
 khổ nào cuộn ngang, không cảnh báo. Khổ 320 thử thêm trong trình duyệt (mở/đóng
 accordion). Cùng breakpoint với Home, thêm một mốc `23.4375rem` (375) cho cỡ chữ
@@ -121,5 +148,7 @@ nhận vì các vùng bấm cách nhau ≥ 24px.
 - SVG hoặc @2x cho các icon/ảnh ở mục "Icon cắt từ ảnh export".
 - Trang About: ảnh gốc video (570×448, không có nút play) và 4 ảnh 270×208
   (bản @2x), logo bản trên nền tối.
+- Trang Portfolio: ảnh gốc HandP (570×416 hoặc lớn hơn) và bản lớn của ảnh
+  KeyBoard (≥ 1170×720).
 - `assets/img/Portfolio Template (Community).zip` và vài ảnh export trùng
   không dùng tới — chờ chị xác nhận trước khi xoá/đổi tên sang kebab-case.

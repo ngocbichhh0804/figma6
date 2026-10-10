@@ -70,8 +70,16 @@
 
   @media (width < 64rem) {
     .site-footer--about,
-    .site-footer--services { padding-top: 105px; padding-bottom: 34px; }   /* [ĐO] mobile "Agency" y7774; đáy trang 8640. Services [FIGMA] y4281 − hộp 4176 */
+    .site-footer--services,
+    .site-footer--portfolio { padding-top: 105px; padding-bottom: 34px; }   /* [ĐO] mobile "Agency" y7774; đáy trang 8640. Services [FIGMA] y4281 − hộp 4176 */
     .site-footer--about .site-footer__bottom,
-    .site-footer--services .site-footer__bottom { margin-top: 64px; }    /* [ĐO] mobile kẻ y8416; Services [FIGMA] y4928 */
+    .site-footer--services .site-footer__bottom,
+    .site-footer--portfolio .site-footer__bottom { margin-top: 64px; }    /* [ĐO] mobile kẻ y8416; Services [FIGMA] y4928 */
+    .site-footer--portfolio .site-footer__copy {   /* [ĐO] Figma: dòng 1 x90, dòng 2 x113, y4484 */
+      position: relative;
+      top: 1px;
+      left: 1px;                        /* dòng 2 sang phải 1 */
+    }
+    .site-footer--portfolio .site-footer__copy-1 { position: relative; left: -3px; }   /* dòng 1: tổng −2 */
   }
 }

@@ -49,6 +49,7 @@ dev/*-overlay.html       đè ảnh Figma lên bản code (Code / 50% / Figma / 
                          home = desktop 1440, home-mobile = mobile 375 (cùng index.html)
                          about / about-mobile (cùng about.html)
                          services / services-mobile (cùng services.html)
+                         portfolio / portfolio-mobile (cùng portfolio.html)
 docs/comparison/<slug>/  <slug>-figma.png, -build, -side-by-side, -overlay, -difference
 ```
 
@@ -70,6 +71,11 @@ docs/comparison/<slug>/  <slug>-figma.png, -build, -side-by-side, -overlay, -dif
   `accordion` (`<details name="service">`); dùng lại `intro`, `steps`, `checklist`,
   `banner`, `site-footer` qua modifier `--services`/`--strong`.
   Thông số: `docs/comparison/services/spec.md`.
+- **Portfolio** (`portfolio.html`): xong cả 2 khung — `4_Portfolio_1_1440` (1440 × 3440,
+  99.6 % pixel lệch ≤ 30) và `4_Portfolio_1_375` (375 × 4656, 98.6 %; HTML theo thứ tự
+  thẻ mobile, desktop đổi chỗ bằng `work--swap-*`). Component mới: `pagination`; dùng lại
+  `portfolio` (`--page`, `work--full/--half`), `banner`, `site-footer` (`--portfolio`).
+  Thông số: `docs/comparison/portfolio/spec.md`.
 
 ## Chạy thử
 
