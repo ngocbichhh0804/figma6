@@ -1,0 +1,42 @@
+# 7_Single_Post_375 — vùng so bbox (Figma vs build)
+nav-logo        18,10,190,70 light thr=90
+nav-menu        298,10,358,70 light thr=150
+back            18,112,150,134
+title           18,170,300,360 rows
+meta-by         18,398,240,424 thr=170
+meta-date       18,446,170,472 thr=170
+cover           18,538,357,751 thr=240
+lead            18,810,345,906 rows
+p1              18,940,350,1100 rows thr=180
+h-promote       18,1160,310,1196
+p2              18,1228,355,1356 rows thr=180
+ul              18,1388,200,1484 rows thr=180
+p3              18,1516,355,1708 rows thr=180
+h-service       18,1768,320,1804
+p4              18,1836,355,1964 rows thr=180
+ol              18,1996,200,2092 rows
+p5              18,2124,355,2316 rows thr=180
+quote-box       18,2378,357,2726 thr=252
+quote-mark      48,2418,110,2465 thr=200
+quote-text      130,2426,330,2682 rows
+p6              18,2796,355,2956 rows thr=180
+author-line     18,3020,357,3028 thr=245
+author-photo    140,3082,235,3172 thr=230
+author-name     100,3178,275,3210
+author-role     150,3216,225,3240 thr=180
+author-share    100,3275,275,3333 thr=230
+related-line    18,3388,357,3396 thr=245
+related-title   18,3463,240,3500
+r1-img          23,3536,352,3760 thr=230
+r1-cat          18,3786,140,3816
+r1-title        18,3833,350,3901 rows
+r1-date         18,3918,140,3945 thr=150
+r2-title        18,4297,350,4365 rows
+r3-title        18,4761,350,4829 rows
+r3-date         18,4846,140,4873 thr=150
+banner-title    45,5302,340,5462 light thr=245
+footer-brand    130,5814,250,5854
+footer-menu     120,5892,260,6072
+footer-social   100,6347,275,6404 thr=230
+footer-copy     60,6507,320,6572
+footer-legal    40,6602,340,6637

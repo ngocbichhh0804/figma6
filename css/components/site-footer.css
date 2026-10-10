@@ -83,10 +83,13 @@
     .site-footer--portfolio .site-footer__copy-1 { position: relative; left: -3px; }   /* dòng 1: tổng −2 */
     /* Single Project: Figma dòng 1 x90, dòng 2 x112, y5923 — cao hơn Portfolio 1px, dòng 2 lệch trái 1px */
     .site-footer--project .site-footer__copy,
-    .site-footer--blog .site-footer__copy { top: 0; left: 0; }
+    .site-footer--blog .site-footer__copy,
+    .site-footer--post .site-footer__copy { top: 0; left: 0; }
     .site-footer--project .site-footer__copy-1,
-    .site-footer--blog .site-footer__copy-1 { left: -1px; }
+    .site-footer--blog .site-footer__copy-1,
+    .site-footer--post .site-footer__copy-1 { left: -1px; }
     .site-footer--project .site-footer__brand,
-    .site-footer--blog .site-footer__brand { position: relative; top: -1px; }   /* [ĐO] chữ "Agency" y5230 (Blog y5630) */
+    .site-footer--blog .site-footer__brand,
+    .site-footer--post .site-footer__brand { position: relative; top: -1px; }   /* [ĐO] chữ "Agency" y5230 (Blog y5630) */
   }
 }

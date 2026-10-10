@@ -1,0 +1,156 @@
+/* Trang bài viết (7_Single_Post): đầu bài, ảnh bìa, thân bài (đoạn, danh sách,
+   trích dẫn), tác giả + chia sẻ. Nhãn "Back to blog" dùng lại project-head
+   (project.css); hàng nút chia sẻ dùng lại .share__list / .share__link.
+   Desktop: chữ trong cột 570 bắt đầu x435 (= 135 + 300) [FIGMA], ảnh bìa
+   970 tại x235. Mobile: một cột 329 [FIGMA]. */
+@layer components {
+  /* ---------- Đầu bài ---------- */
+  .post-head__title {
+    margin-top: 42px;                   /* [FIGMA] mobile H3 y173 − nhãn đáy 131 */
+    font-size: var(--h3-size);          /* [FIGMA] mobile H3 800 40/48 */
+    line-height: var(--h3-lh);
+    overflow-wrap: anywhere;
+  }
+
+  .post-head__meta { margin-top: 31px; }   /* [FIGMA] mobile "In" y396 − H3 đáy 365 */
+  .post-head__date { margin-top: 16px; }   /* [FIGMA] mobile "Date" y444 = 396 + 32 + 16 */
+  .post-head__strong { color: var(--text-primary); }   /* [FIGMA] Text_Dark, chữ nối Text_Dark_Gray */
+  a.post-head__strong:hover { color: var(--accent); }
+
+  /* ---------- Ảnh bìa ---------- */
+  .post-page__cover { margin-top: 68px; }  /* [FIGMA] ảnh y544 / y496 − ngày đáy 476 / 428 */
+  .post-page__cover > img {
+    width: 100%;
+    aspect-ratio: 329 / 201;            /* [FIGMA] mobile 329×201 */
+    object-fit: cover;
+    border-radius: 4px;                 /* [ĐO] bo góc ảnh bìa */
+  }
+
+  /* ---------- Thân bài ---------- */
+  .post-page__body { margin-top: 65px; }   /* [FIGMA] mobile Text_Big y810 − ảnh đáy 745 */
+  .post-page__body > * + * { margin-top: 32px; }   /* [FIGMA] đoạn ↔ danh sách: một dòng trống */
+  .post-page__body > .lead + .copy { margin-top: 34px; }   /* [FIGMA] Text y940 / y1260 − Text_Big đáy 906 / 1226 */
+  .post-page__body > .title { margin-top: 61px; }          /* [FIGMA] H4 y1161 / y1417 − đoạn đáy 1100 / 1356 */
+  .post-page__body > .title + * { margin-top: 35px; }      /* [FIGMA] Text y1228 / y1484 − H4 đáy 1193 / 1449 */
+  .post-page__body > .post-page__quote { margin-top: 68px; }   /* [FIGMA] hộp y2384 − đoạn đáy 2316 (cả 2 khung) */
+  .post-page__body > .post-page__quote + * { margin-top: 76px; }   /* [FIGMA] Text y2796 / y2636 − hộp đáy 2720 / 2560 */
+
+  @media (width < 23rem) or (width >= 25rem) { .post-page__br { display: none; } }   /* [FIGMA] ngắt dòng riêng khung 375 (368–399px) */
+
+  .post-page__list {                    /* [FIGMA] Text 16/32 Text_Dark */
+    padding: 0;                         /* ol không có trong reset (chỉ ul[role=list]) */
+    list-style: none;
+    font-size: var(--body-size);
+    line-height: var(--body-lh);
+    color: var(--text-primary);
+  }
+  .post-page__list > li { position: relative; padding-left: 24px; }   /* [FIGMA] chữ x47 / x459 − chấm x23 / x435 */
+  .post-page__list > li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 11px;                          /* [FIGMA] chấm y1399 − dòng y1388 */
+    width: 8px;                         /* [FIGMA] Oval 8×8 #EF6D58 */
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--accent);
+  }
+  .post-page__list--num { counter-reset: post-num; }
+  .post-page__list--num > li { padding-left: 0; counter-increment: post-num; }
+  .post-page__list--num > li::before {   /* [FIGMA] số nằm trong chữ: "1. Marketing efforts" */
+    content: counter(post-num) ". ";
+    position: static;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background: none;
+  }
+
+  .post-page__quote {
+    position: relative;
+    padding: 42px 32px 38px 112px;      /* [FIGMA] chữ x+112, y+42; hộp đáy − chữ đáy 38 */
+    border-radius: var(--radius);       /* [FIGMA] Rectangle bo 6 */
+    background-color: var(--color-peach);   /* [FIGMA] #F9E5DA */
+  }
+  .post-page__quote::before {           /* [ĐO] dấu “ tách từ ảnh Figma (chưa có SVG) */
+    content: "";
+    position: absolute;
+    left: 32px;                         /* [FIGMA] Shape 48×36 tại hộp + (32, 40) */
+    top: 40px;
+    width: 48px;
+    height: 36px;
+    background: url("../../assets/icon/quote.png") no-repeat;
+  }
+  @media (width < 23rem) {              /* [ƯỚC] < 368px: dấu “ lên trên chữ để cột chữ không quá hẹp */
+    .post-page__quote { padding: 92px 24px 32px; }
+    .post-page__quote::before { left: 24px; top: 32px; }
+  }
+
+  /* ---------- Tác giả + chia sẻ ---------- */
+  .post-author { margin-top: 68px; }    /* [FIGMA] kẻ y3024 / y2800 − đoạn đáy 2956 / 2732 */
+  .post-author__inner {
+    display: flow-root;
+    position: relative;
+    padding-top: 63px;                  /* [FIGMA] ảnh y3088 / y2864 − kẻ đáy 3025 / 2801 */
+    border-top: 1px solid var(--line);  /* [FIGMA] 329 / 570 × 1, #F3D1BF */
+    text-align: center;
+  }
+  .post-author__photo {
+    display: block;
+    margin-inline: auto;
+    border-radius: 50%;                 /* [FIGMA] Oval 80×80 */
+  }
+  .post-author__name { margin-top: 10px; }   /* [FIGMA] mobile tên y3178 − ảnh đáy 3168 */
+  .post-author__role { margin-top: 6px; }    /* [FIGMA] Text_Small y2912 − tên đáy 2906 */
+  .post-author__share { margin-top: 40px; }  /* [FIGMA] mobile hàng nút y3280 − "Editor" đáy 3240 */
+
+  /* ---------- Bài liên quan: .related + .post (blog.css) ---------- */
+  @media (48rem <= width < 64rem) {     /* [ƯỚC] tablet: 3 cột như desktop (Figma không vẽ khổ này) */
+    .related--post .post { float: left; width: calc((100% - 60px) / 3); }
+    .related--post .post + .post { margin: 0 0 0 30px; }
+  }
+
+  /* ---------- Tablet: cột chữ không giãn quá 570 ---------- */
+  @media (width >= 48rem) {
+    .post-page__body > *,
+    .post-author__inner { max-width: 570px; }   /* [ƯỚC] Figma không vẽ khổ tablet */
+  }
+
+  /* ---------- Desktop ---------- */
+  @media (width >= 64rem) {
+    .post-head__title {
+      max-width: 515px;                 /* [FIGMA] khung H2 515: ngắt "Agency is a / business you hire to / outsource" */
+      margin-top: 45px;                 /* [FIGMA] H2 y176 − nhãn đáy 131 */
+      font-size: var(--h2-size);        /* [FIGMA] H2 800 56/64 −1 */
+      line-height: var(--h2-lh);
+      letter-spacing: var(--h2-ls);
+    }
+
+    .post-head__meta { margin-top: 28px; }   /* [FIGMA] y396 − H2 đáy 368 */
+    .post-head__meta::after { content: ""; display: table; clear: both; }
+    .post-head__by { float: left; }
+    .post-head__date { float: right; margin-top: 0; text-align: right; }   /* [FIGMA] canh phải, đáy x1005 */
+
+    .post-page__cover > img {
+      display: block;
+      width: 82.906%;                   /* [FIGMA] 970 tại x235 = 135 + 100 (970 / 1170) */
+      margin-inline: auto;
+      aspect-ratio: 970 / 592;
+    }
+
+    .post-page__body { margin-top: 74px; }   /* [FIGMA] Text_Big y1162 − ảnh đáy 1088 */
+    .post-page__body > *,
+    .post-author__inner { margin-left: 25.641%; }   /* [FIGMA] cột x435 = 135 + 300 (300 / 1170) */
+
+    .post-author__inner { text-align: left; }
+    .post-author__photo { float: left; margin-right: 24px; }   /* [FIGMA] tên x539 = ảnh x435 + 80 + 24 */
+    .post-author__share {
+      position: absolute;
+      right: 0;
+      top: 79px;                        /* [FIGMA] hàng nút y2880 − kẻ y2801 */
+      margin: 0;
+    }
+
+    .related--post { margin-top: 80px; }   /* [FIGMA] kẻ y3024 − ảnh tác giả đáy 2944 */
+  }
+}

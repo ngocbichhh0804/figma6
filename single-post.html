@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Agency is a business you hire to outsource — Agency</title>
+    <meta name="description" content="Agency provides a full service range including technical skills, design, business understanding." />
+
+    <!-- Thứ tự layer khai báo một lần; nhờ vậy không cần !important. -->
+    <style>
+      @layer reset, tokens, base, layout, components, utilities;
+    </style>
+
+    <link rel="preload" href="assets/fonts/epilogue-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components/text.css" />
+    <link rel="stylesheet" href="css/components/button.css" />
+    <link rel="stylesheet" href="css/components/site-header.css" />
+    <link rel="stylesheet" href="css/components/project.css" />
+    <link rel="stylesheet" href="css/components/blog.css" />
+    <link rel="stylesheet" href="css/components/related.css" />
+    <link rel="stylesheet" href="css/components/post-page.css" />
+    <link rel="stylesheet" href="css/components/art.css" />
+    <link rel="stylesheet" href="css/components/banner.css" />
+    <link rel="stylesheet" href="css/components/site-footer.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+  </head>
+
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <!-- Khung Figma "7_Single_Post_1440" 1440 × 4720 và "7_Single_Post_375" 375 × 6688 -->
+    <div class="page page--post">
+
+      <!-- ================= HEADER (nền tối 80px) ================= -->
+      <div class="section--dark">
+        <header class="site-header container">
+          <a class="site-header__brand" href="index.html" aria-label="Agency — home">
+            <span class="site-header__logo"><img src="assets/icon/Polygon.png" width="46" height="44" alt="" /><img class="site-header__core" src="assets/icon/Polygon (1).png" width="19" height="18" alt="" /></span>
+            <span class="site-header__name">Agency</span>
+          </a>
+
+          <!-- Mobile: menu thu gọn bằng checkbox + label, không JS -->
+          <input class="site-header__switch visually-hidden" type="checkbox" id="menu-switch" />
+          <label class="site-header__toggle" for="menu-switch">
+            <span class="visually-hidden">Menu</span>
+            <span class="site-header__bars" aria-hidden="true"></span>
+          </label>
+          <nav class="site-header__nav" aria-label="Main">
+            <ul class="site-header__list" role="list">
+              <li><a class="site-header__link" href="about.html">About</a></li>
+              <li><a class="site-header__link" href="services.html">Services</a></li>
+              <li><a class="site-header__link" href="index.html#pricing">Pricing</a></li>
+              <li><a class="site-header__link" href="blog.html">Blog</a></li>
+            </ul>
+            <a class="button button--outline site-header__cta" href="index.html#contact">Contact</a>
+          </nav>
+        </header>
+      </div>
+
+      <main id="main">
+        <article class="post-page" aria-labelledby="page-title">
+          <!-- ================= TIÊU ĐỀ + TÁC GIẢ, NGÀY ================= -->
+          <header class="project-head post-head container">
+            <a class="project-head__back" href="blog.html">Back to blog</a>
+            <h1 class="title post-head__title" id="page-title">Agency is a business you hire to outsource</h1>
+            <div class="post-head__meta">
+              <p class="copy post-head__by">In <a class="post-head__strong" href="blog.html">Stories</a> by <span class="post-head__strong">Gabriel Pires</span></p>
+              <p class="copy post-head__date">Date <time class="post-head__strong" datetime="2021-12-07">7 Dec, 2021</time></p>
+            </div>
+          </header>
+
+          <figure class="post-page__cover container">
+            <img src="assets/img/post-cover.png" width="970" height="592" alt="Two colleagues laughing together in front of their laptops" />
+          </figure>
+
+          <!-- ================= NỘI DUNG BÀI ================= -->
+          <div class="post-page__body container">
+            <p class="lead">Agency provides a full service range including technical skills, design, business understanding.</p>
+            <p class="copy">Outsource your digital marketing efforts, instead of handling in-house. They can provide your business with a variety of digital solutions to promote your product or service online and help you.</p>
+
+            <h2 class="title title--h4">Promote your product</h2>
+            <p class="copy">Ability to put themselves in the merchant's shoes. It is meant to partner on the long run, and work as an extension of the merchant's team.</p>
+            <ul class="post-page__list" role="list">
+              <li>Digital marketing</li>
+              <li>Efforts instead</li>
+              <li>Handling in-house</li>
+            </ul>
+            <p class="copy">A digital agency is a business you hire to outsource your digital marketing efforts, instead of handling in-house. They can provide your business with a variety of digital solutions to promote your product or service online and help you.</p>
+
+            <h2 class="title title--h4">Service online and help</h2>
+            <p class="copy">Put themselves in the merchant's shoes. It is meant to partner on the long run,<br class="post-page__br" /> and work as an extension of the<br class="post-page__br" /> merchant's team.</p>
+            <ol class="post-page__list post-page__list--num">
+              <li>Marketing efforts</li>
+              <li>Instead of handling</li>
+              <li>In-house</li>
+            </ol>
+            <p class="copy">Agency is a business you hire to outsource your digital marketing efforts, instead of handling in-house. They can provide your business with a variety of digital solutions to promote your product or service online and help you.</p>
+
+            <blockquote class="post-page__quote">
+              <p class="lead">Provide your business with a variety of digital solutions to promote your product or service online and help you.</p>
+            </blockquote>
+
+            <p class="copy">Outsource your digital marketing efforts, instead of handling in-house. They can provide your business with a variety of digital solutions to promote your product or service online and help you.</p>
+          </div>
+
+          <!-- ================= TÁC GIẢ + CHIA SẺ ================= -->
+          <footer class="post-author container">
+            <div class="post-author__inner">
+              <img class="post-author__photo" src="assets/img/post-author.png" width="80" height="80" alt="" />
+              <p class="lead post-author__name">Samuil Sadovsky</p>
+              <p class="copy copy--small post-author__role">Editor</p>
+              <ul class="share__list post-author__share" role="list" aria-label="Share this article">
+                <li><a class="share__link" href="#" aria-label="Share on Facebook"><img src="assets/icon/facebook.png" width="10" height="16" alt="" /></a></li>
+                <li><a class="share__link" href="#" aria-label="Share on Twitter"><img src="assets/icon/twitter.png" width="16" height="13" alt="" /></a></li>
+                <li><a class="share__link" href="#" aria-label="Share on LinkedIn"><img src="assets/icon/linkedin.png" width="16" height="15" alt="" /></a></li>
+              </ul>
+            </div>
+          </footer>
+        </article>
+
+        <!-- ================= BÀI LIÊN QUAN (dùng lại .post của Home) ================= -->
+        <section class="related related--post container" aria-labelledby="related-title">
+          <h2 class="title title--h4 related__title" id="related-title">Related Articles</h2>
+          <ul class="related__grid" role="list">
+            <li class="post">
+              <img class="post__img" src="assets/img/Bitmap (12).png" width="370" height="224" alt="" />
+              <p class="lead post__cat">Stories</p>
+              <h3 class="title title--h4 post__title"><a href="single-post.html">Agency is a business you hire to outsource</a></h3>
+              <p class="copy post__date"><time datetime="2021-11-05">5 Nov, 2021</time></p>
+            </li>
+            <li class="post">
+              <img class="post__img" src="assets/img/Bitmap (13).png" width="370" height="224" alt="" />
+              <p class="lead post__cat">Design</p>
+              <h3 class="title title--h4 post__title"><a href="single-post.html">Outsource your digital marketing efforts</a></h3>
+              <p class="copy post__date"><time datetime="2021-10-29">29 Oct, 2021</time></p>
+            </li>
+            <li class="post">
+              <img class="post__img" src="assets/img/Bitmap (14).png" width="370" height="224" alt="" />
+              <p class="lead post__cat">Marketing</p>
+              <h3 class="title title--h4 post__title"><a href="single-post.html">Your business with a variety of digital</a></h3>
+              <p class="copy post__date"><time datetime="2021-10-21">21 Oct, 2021</time></p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ================= BANNER: HELP TO BUILD ================= -->
+        <section class="banner banner--portfolio banner--post container" aria-labelledby="banner-title">
+          <div class="banner__box">
+            <div class="banner__body">
+              <h2 class="title title--h2 banner__title" id="banner-title">Help To Build<br /> Your Dream<br /> Project</h2>
+              <p class="copy banner__copy">A digital agency is a business you hire to outsource your digital marketing efforts, instead of handling in-house.</p>
+              <a class="button button--secondary button--w154" href="index.html#contact">Contact now</a>
+            </div>
+            <div class="banner__art" aria-hidden="true">
+              <img class="banner__art-mobile" src="assets/img/art-banner-mobile.png" width="273" height="264" alt="" />
+              <img class="art__desk" src="assets/img/art-banner-desktop.png" width="430" height="415" alt="" />
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- ================= FOOTER ================= -->
+      <footer class="site-footer site-footer--portfolio site-footer--post container">
+        <p class="title title--h4 site-footer__brand">Agency</p>
+        <nav class="site-footer__col" aria-labelledby="ft-menu">
+          <h2 class="eyebrow site-footer__head" id="ft-menu">Menu</h2>
+          <ul class="site-footer__list" role="list">
+            <li><a class="site-footer__link" href="about.html">About</a></li>
+            <li><a class="site-footer__link" href="services.html">Services</a></li>
+            <li><a class="site-footer__link" href="blog.html">Blog</a></li>
+            <li><a class="site-footer__link" href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="site-footer__col" aria-labelledby="ft-service">
+          <h2 class="eyebrow site-footer__head" id="ft-service">Service</h2>
+          <ul class="site-footer__list" role="list">
+            <li><a class="site-footer__link" href="services.html#design">Design</a></li>
+            <li><a class="site-footer__link" href="services.html#development">Development</a></li>
+            <li><a class="site-footer__link" href="services.html#marketing">Marketing</a></li>
+            <li><a class="site-footer__link" href="services.html">See More</a></li>
+          </ul>
+        </nav>
+        <ul class="site-footer__social" role="list">
+          <li><a class="site-footer__soc" href="#" aria-label="Facebook"><img src="assets/icon/facebook.png" width="10" height="16" alt="" /></a></li>
+          <li><a class="site-footer__soc" href="#" aria-label="Twitter"><img src="assets/icon/twitter.png" width="16" height="13" alt="" /></a></li>
+          <li><a class="site-footer__soc" href="#" aria-label="Instagram"><img src="assets/icon/instagram.png" width="16" height="16" alt="" /></a></li>
+        </ul>
+        <div class="site-footer__bottom">
+          <p class="copy site-footer__copy"><span class="site-footer__copy-1">Copyright © 2022 Laaqiq.</span> All Rights Reserved.</p>
+          <p class="site-footer__legal"><a class="site-footer__link" href="#">Terms of Use</a><a class="site-footer__link" href="#">Privacy Policy</a></p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

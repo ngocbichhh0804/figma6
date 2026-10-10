@@ -52,6 +52,7 @@ dev/*-overlay.html       đè ảnh Figma lên bản code (Code / 50% / Figma / 
                          portfolio / portfolio-mobile (cùng portfolio.html)
                          single-project / single-project-mobile (cùng single-project.html)
                          blog / blog-mobile (cùng blog.html)
+                         single-post / single-post-mobile (cùng single-post.html)
 docs/comparison/<slug>/  <slug>-figma.png, -build, -side-by-side, -overlay, -difference
 ```
 
@@ -89,6 +90,12 @@ docs/comparison/<slug>/  <slug>-figma.png, -build, -side-by-side, -overlay, -dif
   lại `.post` (Home), `page-hero` (`page-top--blog`), `newsletter--blog`, `banner--blog`,
   `site-footer--blog`. Nội dung khác giữa 2 khung qua `blog-page__m/__d`.
   Thông số: `docs/comparison/blog/spec.md`.
+- **Single Post** (`single-post.html`): xong cả 2 khung — `7_Single_Post_1440`
+  (1440 × 4720, 99.1 % pixel lệch ≤ 30) và `7_Single_Post_375` (375 × 6688, 97.7 %).
+  Component mới: `post-page` (đầu bài, ảnh bìa, thân bài, trích dẫn, tác giả); dùng
+  lại `project-head__back`, `share__list`, `related` + `.post`, `banner--post`,
+  `site-footer--post`. Ảnh bìa, ảnh tác giả, icon trích dẫn/LinkedIn tạm cắt từ
+  export. Thông số: `docs/comparison/single-post/spec.md`.
 
 ## Chạy thử
 

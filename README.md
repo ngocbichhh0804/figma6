@@ -21,6 +21,8 @@ bước build, **không JavaScript**.
 | Single Project — mobile (`5_Single_Project_375`) | 375 × 6096 | 2.3 | 98.0 % | ≤ 60: 99.0 %; mọi khối lệch 0–1px (copyright khớp 0px nhờ `site-footer--project`) |
 | Blog — desktop (`6_Blog_1440`) | 1440 × 3568 | 0.7 | 99.3 % | ≤ 60: 99.6 %; 40/60 vùng khớp 0px, còn lại ≤ 1px (mép chữ) |
 | Blog — mobile (`6_Blog_375`) | 375 × 6496 | 1.5 | 98.7 % | ≤ 60: 99.3 %; 35/49 vùng khớp 0px, còn lại ≤ 1px |
+| Single Post — desktop (`7_Single_Post_1440`) | 1440 × 4720 | 0.8 | 99.1 % | ≤ 60: 99.6 %; 65/85 vùng khớp 0px, còn lại ≤ 1px (riêng dòng "In Stories by…" 2px mép phải) |
+| Single Post — mobile (`7_Single_Post_375`) | 375 × 6688 | 2.5 | 97.7 % | ≤ 60: 98.8 %; 65/98 vùng khớp 0px, còn lại ≤ 1px (riêng dòng "In Stories by…" 2px mép phải) |
 
 Cả hai khung dùng chung **một** file `index.html`; mobile là CSS mặc định,
 desktop bật từ `64rem`, các mảnh minh hoạ dựng rời bật từ `90rem` (1440).
@@ -134,8 +136,8 @@ Một file cho cả hai khung. Dùng lại header, `page-hero`, `intro`, `steps`
 - **Ảnh chưa export**: 3 ảnh lưới đầu dùng lại `Bitmap (12/13/14).png` (khớp
   rmse 3.5); 2 ảnh nổi bật và 3 ảnh lưới cuối cắt 1:1 từ ảnh export desktop
   (`blog-friends`, `blog-laptops`, `blog-tablet`, `blog-commuter`, `blog-bulb`).
-  **Cần ảnh gốc.** Link bài trỏ tạm về `single-project.html`; "Load more" là link
-  tĩnh.
+  **Cần ảnh gốc.** Link bài trỏ về `single-post.html` (trang mẫu duy nhất);
+  "Load more" là link tĩnh.
 - Ảnh đối chiếu: `docs/comparison/blog/`, `docs/comparison/blog-mobile/`.
   Overlay: `dev/blog-overlay.html`, `dev/blog-mobile-overlay.html`.
 
@@ -176,7 +178,39 @@ tốt nhất, 1.75% trở lên làm lệch ngược lại.
 - Mobile: tiêu đề "Making Complex…" và "How Our Agency…" tràn khung 329 như
   Figma (`margin-right: -40px`).
 
+### Single Post (`single-post.html`)
+
+- Khung `7_Single_Post_1440` (1440 × 4720): TB **0.8/765**, **99.1 %** ≤ 30
+  (99.6 % ≤ 60); 65/85 vùng khớp 0px, còn lại lệch 1px ở mép chữ. Dòng "In Stories
+  by Gabriel Pires" hẹp hơn Figma 2px ở mép phải (độ rộng chữ giữa 2 engine).
+- Khung `7_Single_Post_375` (375 × 6688): TB 2.5/765, **97.7 %** ≤ 30, 65/98 vùng
+  khớp 0px, còn lại ≤ 1px. Ảnh bìa dùng bản desktop thu nhỏ nên lệch màu nhiều hơn.
+  Tổng chiều cao 2 khung đúng 4720 / 6688 (chụp dư 40–50px chỉ còn nền trống).
+- Một file cho cả hai khung. Component mới: `post-page` (đầu bài, ảnh bìa, thân
+  bài: đoạn, danh sách chấm/số, hộp trích dẫn; tác giả + chia sẻ). Dùng lại nhãn
+  "Back to blog" của `project-head`, nút tròn `share__list`/`share__link`, khối
+  `related` (kẻ + tiêu đề) với thẻ `.post` của Home, banner qua `banner--portfolio
+  banner--post` (khoảng trên 100 / 132px), footer `site-footer--portfolio
+  site-footer--post` (dời chữ mobile như Single Project / Blog).
+- Đoạn "Put themselves…" ngắt dòng riêng ở khung 375 (`post-page__br`, chỉ hiện
+  368–399px) để khớp Figma.
+- **Ảnh/icon chưa export** → tạm cắt 1:1 từ ảnh export desktop: ảnh bìa
+  `post-cover.png` (970×592, mobile dùng bản này thu nhỏ), ảnh tác giả
+  `post-author.png` (80×80), dấu trích dẫn `assets/icon/quote.png` (48×36) và icon
+  LinkedIn `assets/icon/linkedin.png` (16×15) — tách màu thành kênh alpha. 3 ảnh
+  bài liên quan dùng lại `Bitmap (12/13/14).png`. **Cần ảnh gốc + SVG.**
+- Link bài ở Home và Blog nay trỏ về `single-post.html`.
+- Ảnh đối chiếu: `docs/comparison/single-post/`, `docs/comparison/single-post-mobile/`.
+  Overlay: `dev/single-post-overlay.html`, `dev/single-post-mobile-overlay.html`.
+
 ## Responsive
+
+Single Post: 17 khổ 320 → 2560 + điện thoại xoay ngang 568/667/844 × 320: không
+khổ nào cuộn ngang. Khổ 320 kiểm thêm bằng iframe: dưới 23rem (368px) dấu trích
+dẫn chuyển lên trên chữ cho cột chữ không quá hẹp `[ƯỚC]`. Tablet (48–64rem): cột
+chữ ≤ 570px, bài liên quan 3 cột `[ƯỚC]`. Cảnh báo vùng bấm còn lại: "Back to blog"
+cao 12px (đã có vùng chạm 44px trong `@media (pointer: coarse)`) và link "Stories"
+nằm trong câu (WCAG 2.5.8 miễn cho link trong dòng chữ).
 
 Blog: 17 khổ 320 → 2560 + điện thoại xoay ngang 568/667/844 × 320: không khổ
 nào cuộn ngang, không cảnh báo. Khổ 48–64rem (tablet) xếp bài 2 cột `[ƯỚC]`
@@ -219,5 +253,7 @@ nhận vì các vùng bấm cách nhau ≥ 24px.
   play), 4 ảnh 270×208 (nên kèm @2x); SVG mũi tên "Back to portfolio" và icon
   Pinterest; logo Vortex bản màu nâu.
 - Trang Blog: ảnh gốc 2 bài nổi bật (570×336) và 3 bài cuối (370×224), nên kèm @2x.
+- Trang Single Post: ảnh gốc ảnh bìa (970×592, nên kèm @2x), ảnh tác giả (80×80
+  @2x); SVG dấu trích dẫn và icon LinkedIn.
 - `assets/img/Portfolio Template (Community).zip` và vài ảnh export trùng
   không dùng tới — chờ chị xác nhận trước khi xoá/đổi tên sang kebab-case.

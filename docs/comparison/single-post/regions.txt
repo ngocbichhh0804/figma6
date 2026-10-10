@@ -1,0 +1,48 @@
+# 7_Single_Post_1440 — vùng so bbox (Figma vs build)
+nav-logo        130,10,300,70 light thr=90
+nav-links       440,25,1000,60 light thr=150
+nav-contact     1160,10,1310,70 light thr=150
+back            430,112,560,134
+title           430,170,1010,360 rows
+meta-by         430,398,650,424 thr=170
+meta-date       860,398,1010,424 thr=170
+cover           230,490,1210,1094 thr=240
+lead            430,1160,1000,1226 rows
+p1              430,1260,1000,1356 rows thr=180
+h-promote       430,1415,720,1452
+p2              430,1484,1010,1548 rows thr=180
+ul              430,1580,620,1676 rows thr=180
+p3              430,1708,1000,1836 rows thr=180
+h-service       430,1895,740,1932
+p4              430,1964,1000,2028 rows thr=180
+ol              430,2060,620,2156 rows
+p5              430,2188,1000,2316 rows thr=180
+quote-box       430,2378,1010,2566 thr=252
+quote-mark      460,2418,522,2465 thr=200
+quote-text      540,2426,980,2522 rows
+p6              430,2636,1000,2732 rows thr=180
+author-line     430,2796,1010,2804 thr=245
+author-photo    430,2860,520,2948 thr=230
+author-name     535,2876,720,2906
+author-role     535,2914,600,2936 thr=180
+author-share    840,2875,1010,2933 thr=230
+related-line    135,3020,1305,3028 thr=245
+related-title   130,3095,350,3132
+r1-img          135,3168,505,3392 thr=230
+r1-cat          130,3418,260,3450
+r1-title        130,3465,505,3533 rows
+r1-date         130,3550,260,3577 thr=150
+r2-title        530,3465,905,3533 rows
+r2-date         530,3550,660,3577 thr=150
+r3-title        930,3465,1305,3533 rows
+r3-date         930,3550,1060,3577 thr=150
+banner-title    230,3802,620,4002 light thr=245
+banner-copy     230,4022,720,4097 light thr=200
+banner-button   230,4122,395,4182 thr=200
+footer-brand    130,4327,240,4387
+footer-menu     430,4327,520,4517
+footer-service  730,4327,860,4517
+footer-social   1140,4322,1310,4377 thr=230
+footer-line     135,4588,1305,4596 thr=245
+footer-copy     130,4637,500,4667
+footer-legal    1020,4637,1310,4667
