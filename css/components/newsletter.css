@@ -33,4 +33,15 @@
     .newsletter__field { display: inline-block; vertical-align: top; width: 370px; padding-top: 2px; }   /* [FIGMA] x735; [ĐO] chữ y15024 */
     .newsletter__form > .button { width: 170px; margin: 0 0 0 30px; }  /* [FIGMA] x1135 */
   }
+
+  /* Trang Blog: kẻ trên + dưới, giữa nút "Load more" và banner */
+  .newsletter--blog {
+    margin-top: 80px;                   /* [ĐO] kẻ y4352 / y2272 − nút đáy 4272 / 2192 */
+    padding-bottom: 80px;               /* [ĐO] mobile kẻ dưới y4704 − nút đáy 4624 */
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  @media (width >= 64rem) {
+    .newsletter--blog { height: 177px; padding-bottom: 0; }   /* [FIGMA] kẻ y2272 → y2448 (tính cả 2 viền) */
+  }
 }

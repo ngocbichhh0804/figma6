@@ -1,0 +1,42 @@
+nav-logo        130,10,300,70 light thr=90
+nav-links       440,25,1000,60 light thr=150
+nav-contact     1160,10,1310,70 light thr=150
+hero-title      480,150,960,250 light thr=150
+hero-copy       430,265,1010,335 rows light thr=120
+f1-img          135,480,705,816 thr=230
+f1-cat          130,840,260,875
+f1-title        130,890,700,992 rows
+f1-date         130,1005,260,1032 thr=150
+f2-img          735,480,1305,816 thr=230
+f2-cat          730,840,860,875
+f2-title        730,890,1300,992 rows
+f2-date         730,1005,860,1032 thr=150
+divider-1       135,1100,1305,1108 thr=245
+g1-img          135,1184,505,1408 thr=230
+g1-cat          130,1435,260,1465
+g1-title        130,1480,505,1545 rows
+g1-date         130,1565,260,1592 thr=150
+g2-title        530,1480,905,1545 rows
+g3-title        930,1480,1305,1545 rows
+g4-img          135,1664,505,1888 thr=230
+g4-cat          130,1915,260,1945
+g4-title        130,1960,505,2025 rows
+g4-date         130,2045,260,2072 thr=150
+g5-title        530,1960,905,2025 rows
+g5-date         530,2045,660,2072 thr=150
+g6-title        930,1960,1305,2025 rows
+g6-date         930,2045,1060,2072 thr=150
+load-more       630,2140,810,2196 thr=200
+divider-2       135,2268,1305,2276 thr=245
+nl-title        130,2330,380,2390
+nl-field        730,2330,1110,2390 thr=200
+nl-button       1130,2330,1310,2390 thr=200
+divider-3       135,2444,1305,2452 thr=245
+banner-title    230,2650,620,2850 light thr=245
+banner-copy     230,2870,720,2945 light thr=200
+footer-brand    130,3175,240,3235
+footer-menu     430,3175,520,3365
+footer-service  730,3175,860,3365
+footer-social   1140,3170,1310,3225 thr=230
+footer-copy     130,3485,500,3515
+footer-legal    1020,3485,1310,3515

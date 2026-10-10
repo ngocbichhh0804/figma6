@@ -59,11 +59,13 @@
 
   /* Trang Portfolio: hộp như Services, ngay dưới hàng phân trang */
   .banner--portfolio { padding-top: 112px; }   /* [ĐO] hộp y2944 − phân trang đáy 2832 (mobile); desktop 2432 − 2320 */
+  .banner--blog { padding-top: 79px; }         /* [ĐO] Blog mobile: hộp y4784 − kẻ đáy 4705 */
 
   @media (width >= 64rem) {
     .banner--about { padding-top: 50px; }   /* [ĐO] hộp y5152 */
     .banner--services { padding-top: 141px; }   /* [ĐO] hộp y2656 (danh sách bước kéo lên 1px, xem steps.css) */
     .banner--project { padding-top: 160px; }    /* [FIGMA] Single Project: hộp y3840 − thẻ liên quan đáy 3680 (mobile như Portfolio: 112) */
+    .banner--blog { padding-top: 111px; }       /* [FIGMA] Blog: hộp y2560 − kẻ đáy 2449 */
     .banner--about,
     .banner--services,
     .banner--portfolio { --banner-box-h: 544px; --banner-pad-top: 96px; }   /* [ĐO] About 1170×544, H2 y5248; [FIGMA] Services 1170×544, H2 y2752 */

@@ -1,0 +1,62 @@
+/* Trang Blog (6_Blog): 2 bài nổi bật 570×336 + lưới 3 cột 370×224, nút
+   "Load more". Thẻ bài dùng lại .post của blog.css (Home). Mobile: 8 bài một
+   cột như Home [FIGMA]. */
+@layer components {
+  .page-top--blog { height: 464px; }    /* [ĐO] mobile: tiêu đề 2 dòng, nền tối 0 → 464 */
+
+  .page-hero--blog .page-hero__title { position: relative; top: -1px; }   /* [ĐO] chữ Figma y168 (desktop) / y148 (mobile): Chrome dựng thấp 1px */
+
+  .blog-page { padding-top: 80px; }     /* [ĐO] mobile ảnh đầu y544 − nền tối 464 */
+
+  .blog-page__grid,
+  .post--featured + .post--featured { margin-top: 52px; }   /* [ĐO] như Home: ảnh kế cách ngày 52 */
+  .blog-page__grid::after { content: ""; display: table; clear: both; }
+
+  .blog-page__more { display: block; margin: 52px auto 0; }   /* [ĐO] mobile nút y4224 */
+  .blog-page__more,
+  .newsletter--blog .button { line-height: 50px; }   /* [ĐO] mobile chữ nút y4242 / y4594: thấp hơn tâm 1px như desktop */
+
+  /* Nội dung khác nhau giữa 2 khung */
+  .blog-page__d { display: none; }
+
+  /* Tablet: 2 cột (Figma không vẽ khổ này) */
+  @media (48rem <= width < 64rem) {
+    .blog-page__featured::after { content: ""; display: table; clear: both; }
+    .blog-page .post,
+    .blog-page .post + .post { float: left; width: calc((100% - 30px) / 2); margin: 0; }   /* [ƯỚC] khe 30 như desktop */
+    .blog-page .post:nth-child(2n) { margin-left: 30px; }
+    .blog-page .post:nth-child(2n + 1) { clear: left; }
+    .blog-page .post:nth-child(n + 3) { margin-top: 52px; }   /* [ƯỚC] */
+  }
+
+  @media (width >= 64rem) {
+    .page-top--blog { height: 400px; }  /* [FIGMA] nền tối 0 → 400 */
+    .blog-page { padding-top: 80px; }   /* [FIGMA] ảnh y480 − 400 */
+
+    .blog-page__m { display: none; }
+    .blog-page__d { display: inline; }
+
+    .blog-page__featured {
+      padding-bottom: 68px;             /* [ĐO] ngày đáy → kẻ y1104 */
+      border-bottom: 1px solid var(--line);
+    }
+    .blog-page__featured::after { content: ""; display: table; clear: both; }
+    .post--featured { float: left; width: calc((100% - 30px) / 2); }   /* [FIGMA] 570, khe 30 */
+    .post--featured + .post--featured { margin: 0 0 0 30px; }
+    .post--featured > .post__img { aspect-ratio: auto; height: 336px; }   /* [FIGMA] 570×336 */
+    .post--featured > .post__title {
+      max-width: 538px;                 /* [FIGMA] w538 */
+      margin-top: 19px;                 /* [FIGMA] y893 − chữ loại đáy 874 */
+      font-size: var(--h3-size);        /* [FIGMA] H3 800 40/48 */
+      line-height: var(--h3-lh);
+      font-weight: var(--weight-xbold);
+    }
+    .post--featured > .post__date { margin-top: 15px; }   /* [FIGMA] y1004 − tiêu đề đáy 989 */
+
+    .blog-page__grid { margin-top: 79px; }   /* [FIGMA] ảnh y1184 − kẻ đáy 1105 */
+    .blog-page__grid > .post:nth-child(3n + 1) { clear: left; margin-left: 0; }
+    .blog-page__grid > .post:nth-child(n + 4) { margin-top: 68px; }   /* [FIGMA] ảnh y1664 − ngày đáy 1596 */
+
+    .blog-page__more { margin-top: 68px; }   /* [ĐO] nút y2144 − ngày đáy 2076 */
+  }
+}

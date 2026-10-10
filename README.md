@@ -19,6 +19,8 @@ bước build, **không JavaScript**.
 | Portfolio — mobile (`4_Portfolio_1_375`) | 375 × 4656 | 2.2 | 98.6 % | mọi khối lệch 0–1px |
 | Single Project — desktop (`5_Single_Project_1440`) | 1440 × 4848 | 0.7 | 99.4 % | ≤ 60: 99.7 %; 31/61 vùng khớp 0px, còn lại ≤ 1px (riêng 1 dòng Solution lệch ngang 3px) |
 | Single Project — mobile (`5_Single_Project_375`) | 375 × 6096 | 2.3 | 98.0 % | ≤ 60: 99.0 %; mọi khối lệch 0–1px (copyright khớp 0px nhờ `site-footer--project`) |
+| Blog — desktop (`6_Blog_1440`) | 1440 × 3568 | 0.7 | 99.3 % | ≤ 60: 99.6 %; 40/60 vùng khớp 0px, còn lại ≤ 1px (mép chữ) |
+| Blog — mobile (`6_Blog_375`) | 375 × 6496 | 1.5 | 98.7 % | ≤ 60: 99.3 %; 35/49 vùng khớp 0px, còn lại ≤ 1px |
 
 Cả hai khung dùng chung **một** file `index.html`; mobile là CSS mặc định,
 desktop bật từ `64rem`, các mảnh minh hoạ dựng rời bật từ `90rem` (1440).
@@ -115,6 +117,28 @@ Một file cho cả hai khung. Dùng lại header, `page-hero`, `intro`, `steps`
 - Ảnh đối chiếu: `docs/comparison/single-project/`, `docs/comparison/single-project-mobile/`.
   Overlay: `dev/single-project-overlay.html`, `dev/single-project-mobile-overlay.html`.
 
+### Blog (`blog.html`)
+
+- Khung `6_Blog_1440` (1440 × 3568): TB **0.7/765**, **99.3 %** ≤ 30 (99.6 % ≤ 60);
+  mọi khối đúng vị trí, 40/60 vùng khớp 0px, còn lại lệch 1px ở mép chữ.
+- Khung `6_Blog_375` (375 × 6496): TB 1.5/765, **98.7 %** ≤ 30, 35/49 vùng khớp
+  0px, còn lại ≤ 1px.
+- Một file cho cả hai khung. Component mới: `blog-page` (2 bài nổi bật 570×336 +
+  lưới 3 cột, nút Load more). Thẻ bài dùng lại `.post` của Home; dùng lại
+  `page-hero` (`page-top--blog` cao 464 ở mobile vì tiêu đề 2 dòng),
+  `newsletter--blog` (kẻ trên/dưới), `banner--blog`, `site-footer--blog`.
+- **Nội dung khác nhau giữa 2 khung** (ngày 2 bài đầu, nội dung 3 bài cuối) →
+  `blog-page__m` / `blog-page__d`, mỗi khổ hiện một bản.
+- Tiêu đề hero mobile ngắt "Blog&nbsp;" + `<br class="br-m">`: Figma tính cả dấu
+  cách cuối dòng khi canh giữa, trình duyệt thì bỏ → dùng `&nbsp;` để giữ.
+- **Ảnh chưa export**: 3 ảnh lưới đầu dùng lại `Bitmap (12/13/14).png` (khớp
+  rmse 3.5); 2 ảnh nổi bật và 3 ảnh lưới cuối cắt 1:1 từ ảnh export desktop
+  (`blog-friends`, `blog-laptops`, `blog-tablet`, `blog-commuter`, `blog-bulb`).
+  **Cần ảnh gốc.** Link bài trỏ tạm về `single-project.html`; "Load more" là link
+  tĩnh.
+- Ảnh đối chiếu: `docs/comparison/blog/`, `docs/comparison/blog-mobile/`.
+  Overlay: `dev/blog-overlay.html`, `dev/blog-mobile-overlay.html`.
+
 ## Không flexbox, không grid
 
 Bố cục dựng bằng kỹ thuật trước thời flexbox: `float` + `calc()`, `flow-root`,
@@ -154,6 +178,10 @@ tốt nhất, 1.75% trở lên làm lệch ngược lại.
 
 ## Responsive
 
+Blog: 17 khổ 320 → 2560 + điện thoại xoay ngang 568/667/844 × 320: không khổ
+nào cuộn ngang, không cảnh báo. Khổ 48–64rem (tablet) xếp bài 2 cột `[ƯỚC]`
+thay vì 1 cột ảnh rất to. Khổ 320 kiểm thêm bằng iframe.
+
 Single Project: 17 khổ 320 → 2560 + điện thoại xoay ngang 568/667/844 × 320:
 không khổ nào cuộn ngang. Khổ 320/360 kiểm thêm bằng iframe. Cảnh báo "chữ bị
 cắt" ở tag dự án như Portfolio (có chủ ý). Link "Back to portfolio" cao 12px →
@@ -190,5 +218,6 @@ nhận vì các vùng bấm cách nhau ≥ 24px.
 - Trang Single Project: ảnh gốc ảnh bìa (1170×720), video (570×448, không có nút
   play), 4 ảnh 270×208 (nên kèm @2x); SVG mũi tên "Back to portfolio" và icon
   Pinterest; logo Vortex bản màu nâu.
+- Trang Blog: ảnh gốc 2 bài nổi bật (570×336) và 3 bài cuối (370×224), nên kèm @2x.
 - `assets/img/Portfolio Template (Community).zip` và vài ảnh export trùng
   không dùng tới — chờ chị xác nhận trước khi xoá/đổi tên sang kebab-case.

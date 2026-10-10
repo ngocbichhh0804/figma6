@@ -1,0 +1,31 @@
+nav-logo        20,10,190,70 light thr=90
+nav-toggle      300,12,356,68 light thr=150
+hero-title      60,140,320,270 rows light thr=150
+hero-copy       30,285,345,380 rows light thr=120
+p1-img          23,544,352,768 thr=230
+p1-cat          20,795,140,822
+p1-title        20,840,350,905 rows
+p1-date         20,925,140,950 thr=150
+p2-title        20,1300,350,1340 rows
+p2-date         20,1357,140,1382 thr=150
+p3-title        20,1735,350,1800 rows
+p5-title        20,2663,350,2730 rows
+p6-cat          20,3083,140,3110
+p6-title        20,3127,350,3190 rows
+p6-date         20,3213,140,3240 thr=150
+p7-title        20,3590,350,3658 rows
+p8-cat          20,4010,160,4042
+p8-title        20,4055,350,4122 rows
+p8-date         20,4142,140,4167 thr=150
+load-more       100,4220,276,4276 thr=200
+divider-1       23,4348,352,4356 thr=245
+nl-title        20,4425,300,4470
+nl-field        20,4508,356,4564 thr=200
+nl-button       20,4572,356,4628 thr=200
+divider-2       23,4700,352,4708 thr=245
+banner-title    45,5110,340,5270 light thr=245
+footer-brand    130,5622,250,5662
+footer-menu     120,5700,260,5880
+footer-social   100,6155,275,6212 thr=230
+footer-copy     60,6315,320,6380
+footer-legal    40,6410,340,6445

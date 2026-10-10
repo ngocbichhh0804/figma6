@@ -51,6 +51,7 @@ dev/*-overlay.html       đè ảnh Figma lên bản code (Code / 50% / Figma / 
                          services / services-mobile (cùng services.html)
                          portfolio / portfolio-mobile (cùng portfolio.html)
                          single-project / single-project-mobile (cùng single-project.html)
+                         blog / blog-mobile (cùng blog.html)
 docs/comparison/<slug>/  <slug>-figma.png, -build, -side-by-side, -overlay, -difference
 ```
 
@@ -83,6 +84,11 @@ docs/comparison/<slug>/  <slug>-figma.png, -build, -side-by-side, -overlay, -dif
   (dùng lại `.work`); dùng lại `gallery` + `video--about`/`--project`, `banner--portfolio`
   + `banner--project`, `site-footer--portfolio`. Ảnh `project-*.png` tạm cắt từ export
   (chờ ảnh gốc). Thông số: `docs/comparison/single-project/spec.md`.
+- **Blog** (`blog.html`): xong cả 2 khung — `6_Blog_1440` (1440 × 3568, 99.3 % pixel
+  lệch ≤ 30) và `6_Blog_375` (375 × 6496, 98.7 %). Component mới: `blog-page`; dùng
+  lại `.post` (Home), `page-hero` (`page-top--blog`), `newsletter--blog`, `banner--blog`,
+  `site-footer--blog`. Nội dung khác giữa 2 khung qua `blog-page__m/__d`.
+  Thông số: `docs/comparison/blog/spec.md`.
 
 ## Chạy thử
 
