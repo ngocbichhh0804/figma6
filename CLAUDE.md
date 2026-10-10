@@ -53,6 +53,7 @@ dev/*-overlay.html       đè ảnh Figma lên bản code (Code / 50% / Figma / 
                          single-project / single-project-mobile (cùng single-project.html)
                          blog / blog-mobile (cùng blog.html)
                          single-post / single-post-mobile (cùng single-post.html)
+                         contact / contact-mobile (cùng contact.html)
 docs/comparison/<slug>/  <slug>-figma.png, -build, -side-by-side, -overlay, -difference
 ```
 
@@ -96,6 +97,11 @@ docs/comparison/<slug>/  <slug>-figma.png, -build, -side-by-side, -overlay, -dif
   lại `project-head__back`, `share__list`, `related` + `.post`, `banner--post`,
   `site-footer--post`. Ảnh bìa, ảnh tác giả, icon trích dẫn/LinkedIn tạm cắt từ
   export. Thông số: `docs/comparison/single-post/spec.md`.
+- **Contact** (`contact.html`): xong cả 2 khung — `8_Contact_1440` (1440 × 2736,
+  99.3 % pixel lệch ≤ 30) và `8_Contact_375` (375 × 4736, 98.4 %). Không component
+  mới: dùng lại `contact` (`contact--page`), `faq` (`faq--contact`, `faq__ask`),
+  `page-hero--contact`, `site-footer--contact` (kẻ trên, không banner). Thông số
+  từ ảnh chụp panel Figma (`~/Desktop/contact-desktop|mobile`): `docs/comparison/contact/spec.md`.
 
 ## Chạy thử
 

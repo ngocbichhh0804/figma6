@@ -86,4 +86,24 @@
     .info:first-child { border-radius: var(--radius) 0 0 var(--radius); }
     .info:last-child  { border-radius: 0 var(--radius) var(--radius) 0; }
   }
+
+  /* Trang Contact (8_Contact): cùng khối với Home, số theo frame Contact [FIGMA] */
+  .contact--page .contact__map { padding-top: 64px; }   /* [FIGMA] mobile form y464 − hero đáy 400 */
+  .contact--page .contact__form { padding-top: 57px; }  /* [FIGMA] thẻ form cao đúng 464 (Home 465) */
+  .contact--page .contact__field { padding-top: 2px; }  /* [ĐO] placeholder y657 / mobile y593 */
+  .contact--page .field--area { padding-top: 8px; }     /* [ĐO] "Message" y785 */
+  .contact--page .info__label { left: 1px; }            /* [FIGMA] chữ = icon + 88 (x270 / mobile x139) */
+  .contact--page .info__value { margin-top: 26px; }     /* [FIGMA] y1322 / mobile y1866 */
+  @media (width < 64rem) {
+    .contact--page .info + .info {      /* [FIGMA] mobile ô 2, 3: y1935 / y2127, cao 193 — chồng viền ô trên */
+      height: 193px;
+      margin-top: -1px;
+      padding-top: 32px;                /* [FIGMA] icon y1968 / y2160 = ô + 33 */
+    }
+  }
+  @media (width >= 64rem) {
+    .contact--page .contact__map { padding-top: 128px; }      /* [FIGMA] form y528 − bản đồ 400 */
+    .contact--page .info { width: calc((100% + 3px) / 3); }   /* [FIGMA] 3 ô 391, chồng viền 1 */
+    .contact--page .info:first-child { margin-left: -1px; }   /* [FIGMA] ô đầu x134 (Home x135) */
+  }
 }

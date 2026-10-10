@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Contact — Agency</title>
+    <meta name="description" content="Agency provides a full service range including technical skills, design, business understanding." />
+
+    <!-- Thứ tự layer khai báo một lần; nhờ vậy không cần !important. -->
+    <style>
+      @layer reset, tokens, base, layout, components, utilities;
+    </style>
+
+    <link rel="preload" href="assets/fonts/epilogue-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components/text.css" />
+    <link rel="stylesheet" href="css/components/button.css" />
+    <link rel="stylesheet" href="css/components/site-header.css" />
+    <link rel="stylesheet" href="css/components/page-hero.css?v=20261010" />
+    <link rel="stylesheet" href="css/components/newsletter.css" />
+    <link rel="stylesheet" href="css/components/contact.css?v=20261010" />
+    <link rel="stylesheet" href="css/components/faq.css?v=20261010" />
+    <link rel="stylesheet" href="css/components/site-footer.css?v=20261010" />
+    <link rel="stylesheet" href="css/utilities.css" />
+  </head>
+
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <!-- Khung Figma "8_Contact_1440" 1440 × 2736 và "8_Contact_375" 375 × 4736 -->
+    <div class="page page--contact">
+
+      <!-- ================= HEADER + HERO (nền tối) ================= -->
+      <div class="section--dark page-top page-top--contact">
+        <header class="site-header container">
+          <a class="site-header__brand" href="index.html" aria-label="Agency — home">
+            <span class="site-header__logo"><img src="assets/icon/Polygon.png" width="46" height="44" alt="" /><img class="site-header__core" src="assets/icon/Polygon (1).png" width="19" height="18" alt="" /></span>
+            <span class="site-header__name">Agency</span>
+          </a>
+
+          <!-- Mobile: menu thu gọn bằng checkbox + label, không JS -->
+          <input class="site-header__switch visually-hidden" type="checkbox" id="menu-switch" />
+          <label class="site-header__toggle" for="menu-switch">
+            <span class="visually-hidden">Menu</span>
+            <span class="site-header__bars" aria-hidden="true"></span>
+          </label>
+          <nav class="site-header__nav" aria-label="Main">
+            <ul class="site-header__list" role="list">
+              <li><a class="site-header__link" href="about.html">About</a></li>
+              <li><a class="site-header__link" href="services.html">Services</a></li>
+              <li><a class="site-header__link" href="index.html#pricing">Pricing</a></li>
+              <li><a class="site-header__link" href="blog.html">Blog</a></li>
+            </ul>
+            <a class="button button--outline site-header__cta" href="contact.html" aria-current="page">Contact</a>
+          </nav>
+        </header>
+
+        <section class="page-hero page-hero--contact container" aria-labelledby="page-title">
+          <h1 class="title title--h1 page-hero__title" id="page-title">Contact</h1>
+          <p class="copy page-hero__copy">Agency provides a full service range including technical skills, design, business understanding.</p>
+        </section>
+      </div>
+
+      <main id="main">
+        <!-- ================= CONTACT: MAP + FORM + INFO ================= -->
+        <section class="contact contact--page" id="contact" aria-labelledby="contact-title">
+          <div class="contact__map">
+            <img class="contact__map-img" src="assets/img/map.png" width="1440" height="720" alt="" />
+            <img class="contact__pin" src="assets/icon/pin.png" width="72" height="72" alt="" />
+            <div class="container contact__inner">
+              <form class="contact__form" action="#" method="post">
+                <h2 class="title title--h4 contact__title" id="contact-title">Get In Touch</h2>
+                <label class="visually-hidden" for="ct-email">Your email</label>
+                <input class="field contact__field" id="ct-email" type="email" name="email" placeholder="Your email" autocomplete="email" required />
+                <label class="visually-hidden" for="ct-subject">Subject</label>
+                <select class="field field--select contact__field" id="ct-subject" name="subject">
+                  <option value="">Subject</option>
+                  <option>Design</option>
+                  <option>Development</option>
+                  <option>Marketing</option>
+                </select>
+                <label class="visually-hidden" for="ct-message">Message</label>
+                <textarea class="field field--area contact__field" id="ct-message" name="message" placeholder="Message" rows="2"></textarea>
+                <button class="button button--primary button--w154 contact__submit" type="submit">Submit now</button>
+              </form>
+            </div>
+          </div>
+
+          <ul class="contact__info container" role="list">
+            <li class="info">
+              <span class="info__icon info__icon--img"><img src="assets/icon/contact-phone.png" width="64" height="64" alt="" /></span>
+              <h3 class="eyebrow info__label">Phone</h3>
+              <a class="lead info__value" href="tel:+12345678900">+1 (234) 567-89-00</a>
+            </li>
+            <li class="info">
+              <span class="info__icon info__icon--img"><img src="assets/icon/contact-email.png" width="64" height="64" alt="" /></span>
+              <h3 class="eyebrow info__label">Email</h3>
+              <a class="lead info__value" href="mailto:info@agency.com">info@agency.com</a>
+            </li>
+            <li class="info">
+              <span class="info__icon info__icon--img"><img src="assets/icon/contact-address.png" width="64" height="64" alt="" /></span>
+              <h3 class="eyebrow info__label">Address</h3>
+              <p class="lead info__value">2247 Lunetta Street, TX 76301</p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ================= FAQ ================= -->
+        <section class="faq faq--contact container" aria-labelledby="faq-title">
+          <div class="faq__intro">
+            <p class="eyebrow">FAQ</p>
+            <h2 class="title title--h3 faq__title" id="faq-title">Frequently Asked Questions</h2>
+            <p class="copy faq__copy">A digital agency is a business you hire to outsource your digital marketing efforts, instead of handling in-house.</p>
+            <p class="copy faq__ask">Ask us anything</p>
+          </div>
+          <div class="faq__list">
+            <details class="faq__item" name="faq" open>
+              <summary class="title title--h4 faq__question">A digital agency is a business</summary>
+              <p class="copy faq__answer">Digital marketing efforts, instead of handling in-house. They can provide your business with a variety of digital solutions to promote your product or service online and help you hit your marketing goals and grow your business.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="title title--h4 faq__question">Hire to outsource your digital</summary>
+              <p class="copy faq__answer">Digital marketing efforts, instead of handling in-house. They can provide your business with a variety of digital solutions to promote your product or service online.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="title title--h4 faq__question">Marketing efforts</summary>
+              <p class="copy faq__answer">They can provide your business with a variety of digital solutions to promote your product or service online.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="title title--h4 faq__question">Can provide your business</summary>
+              <p class="copy faq__answer">Help you hit your marketing goals and grow your business.</p>
+            </details>
+          </div>
+        </section>
+      </main>
+
+      <!-- ================= FOOTER ================= -->
+      <footer class="site-footer site-footer--portfolio site-footer--contact container">
+        <p class="title title--h4 site-footer__brand">Agency</p>
+        <nav class="site-footer__col" aria-labelledby="ft-menu">
+          <h2 class="eyebrow site-footer__head" id="ft-menu">Menu</h2>
+          <ul class="site-footer__list" role="list">
+            <li><a class="site-footer__link" href="about.html">About</a></li>
+            <li><a class="site-footer__link" href="services.html">Services</a></li>
+            <li><a class="site-footer__link" href="blog.html">Blog</a></li>
+            <li><a class="site-footer__link" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="site-footer__col" aria-labelledby="ft-service">
+          <h2 class="eyebrow site-footer__head" id="ft-service">Service</h2>
+          <ul class="site-footer__list" role="list">
+            <li><a class="site-footer__link" href="services.html#design">Design</a></li>
+            <li><a class="site-footer__link" href="services.html#development">Development</a></li>
+            <li><a class="site-footer__link" href="services.html#marketing">Marketing</a></li>
+            <li><a class="site-footer__link" href="services.html">See More</a></li>
+          </ul>
+        </nav>
+        <ul class="site-footer__social" role="list">
+          <li><a class="site-footer__soc" href="#" aria-label="Facebook"><img src="assets/icon/facebook.png" width="10" height="16" alt="" /></a></li>
+          <li><a class="site-footer__soc" href="#" aria-label="Twitter"><img src="assets/icon/twitter.png" width="16" height="13" alt="" /></a></li>
+          <li><a class="site-footer__soc" href="#" aria-label="Instagram"><img src="assets/icon/instagram.png" width="16" height="16" alt="" /></a></li>
+        </ul>
+        <div class="site-footer__bottom">
+          <p class="copy site-footer__copy"><span class="site-footer__copy-1">Copyright © 2022 Laaqiq.</span> All Rights Reserved.</p>
+          <p class="site-footer__legal"><a class="site-footer__link" href="#">Terms of Use</a><a class="site-footer__link" href="#">Privacy Policy</a></p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

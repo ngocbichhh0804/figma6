@@ -103,4 +103,24 @@
     .faq--about .text-link { display: none; }   /* [FIGMA] desktop không có "Contact Me" */
     .faq--about .faq__list { margin: 68px 0 0; }   /* [ĐO] khung y4256 − mô tả đáy 4188 */
   }
+
+  /* Trang Contact: "Ask us anything" là chữ thường, không phải link [FIGMA] */
+  .faq__ask { margin-top: 32px; color: var(--text-primary); }   /* [FIGMA] mobile y2764 = mô tả 2636 + 96 + 32 */
+  .faq--contact { padding-top: 108px; } /* [FIGMA] mobile eyebrow y2428 − ô liên hệ đáy 2320 */
+  @media (width < 64rem) {
+    .faq--contact .faq__question::after { top: 39px; }   /* [FIGMA] mobile icon y2872 */
+    .faq--contact .faq__copy { margin-top: 15px; }       /* [FIGMA] mobile mô tả y2636 */
+    .faq--contact .faq__answer { margin-top: -21px; padding-bottom: 36px; }   /* [FIGMA] mobile trả lời y2956, mục mở cao 417 */
+  }
+
+  @media (width >= 64rem) {
+    .faq--contact {
+      padding-top: 144px;               /* [FIGMA] thẻ y1536 − ô liên hệ đáy 1392 */
+      --faq-q-pt: 40px;                 /* [ĐO] tiêu đề y1577 */
+      --faq-q-pb: 39px;                 /* [FIGMA] mục đóng 570×113 */
+      --faq-q-pb-open: 39px;            /* [FIGMA] trả lời y1644 */
+      --faq-icon-t: 39px;               /* [FIGMA] icon y1576 */
+    }
+    .faq--contact .faq__intro { margin-top: -20px; }   /* [FIGMA] eyebrow y1516 */
+  }
 }

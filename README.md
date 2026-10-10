@@ -23,6 +23,8 @@ bước build, **không JavaScript**.
 | Blog — mobile (`6_Blog_375`) | 375 × 6496 | 1.5 | 98.7 % | ≤ 60: 99.3 %; 35/49 vùng khớp 0px, còn lại ≤ 1px |
 | Single Post — desktop (`7_Single_Post_1440`) | 1440 × 4720 | 0.8 | 99.1 % | ≤ 60: 99.6 %; 65/85 vùng khớp 0px, còn lại ≤ 1px (riêng dòng "In Stories by…" 2px mép phải) |
 | Single Post — mobile (`7_Single_Post_375`) | 375 × 6688 | 2.5 | 97.7 % | ≤ 60: 98.8 %; 65/98 vùng khớp 0px, còn lại ≤ 1px (riêng dòng "In Stories by…" 2px mép phải) |
+| Contact — desktop (`8_Contact_1440`) | 1440 × 2736 | 0.8 | 99.3 % | ≤ 60: 99.6 %; 49/67 vùng khớp 0px, còn lại ≤ 1px (mép chữ) |
+| Contact — mobile (`8_Contact_375`) | 375 × 4736 | 2.0 | 98.4 % | ≤ 60: 99.0 %; 55/77 vùng khớp 0px, còn lại ≤ 1px (riêng chữ "Contact" hẹp 2px mép phải) |
 
 Cả hai khung dùng chung **một** file `index.html`; mobile là CSS mặc định,
 desktop bật từ `64rem`, các mảnh minh hoạ dựng rời bật từ `90rem` (1440).
@@ -75,7 +77,7 @@ Một file cho cả hai khung. Dùng lại header, `page-hero`, `intro`, `steps`
 - Khung `4_Portfolio_1_1440` (1440 × 3440): sai lệch TB **0.8/765**, **99.6 %**
   pixel lệch ≤ 30 (99.7 % ≤ 60). `regions.py`: mọi khối lệch 0–1px (1px là mép
   chữ do khác engine dựng chữ).
-- Khung `4_Portfolio_1_375` (375 × 4656): TB 2.2/765, **98.6 %** ≤ 30, mọi khối
+- Khung `4_Portfolio_1_375` (375 × 4656): TB 2.0/765, **98.6 %** ≤ 30, mọi khối
   lệch 0–1px. Figma mobile khác desktop: DDDone xếp trước Work Media, tag
   KeyBoard "Design" / DDDone "Branding", ảnh DDDone phóng rộng 570. HTML theo
   thứ tự mobile; desktop đổi chỗ 2 ô cùng cỡ bằng `position: relative`
@@ -203,7 +205,29 @@ tốt nhất, 1.75% trở lên làm lệch ngược lại.
 - Ảnh đối chiếu: `docs/comparison/single-post/`, `docs/comparison/single-post-mobile/`.
   Overlay: `dev/single-post-overlay.html`, `dev/single-post-mobile-overlay.html`.
 
+### Contact (`contact.html`)
+
+- Thông số đọc từ ảnh chụp panel Properties của Figma design (frame `8_Contact_1440`
+  node `0-5114`, `8_Contact_375` node `0-5207`), chụp trong Chrome: `~/Desktop/contact-desktop`
+  (109 ảnh), `~/Desktop/contact-mobile` (97 ảnh); bảng ở `docs/comparison/contact/spec.md`.
+- Khung 1440 × 2736: TB **0.8/765**, **99.3 %** ≤ 30; 49/67 vùng khớp 0px, còn
+  lại 1px ở mép chữ (header lệch y như Blog). Khung 375 × 4736: TB 2.0/765,
+  **98.4 %** ≤ 30; 55/77 vùng khớp 0px. Tổng chiều cao 2 khung đúng 2736 / 4736.
+- Khối bản đồ + form + 3 ô liên hệ trùng pixel với Home → dùng lại `contact`
+  qua `contact--page` (form cao đúng 464, ô liên hệ x134 rộng 391, mobile form
+  cách hero 64). FAQ dùng lại `faq` qua `faq--contact` ("Ask us anything" là chữ
+  thường `faq__ask`). Hero `page-hero--contact`. Không có banner: footer
+  `site-footer--portfolio site-footer--contact` có kẻ trên (y2272 / y3760).
+- Link "Contact" ở header/footer các trang con nay trỏ về `contact.html` (Home
+  giữ `#contact` vì có khối liên hệ riêng).
+- Ảnh đối chiếu: `docs/comparison/contact/`, `docs/comparison/contact-mobile/`.
+  Overlay: `dev/contact-overlay.html`, `dev/contact-mobile-overlay.html`.
+
 ## Responsive
+
+Contact: 17 khổ 320 → 2560 + điện thoại xoay ngang 568/667/844 × 320: không khổ
+nào cuộn ngang, không cảnh báo. Khổ 320 kiểm thêm bằng iframe. Breakpoint giữ
+như Home (`64rem` bật bố cục desktop); ở 1024 địa chỉ xuống 2 dòng trong ô 192.
 
 Single Post: 17 khổ 320 → 2560 + điện thoại xoay ngang 568/667/844 × 320: không
 khổ nào cuộn ngang. Khổ 320 kiểm thêm bằng iframe: dưới 23rem (368px) dấu trích

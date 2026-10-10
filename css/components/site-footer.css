@@ -92,4 +92,22 @@
     .site-footer--blog .site-footer__brand,
     .site-footer--post .site-footer__brand { position: relative; top: -1px; }   /* [ĐO] chữ "Agency" y5230 (Blog y5630) */
   }
+
+  /* Trang Contact: không có banner, kẻ ngang ngay trên footer [FIGMA] */
+  .site-footer--contact::before {
+    content: "";
+    position: absolute;
+    left: var(--gutter);
+    right: var(--gutter);
+    top: 0;
+    border-top: 1px solid var(--line);  /* [FIGMA] 1170×1 #F3D1BF */
+  }
+  .site-footer--contact { margin-top: 111px; }   /* [FIGMA] mobile kẻ y3760 − FAQ đáy 3649 */
+  .site-footer--contact .site-footer__brand { position: relative; top: -1px; }   /* [ĐO] chữ "Agency" y3870 / y2366 */
+  .site-footer--contact .site-footer__legal > a { display: inline-block; width: 102px; }   /* [FIGMA] Terms of Use 102×32 */
+  .site-footer--contact .site-footer__legal > a + a { width: 105px; margin-left: 68px; }   /* [FIGMA] Privacy Policy 105×32, x220 (mobile) / x1200 */
+  @media (width >= 64rem) {
+    .site-footer--contact { margin-top: 127px; }   /* [FIGMA] kẻ y2272 − FAQ đáy 2145 */
+    .site-footer--contact .site-footer__legal > a { text-align: right; }   /* [FIGMA] desktop canh phải */
+  }
 }

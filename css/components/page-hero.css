@@ -28,4 +28,6 @@
     }
     .page-hero__copy { margin-top: 24px; }   /* [FIGMA] y268 = 164 + 80 + 24 */
   }
+
+  .page-hero--contact .page-hero__title { position: relative; top: -1px; }   /* [ĐO] như Blog: Chrome dựng chữ thấp 1px */
 }
